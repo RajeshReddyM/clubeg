@@ -12,6 +12,14 @@ use App\Http\Requests\CreatePlayerRequest;
 
 class UsersController extends Controller
 {
+
+    public function index()
+    {
+        $users = User::all();
+
+        return view('users.index')->with('users', $users);;
+    }
+
     /**
      * Show the form for creating a new resource.
      *

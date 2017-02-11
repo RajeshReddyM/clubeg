@@ -21,6 +21,6 @@ Route::get('/home', 'HomeController@index');
 
 Route::group( ['middleware' => 'auth' ], function() {
 	Route::get('/register', array('as' => 'register', 'uses' => 'UsersController@create'));
-
+	Route::get('/users', array('as' => 'users', 'uses' => 'UsersController@index'));
 	Route::post('/register', array('as' => 'register', 'uses' => 'UsersController@store'));
 });
