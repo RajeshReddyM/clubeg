@@ -23,9 +23,12 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->handicap }}</td>
                     <td>
-                        <a href="#" class="btn btn-primary">Show</a>
-                        <a href="#" class="btn btn-info">Edit</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
+                        <a href="#" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"> Edit </span>
+                        </a>
+                        <a href="#" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"> Delete </span>
+                        </a>
                     </td>
                 </tr>
             @endforeach
