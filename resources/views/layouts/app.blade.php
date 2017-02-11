@@ -83,5 +83,6 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="/js/site.js"></script>
 </body>
 </html>
