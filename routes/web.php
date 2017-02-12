@@ -11,6 +11,14 @@
 |
 */
 
+Route::post('/language-chooser',  'LanguageController@changeLanguage');
+Route::post('/language', array(
+	'before' =>  'csrf',
+	'as' => 'language-chooser',
+	'uses' => 'LanguageController@changeLanguage'
+	)
+);
+
 Route::get('/', function () {
     return view('welcome');
 });

@@ -86,10 +86,16 @@
                         <!-- Authentication Links -->
                         @if (Route::has('login'))
                             <div class="top-right links">
+                                @if (Session::get('locale') == 'fr')
+                                    <a href="#" data-index="en" id="languageSwitcher"> English </a>
+                                @else
+                                    <a href="#" data-index="fr" id="languageSwitcher"> French </a>
+                                @endif
+                                <input type="hidden" name="_token" id="csrf_token" value="{{csrf_token()}}">
                                 @if (Auth::check())
                                     <a href="{{ url('/home') }}">Home</a>
                                 @else
-                                    <a href="{{ url('/login') }}">Login</a>
+                                    <a href="{{ url('/login') }}">{{ trans('app.login') }}</a>
                                 @endif
                             </div>
                         @endif
@@ -112,7 +118,7 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    Welcome
+                    {{ trans('app.welcome') }}
                 </div>
             </div>
         </div>
