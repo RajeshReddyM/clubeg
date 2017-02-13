@@ -23,7 +23,7 @@ return [
     'confirm_password' => 'Confirm Password',
     'register' => 'Register',
     'logout_msg' => 'You have been logged out successfully',
-    'login_msg' => 'you have been logged in',
+    'login_msg' => ' you have been logged in',
     'welcome_msg' => 'Welcome back ',
     'player_added_msg' => 'Player added successfully'
 ];
