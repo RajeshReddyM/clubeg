@@ -8316,3 +8316,10 @@ button.close {
     display: none !important;
   }
 }
+
+.dropdown-divider {
+    height: 1px;
+    margin: .5rem 0;
+    overflow: hidden;
+    background-color: #eceeef;
+}

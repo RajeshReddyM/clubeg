@@ -57,16 +57,18 @@
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">{{ trans('app.login') }}</a></li>
                         @else
-                            <li><a href="{{ route('users') }}">{{ trans('app.players') }}</a></li>
-                            <li><a href="{{ route('register') }}">{{ trans('app.add_player') }}</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     <i class="glyphicon glyphicon-user"> </i> {{ Auth::user()->first_name }}<span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a class="dropdown-item" href="{{ route('register') }}"> <i class="glyphicon glyphicon-plus"></i> {{ trans('app.add_player') }}</a></li>
+                                    <div class="dropdown-divider"></div>
+                                    <li><a class="dropdown-item"  href="{{ route('users') }}"><i class="glyphicon glyphicon-list"></i> {{ trans('app.players') }} </a></li>
+                                    <div class="dropdown-divider"></div>
                                     <li>
-                                        <a href="{{ route('logout') }}"
+                                        <a href="{{ route('logout') }}" class="dropdown-item"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             <i class="glyphicon glyphicon-off"> </i> {{ trans('app.logout') }}
