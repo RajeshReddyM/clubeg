@@ -43,7 +43,7 @@ class UsersController extends Controller
         $request->merge(['password' => Hash::make($request->password)]);
         $user = User::create($request->all());
 
-        Session::flash('alert-success', 'Player added successfully');
+        Session::flash('alert-success', trans('app.player_added_msg'));
 
         return redirect('/home');
     }

@@ -55,10 +55,10 @@
                             <li> <a href="#" data-index="fr" id="languageSwitcher"> Français </a> </li>
                         @endif
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('login') }}">{{ trans('app.login') }}</a></li>
                         @else
-                            <li><a href="{{ route('users') }}">Players</a></li>
-                            <li><a href="{{ route('register') }}">Add Players</a></li>
+                            <li><a href="{{ route('users') }}">{{ trans('app.players') }}</a></li>
+                            <li><a href="{{ route('register') }}">{{ trans('app.add_player') }}</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     <i class="glyphicon glyphicon-user"> </i> {{ Auth::user()->first_name }}<span class="caret"></span>
@@ -69,7 +69,7 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            <i class="glyphicon glyphicon-off"> </i> Logout
+                                            <i class="glyphicon glyphicon-off"> </i> {{ trans('app.logout') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

@@ -52,7 +52,7 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        Session::flash('alert-success', 'Welcome back ' . $user->first_name . ', you have been logged in');
+        Session::flash('alert-success', trans('app.welcome_msg') . $user->first_name . trans('app.login_msg'));
     }
 
     /**
@@ -69,7 +69,7 @@ class LoginController extends Controller
 
         $request->session()->regenerate();
 
-        Session::flash('alert-danger', 'You have been logged out successfully');
+        Session::flash('alert-danger', trans('app.logout_msg'));
 
         return redirect('/');
     }

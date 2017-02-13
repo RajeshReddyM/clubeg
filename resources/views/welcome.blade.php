@@ -93,7 +93,7 @@
                                 @endif
                                 <input type="hidden" name="_token" id="csrf_token" value="{{csrf_token()}}">
                                 @if (Auth::check())
-                                    <a href="{{ url('/home') }}">Home</a>
+                                    <a href="{{ url('/home') }}">{{ trans('app.home') }}</a>
                                 @else
                                     <a href="{{ url('/login') }}">{{ trans('app.login') }}</a>
                                 @endif
