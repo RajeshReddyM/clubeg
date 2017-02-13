@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Login
+                                    <i class="glyphicon glyphicon-log-in"></i> Login
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">

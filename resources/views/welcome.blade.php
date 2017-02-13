@@ -89,7 +89,7 @@
                                 @if (Session::get('locale') == 'fr')
                                     <a href="#" data-index="en" id="languageSwitcher"> English </a>
                                 @else
-                                    <a href="#" data-index="fr" id="languageSwitcher"> French </a>
+                                    <a href="#" data-index="fr" id="languageSwitcher"> Français </a>
                                 @endif
                                 <input type="hidden" name="_token" id="csrf_token" value="{{csrf_token()}}">
                                 @if (Auth::check())

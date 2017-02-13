@@ -49,6 +49,11 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
+                        @if (Session::get('locale') == 'fr')
+                            <li> <a href="#" data-index="en" id="languageSwitcher"> English </a> </li>
+                        @else
+                            <li> <a href="#" data-index="fr" id="languageSwitcher"> Français </a> </li>
+                        @endif
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                         @else

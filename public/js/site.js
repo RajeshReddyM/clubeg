@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+	// Change the language
 	$('#languageSwitcher').click(function(){
 		var locale = $(this).data('index');
 		var _token = $("input[name=_token]").val();
@@ -24,6 +25,7 @@ $(document).ready(function() {
 
 	});
 
+	// Fade out alert messages
     $(".alert").fadeTo(2000, 500).slideUp(500, function(){
         $(".alert").slideUp(500);
     });
