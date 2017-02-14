@@ -37,20 +37,21 @@
                                 @endif
                             </div>
                         </div>
+                        @if (Auth::user())
+                            <div class="form-group{{ $errors->has('handicap') ? ' has-error' : '' }}">
+                                <label for="handicap" class="col-md-4 control-label">{{ trans('app.handicap') }}</label>
 
-                        <div class="form-group{{ $errors->has('handicap') ? ' has-error' : '' }}">
-                            <label for="handicap" class="col-md-4 control-label">{{ trans('app.handicap') }}</label>
+                                <div class="col-md-6">
+                                    <input id="handicap" type="text" class="form-control" name="handicap" value="{{ old('handicap') }}" required autofocus>
 
-                            <div class="col-md-6">
-                                <input id="handicap" type="text" class="form-control" name="handicap" value="{{ old('handicap') }}" required autofocus>
-
-                                @if ($errors->has('handicap'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('handicap') }}</strong>
-                                    </span>
-                                @endif
+                                    @if ($errors->has('handicap'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('handicap') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
+                        @endif
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">{{ trans('app.email_address') }}</label>

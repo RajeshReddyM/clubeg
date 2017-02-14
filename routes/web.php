@@ -26,9 +26,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-
+Route::get('/register', array('as' => 'register', 'uses' => 'UsersController@create'));
+Route::post('/register', array('as' => 'register', 'uses' => 'UsersController@store'));
 Route::group( ['middleware' => 'auth' ], function() {
-	Route::get('/register', array('as' => 'register', 'uses' => 'UsersController@create'));
 	Route::get('/users', array('as' => 'users', 'uses' => 'UsersController@index'));
-	Route::post('/register', array('as' => 'register', 'uses' => 'UsersController@store'));
 });

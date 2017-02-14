@@ -19,11 +19,13 @@ return [
     'handicap' => 'Handicap',
     'edit' => 'Edit',
     'delete' => 'Delete',
-    'register_players' => 'Register Players',
+    'register_players' => 'Register',
     'confirm_password' => 'Confirm Password',
     'register' => 'Register',
     'logout_msg' => 'You have been logged out successfully',
     'login_msg' => ' you have been logged in',
     'welcome_msg' => 'Welcome back ',
-    'player_added_msg' => 'Player added successfully'
+    'player_added_msg' => 'Player added successfully',
+    'user_added_msg' => 'Registered successfully. Please Login',
+    'signup' => 'Signup'
 ];

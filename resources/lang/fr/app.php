@@ -19,11 +19,13 @@ return [
     'handicap' => 'Handicap',
     'edit' => 'Modifier',
     'delete' => 'Supprimer',
-    'register_players' => "Les Joueurs À S'Inscrire",
+    'register_players' => "Registre",
     'confirm_password' => 'Confirmer Le Mot De Passe',
     'register' => 'Registre',
     'logout_msg' => 'Vous avez été connecté avec succès',
     'login_msg' => ' vous avez été connecté',
     'welcome_msg' => 'Bienvenue ',
-    'player_added_msg' => 'Joueur ajouté avec succès'
+    'player_added_msg' => 'Joueur ajouté avec succès',
+    'user_added_msg' => 'Enregistré avec succès. Veuillez vous connecter',
+    'signup' => 'Inscrivez'
 ];
