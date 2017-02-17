@@ -15,6 +15,8 @@
 
     </head>
     <body>
+
+        <!-- Start of top nav -->
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -62,51 +64,61 @@
                 </div>
             </div>
         </nav>
+        <!-- End of top nav -->
 
+        <!-- Start of main container -->
         <div class="container">
+            <!-- Start of tournament info -->
             <h2>{Tournament Name}</h2>
 
+            <div class="col-sm-6">
                 <div class="col-sm-6">
-                    <div class="col-sm-6">
-                        <label for="startDate">Start Date: </label>
-                    </div>
-                    <div class="col-sm-6">
-                        <p id="startDate">{start_date}</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="startDate">Club Name: </label>
-                    </div>
-                    <div class="col-sm-6">
-                        <p id="startDate">{golf_club_name}</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="startDate">Course Name: </label>
-                    </div>
-                    <div class="col-sm-6">
-                        <p id="startDate">{golf_course_name}</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="startDate">Type: </label>
-                    </div>
-                    <div class="col-sm-6">
-                        <p id="startDate">{tournament_type}</p>
-                    </div>
-
+                    <label for="startDate">Start Date: </label>
                 </div>
                 <div class="col-sm-6">
-                    <!-- Tournament promo photo -->
-                        {{ Html::image('http://placehold.it/350x150',"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
-
+                    <p id="startDate">{start_date}</p>
                 </div>
+                <div class="col-sm-6">
+                    <label for="startDate">Club Name: </label>
+                </div>
+                <div class="col-sm-6">
+                    <p id="startDate">{golf_club_name}</p>
+                </div>
+                <div class="col-sm-6">
+                    <label for="startDate">Course Name: </label>
+                </div>
+                <div class="col-sm-6">
+                    <p id="startDate">{golf_course_name}</p>
+                </div>
+                <div class="col-sm-6">
+                    <label for="startDate">Type: </label>
+                </div>
+                <div class="col-sm-6">
+                    <p id="startDate">{tournament_type}</p>
+                </div>
+
+            </div>
+            <!-- End of tournament info -->
+
+
+            <!-- Start of tournament photo -->
+            <div class="col-sm-6">
+                    {{ Html::image('http://placehold.it/350x150',"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
+            </div>
+            <!-- End of tournament photo -->
+
+
             <hr/>
-            <!-- Register button-->
+
+
+            <!-- Start of register/cancel registration buttons -->
             <div class="col-sm-6">
                 <button class="btn btn-success">Register</button>
                 <button class="btn btn-danger">Cancel Registration</button>
             </div>
+            <!-- End of register/cancel registration buttons -->
 
-
-            <!-- sponsor area -->
+            <!-- Start of sponsor area -->
             <div class="row">
                 <div class="col-sm-12">
                     <h2>Sponsors</h2>
@@ -136,9 +148,10 @@
                         {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
                     </div>
                 </div>
-                </div>
             </div>
-
+            <!-- End of sponsor area -->
+        </div>
+        <!-- End of main container -->
         </div>
     <!-- Scripts -->
     <script src="/js/app.js"></script>
