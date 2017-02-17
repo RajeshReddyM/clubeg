@@ -12,49 +12,7 @@
 
         <!-- Styles -->
         <link href="/css/app.css" rel="stylesheet">
-        <style>
-            .full-height {
-                height: 90vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+       
     </head>
     <body>
         <nav class="navbar navbar-default navbar-static-top">
@@ -104,13 +62,9 @@
                 </div>
             </div>
         </nav>
+
         <div class="container">
             <h2>{Tournament Name}</h2>
-
-
-
-
-
 
                 <div class="col-sm-6">
                     <div class="col-sm-6">
@@ -141,12 +95,13 @@
                 </div>
                 <div class="col-sm-6">
                     <!-- Tournament promo photo -->
-                        {{ Html::image('images/tournament_placeholder_image.jpg',"Tournament placeholder image",array('class' => 'img img-responsive img-rounded rounded')) }}
+                        {{ Html::image('images/tournament_placeholder_image.jpg',"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
 
                 </div>
             <!-- Register button-->
             <div class="col-sm-6">
                 <button class="btn btn-success">Register</button>
+                <button class="btn btn-danger">Cancel Registration</button>
             </div>
 
 
@@ -157,27 +112,27 @@
                     <hr/>
                     <div class="col-sm-4 well well-sm">
                         <p>{Sponsor 1}</p>
-                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image",array('class' => 'img img-responsive img-rounded rounded')) }}
+                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
                     </div>
                     <div class="col-sm-4 well well-sm">
                         <p>{Sponsor 2}</p>
-                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image",array('class' => 'img img-responsive img-rounded rounded')) }}
+                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
                     </div>
                     <div class="col-sm-4 well well-sm">
                         <p>{Sponsor 3}</p>
-                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image",array('class' => 'img img-responsive img-rounded rounded')) }}
+                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
                     </div>
                     <div class="col-sm-4 well well-sm">
                         <p>{Sponsor 4}</p>
-                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image",array('class' => 'img img-responsive img-rounded rounded')) }}
+                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
                     </div>
                     <div class="col-sm-4 well well-sm">
                         <p>{Sponsor 5}</p>
-                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image",array('class' => 'img img-responsive img-rounded rounded')) }}
+                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
                     </div>
                     <div class="col-sm-4 well well-sm">
                         <p>{Sponsor 6}</p>
-                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image",array('class' => 'img img-responsive img-rounded rounded')) }}
+                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
                     </div>
                 </div>
                 </div>
