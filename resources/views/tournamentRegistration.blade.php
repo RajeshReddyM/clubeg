@@ -57,6 +57,7 @@
         </style>
     </head>
     <body>
+
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -245,9 +246,7 @@
                         {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
                     </div>
                 </div>
-                </div>
             </div>
-
         </div>
     <!-- Scripts -->
     <script src="/js/app.js"></script>
