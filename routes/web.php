@@ -31,4 +31,4 @@ Route::post('/register', array('as' => 'register', 'uses' => 'UsersController@st
 Route::group( ['middleware' => 'auth' ], function() {
 	Route::get('/users', array('as' => 'users', 'uses' => 'UsersController@index'));
 });
-Route::get('/tournaments/register', 'TournamentController@register');
+Route::get('/tournaments/register', 'TournamentController@view');

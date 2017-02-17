@@ -22,6 +22,20 @@ class TournamentController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    /*Created: 2017-02-16 - Michel Tremblay
+     * Controller function which returns the basic view with tournament data which the user requests
+     * TODO: Add functionality to fetch and return tournament data
+    */
+    public function view()
+    {
+        return view('tournamentRegistration');
+    }
+
+
+    /*Created: 2017-02-16 - Michel Tremblay
+    * Controller function which registers the user for the selected tournament
+    * TODO: Add functionality to fetch and return tournament data
+   */
     public function register()
     {
         return view('tournamentRegistration');
