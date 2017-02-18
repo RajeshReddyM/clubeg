@@ -162,7 +162,13 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        // Laravel Collective for cleaner form syntax
         Collective\Html\HtmlServiceProvider::class,
+        // Bouncer Library to handle user roles
+        Silber\Bouncer\BouncerServiceProvider::class,
+        // Debugbar library for better debugging
+        Barryvdh\Debugbar\ServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -228,6 +234,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Bouncer' => Silber\Bouncer\BouncerFacade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
