@@ -27,5 +27,7 @@ return [
     'welcome_msg' => 'Welcome back ',
     'player_added_msg' => 'Player added successfully',
     'user_added_msg' => 'Registered successfully. Please Login',
-    'signup' => 'Signup'
+    'signup' => 'Signup',
+    'roles' => 'Roles',
+    'update' => 'Update',
 ];

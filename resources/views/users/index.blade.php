@@ -12,6 +12,7 @@
               <th>{{ trans('app.last_name') }}</th>
               <th>{{ trans('app.email') }}</th>
               <th>{{ trans('app.handicap') }}</th>
+              <th>{{ trans('app.roles') }}</th>
               <th></th>
             </tr>
           </thead>
@@ -22,13 +23,18 @@
                     <td>{{ $user->last_name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->handicap }}</td>
+                    <td> <b> {{ implode(', ',$user->listRoles()) }} </b></td>
                     <td>
-                        <a href="#" class="btn btn-primary">
-                            <i class="glyphicon glyphicon-edit" aria-hidden="true"> {{ trans('app.edit') }} </i>
+                        <a href="{{route('users.edit', $user->id)}}" class="btn btn-primary">
+                            <i class="glyphicon glyphicon-edit" aria-hidden="true"> </i>
                         </a>
-                        <a href="#" class="btn btn-danger">
-                            <i class="glyphicon glyphicon-trash" aria-hidden="true"> {{ trans('app.delete') }} </i>
-                        </a>
+                        {!! Form::open([
+                            'method' => 'DELETE',
+                            'route' => ['users.destroy', $user->id], 'class' => 'deleteUser'
+                        ]) !!}
+                            {{Form::button("<i class='glyphicon glyphicon-trash'></i>", array('type' => 'submit', 'class' => 'btn btn-danger'))}}
+                        {!! Form::close() !!}
+
                     </td>
                 </tr>
             @endforeach

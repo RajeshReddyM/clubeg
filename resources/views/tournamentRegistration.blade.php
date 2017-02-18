@@ -12,6 +12,7 @@
 
         <!-- Styles -->
         <link href="/css/app.css" rel="stylesheet">
+        <link href="/css/site.css" rel="stylesheet">
         <style>
             .full-height {
                 height: 90vh;

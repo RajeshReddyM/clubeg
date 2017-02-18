@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Session;
 use App\Http\Requests\CreatePlayerRequest;
+use App\Http\Requests;
 use Bouncer;
 
 class UsersController extends Controller
@@ -57,5 +58,65 @@ class UsersController extends Controller
             Session::flash('alert-success', trans('app.user_added_msg'));
             return redirect('/');
         }
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        // get the user
+        $user = User::find($id);
+
+        // show the edit form and pass the user
+        return view('users.edit')->with('user', $user);
+    }
+
+    /**
+     * Update the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+
+    public function update($id)
+    {
+        $this->validate(request(), [
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+        ]);
+        $user = User::findOrFail($id);
+        $user->fill(request()->all());
+        $old_roles = $user->listRoles();
+        foreach ($old_roles as $role) {
+            $user->retract($role);
+        }
+        $new_roles = request()->roles;
+        for ($i = 0; $i < count($new_roles); $i++ ) {
+            $user->assign($new_roles[$i]);
+        }
+
+        $user->save();
+
+        return redirect('/users');
+    }
+
+     /**
+     * Destroy the resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+
+    public function destroy($id)
+    {
+        $user = User::findOrFail($id);
+
+        $user->delete();
+
+        return redirect('/users');
     }
 }

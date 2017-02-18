@@ -29,4 +29,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    // Return user roles in an array
+    public function listRoles()
+    {
+        return $this->roles->pluck('name')->toArray();
+    }
 }

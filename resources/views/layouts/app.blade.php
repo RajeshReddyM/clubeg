@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/site.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -67,7 +68,7 @@
                                    @if (Auth::user()->isAn('admin'))
                                         <li><a class="dropdown-item" href="{{ route('register') }}"> <i class="glyphicon glyphicon-plus"></i> {{ trans('app.add_player') }}</a></li>
                                         <div class="dropdown-divider"></div>
-                                        <li><a class="dropdown-item"  href="{{ route('users') }}"><i class="glyphicon glyphicon-list"></i> {{ trans('app.players') }} </a></li>
+                                        <li><a class="dropdown-item"  href="{{ route('users.index') }}"><i class="glyphicon glyphicon-list"></i> {{ trans('app.players') }} </a></li>
                                         <div class="dropdown-divider"></div>
                                     @endif
                                     <li>
