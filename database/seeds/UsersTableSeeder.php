@@ -29,7 +29,7 @@ class UsersTableSeeder extends Seeder
 
         // Player
         $player =  User::create([
-            'first_name'=>'Admin', 'last_name' => 'User', 'handicap' => '5', 'email'=>'player@example.com','password'=> bcrypt('password')
+            'first_name'=>'Player', 'last_name' => 'User', 'handicap' => '5', 'email'=>'player@example.com','password'=> bcrypt('password')
         ]);
         $player->assign('player');
 
