@@ -36,4 +36,19 @@ class User extends Authenticatable
     {
         return $this->roles->pluck('name')->toArray();
     }
+
+    // Delete Roles for an user
+    public function deleteRoles() {
+        $roles = $this->listRoles();
+        foreach ($roles as $role) {
+            $this->retract($role);
+        }
+    }
+
+    // Assign roles to an user
+    public function assignRoles($roles) {
+        for ($i = 0; $i < count($roles); $i++ ) {
+            $this->assign($roles[$i]);
+        }
+    }
 }

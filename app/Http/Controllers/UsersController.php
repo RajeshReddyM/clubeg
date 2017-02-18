@@ -52,7 +52,7 @@ class UsersController extends Controller
 
         if (Auth::user()) {
             Session::flash('alert-success', trans('app.player_added_msg'));
-            return redirect('/home');
+            return redirect('/users');
         } else {
             $user->assign('guest');
             Session::flash('alert-success', trans('app.user_added_msg'));
@@ -90,17 +90,10 @@ class UsersController extends Controller
         ]);
         $user = User::findOrFail($id);
         $user->fill(request()->all());
-        $old_roles = $user->listRoles();
-        foreach ($old_roles as $role) {
-            $user->retract($role);
-        }
-        $new_roles = request()->roles;
-        for ($i = 0; $i < count($new_roles); $i++ ) {
-            $user->assign($new_roles[$i]);
-        }
-
+        $user->deleteRoles();
+        $user->assignRoles(request()->roles);
         $user->save();
-
+        Session::flash('alert-success', trans('app.player_updated_msg'));
         return redirect('/users');
     }
 
@@ -116,7 +109,7 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
 
         $user->delete();
-
+        Session::flash('alert-success', trans('app.player_deleted_msg'));
         return redirect('/users');
     }
 }

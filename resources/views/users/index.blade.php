@@ -3,6 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="flash-message">
+          @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+            @if(Session::has('alert-' . $msg))
+            <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p>
+            @endif
+          @endforeach
+        </div>
         <h3>{{ trans('app.listing_players') }}</h3>
 
         <table class="table table-responsive">
