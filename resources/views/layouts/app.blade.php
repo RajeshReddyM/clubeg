@@ -64,10 +64,12 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a class="dropdown-item" href="{{ route('register') }}"> <i class="glyphicon glyphicon-plus"></i> {{ trans('app.add_player') }}</a></li>
-                                    <div class="dropdown-divider"></div>
-                                    <li><a class="dropdown-item"  href="{{ route('users') }}"><i class="glyphicon glyphicon-list"></i> {{ trans('app.players') }} </a></li>
-                                    <div class="dropdown-divider"></div>
+                                   @if (Auth::user()->isAn('admin'))
+                                        <li><a class="dropdown-item" href="{{ route('register') }}"> <i class="glyphicon glyphicon-plus"></i> {{ trans('app.add_player') }}</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a class="dropdown-item"  href="{{ route('users') }}"><i class="glyphicon glyphicon-list"></i> {{ trans('app.players') }} </a></li>
+                                        <div class="dropdown-divider"></div>
+                                    @endif
                                     <li>
                                         <a href="{{ route('logout') }}" class="dropdown-item"
                                             onclick="event.preventDefault();

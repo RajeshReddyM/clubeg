@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
+use App\User;
+use Silber\Bouncer\Database\HasRolesAndAbilities;
+
 
 class UsersTableSeeder extends Seeder
 {
@@ -12,13 +14,42 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-		//delete users table records
-		DB::table('users')->delete();
-		//insert some dummy records
-		DB::table('users')->insert(array(
-			array('first_name'=>'Rajesh', 'last_name' => 'Reddy', 'handicap' => '5', 'email'=>'rajesh@example.com','password'=> Hash::make('password')),
-			array('first_name'=>'John', 'last_name' => 'Doe', 'handicap' => '5', 'email'=>'jdoe@example.com','password'=> 
-				Hash::make('password'))
-		));
+        //delete users table records
+        DB::table('users')->delete();
+
+        // Admin
+        $admin =  User::create([
+            'first_name'=>'Admin', 'last_name' => 'User', 'handicap' => '5', 'email'=>'admin@example.com','password'=> bcrypt('password')
+        ]);
+        $admin->assign('admin');
+        $admin->assign('player');
+
+        // Give admin all previleges in the app
+        Bouncer::allow($admin)->everything();
+
+        // Player
+        $player =  User::create([
+            'first_name'=>'Admin', 'last_name' => 'User', 'handicap' => '5', 'email'=>'player@example.com','password'=> bcrypt('password')
+        ]);
+        $player->assign('player');
+
+        // Referee
+        $referee =  User::create([
+            'first_name'=>'Referee', 'last_name' => 'User', 'handicap' => '5', 'email'=>'referee@example.com','password'=> bcrypt('password')
+        ]);
+        $referee->assign('referee');
+
+        // Scorer
+        $scorer =  User::create([
+            'first_name'=>'Scorer', 'last_name' => 'User', 'handicap' => '5', 'email'=>'scorer@example.com','password'=> bcrypt('password')
+        ]);
+        $scorer->assign('scorer');
+
+        // Guest
+        $guest =  User::create([
+            'first_name'=>'Guest', 'last_name' => 'User', 'handicap' => '5', 'email'=>'guest@example.com','password'=> bcrypt('password')
+        ]);
+        $guest->assign('guest');
+
     }
 }
