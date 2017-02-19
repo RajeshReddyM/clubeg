@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/site.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -60,14 +61,16 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <i class="glyphicon glyphicon-user"> </i> {{ Auth::user()->first_name }}<span class="caret"></span>
+                                    {{ Auth::user()->first_name }}<span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{route('users.edit', Auth::user()->id)}}" class="dropdown-item"> <i class="glyphicon glyphicon-user"> </i> {{ trans('app.profile') }}</a></li>
                                    @if (Auth::user()->isAn('admin'))
+                                        <div class="dropdown-divider"></div>
                                         <li><a class="dropdown-item" href="{{ route('register') }}"> <i class="glyphicon glyphicon-plus"></i> {{ trans('app.add_player') }}</a></li>
                                         <div class="dropdown-divider"></div>
-                                        <li><a class="dropdown-item"  href="{{ route('users') }}"><i class="glyphicon glyphicon-list"></i> {{ trans('app.players') }} </a></li>
+                                        <li><a class="dropdown-item"  href="{{ route('users.index') }}"><i class="glyphicon glyphicon-list"></i> {{ trans('app.players') }} </a></li>
                                         <div class="dropdown-divider"></div>
                                     @endif
                                     <li>

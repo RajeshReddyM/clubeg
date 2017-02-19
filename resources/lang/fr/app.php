@@ -16,7 +16,7 @@ return [
     'first_name' => 'Prénom',
     'last_name' => 'Nom De Famille',
     'email' => 'E-mail',
-    'handicap' => 'Handicap',
+    'handicap' => 'Handicapé',
     'edit' => 'Modifier',
     'delete' => 'Supprimer',
     'register_players' => "Registre",
@@ -26,6 +26,12 @@ return [
     'login_msg' => ' vous avez été connecté',
     'welcome_msg' => 'Bienvenue ',
     'player_added_msg' => 'Joueur ajouté avec succès',
+    'player_updated_msg' => 'Joueur mis à jour avec succès',
+    'profile_updated_msg' => 'Profil mis à jour avec succès',
+    'player_deleted_msg' => 'Joueur supprimé avec succès',
     'user_added_msg' => 'Enregistré avec succès. Veuillez vous connecter',
-    'signup' => 'Inscrivez'
+    'signup' => 'Inscrivez',
+    'profile' => 'Profil',
+    'roles' => 'Les rôles',
+    'update' => 'Mise à jour',
 ];

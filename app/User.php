@@ -29,4 +29,26 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    // Return user roles in an array
+    public function listRoles()
+    {
+        return $this->roles->pluck('name')->toArray();
+    }
+
+    // Delete Roles for an user
+    public function deleteRoles() {
+        $roles = $this->listRoles();
+        foreach ($roles as $role) {
+            $this->retract($role);
+        }
+    }
+
+    // Assign roles to an user
+    public function assignRoles($roles) {
+        for ($i = 0; $i < count($roles); $i++ ) {
+            $this->assign($roles[$i]);
+        }
+    }
 }
