@@ -84,6 +84,7 @@ class UsersController extends Controller
         $this->validate(request(), [
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
+            'password' => 'required|min:6',
         ]);
         $user = User::findOrFail($id);
         $request = request();

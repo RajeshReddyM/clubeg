@@ -33,6 +33,10 @@ class BouncerRolesTableSeeder extends Seeder
             'name' => 'guest',
             'title' => 'Guest',
         ]);
+        Bouncer::role()->create([
+            'name' => 'golfcourse',
+            'title' => 'GolfCourse',
+        ]);
 
     }
 }
