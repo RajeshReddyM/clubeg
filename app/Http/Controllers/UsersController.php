@@ -83,16 +83,14 @@ class UsersController extends Controller
     {
         $this->validate(request(), [
             'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'password' => 'required|min:6',
+            'last_name' => 'required|max:255'
         ]);
         $user = User::findOrFail($id);
         $request = request();
-        $request->merge(['password' => bcrypt($request->password)]);
         $user->fill($request->all());
         if ($request->roles) {
             $user->deleteRoles();
-            $user->assignRoles(request()->roles);
+            $user->assignRoles($request->roles);
         }
         $user->save();
         if (Auth::user()->isAn('admin')) {

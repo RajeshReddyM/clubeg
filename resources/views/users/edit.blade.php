@@ -25,10 +25,6 @@
               {{ Form::text('handicap', null, array('class' => 'form-control')) }}
           </div>
 
-          <div class="form-group">
-              {{ Form::label('password', trans('app.password')) }}
-              {{ Form::text('password', null, array('class' => 'form-control')) }}
-          </div>
           @if ($user->isAn('admin'))
             <div class="form-group">
                 {{ Form::label('roles', trans('app.roles')) }}
