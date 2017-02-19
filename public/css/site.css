@@ -9,6 +9,12 @@
   display: inline-block;
 }
 
+#createPlayer span.select2-container
+{
+  width: 360px !important;
+  padding-left: 15px !important;
+}
+
 <!-- start of side nav CSS -->
 .nav-side-menu {
   overflow: auto;
