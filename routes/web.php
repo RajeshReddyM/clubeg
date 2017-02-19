@@ -31,4 +31,12 @@ Route::post('/register', array('as' => 'register', 'uses' => 'UsersController@st
 Route::group( ['middleware' => 'auth' ], function() {
 	Route::get('/users', array('as' => 'users', 'uses' => 'UsersController@index'));
 });
+
+//Routes to TournamentController
+//TODO: Since all requests for tournament pages should be done via post requests - we should remove the Route::get once the tournaments table is up and running - Michel Tremblay - 2017-02-17
 Route::get('/tournaments/', 'TournamentController@view');
+//TODO: add logic to fetch the requested tournament info to display on the tournament page - Michel Tremblay - 2017-02-17
+Route::post('/tournaments/', array('as' => 'tournaments', 'uses' => 'TournamentController@view'));
+
+//Routes to ProfileController
+Route::get('/profile/', 'ProfileController@view');

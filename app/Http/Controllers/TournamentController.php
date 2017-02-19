@@ -23,12 +23,15 @@ class TournamentController extends Controller
      */
 
     /*Created: 2017-02-16 - Michel Tremblay
+     *Updated - 2017-02-17 - Michel Tremblay
+     ***returning array of placeholder tournament information
      * Controller function which returns the basic view with tournament data which the user requests
      * TODO: Add functionality to fetch and return tournament data
     */
     public function view()
     {
-        return view('tournamentRegistration');
+        $tournamentInfo = ['start_date'=>'2017-02-27', 'golf_club_name'=>'Candy Land', 'golf_course_name'=>'Free Labour Range','tournament_type'=>'Private'];
+        return view('tournamentRegistration')->with(compact('tournamentInfo'));
     }
 
 

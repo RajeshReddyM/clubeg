@@ -37,7 +37,7 @@
                                 @endif
                             </div>
                         </div>
-                        @if (Auth::user())
+                        @if (Auth::user() && Auth::user()->isAn('admin'))
                             <div class="form-group{{ $errors->has('handicap') ? ' has-error' : '' }}">
                                 <label for="handicap" class="col-md-4 control-label">{{ trans('app.handicap') }}</label>
 
@@ -88,6 +88,13 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                        @if (Auth::user() && Auth::user()->isAn('admin'))
+                            <div class="form-group">
+                                {{ Form::label('Roles', null, ['class' => 'col-md-4 control-label']) }}
+
+                                {{ Form::select('roles[]', \App\Role::all()->pluck('title', 'name')->toArray(), null,['multiple'=>true, 'class'=>'col-md-6 select2']) }}
+                            </div>
+                        @endif
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
