@@ -25,7 +25,7 @@
               {{ Form::text('handicap', null, array('class' => 'form-control')) }}
           </div>
 
-          @if ($user->isAn('admin'))
+          @if (Auth::user()->isAn('admin'))
             <div class="form-group">
                 {{ Form::label('roles', trans('app.roles')) }}
                 {{ Form::select('roles[]', \App\Role::all()->pluck('title', 'name')->toArray(), $user->listRoles() ,['multiple'=>true, 'class'=>'form-control select2']) }}
