@@ -86,9 +86,13 @@ class UsersController extends Controller
             'last_name' => 'required|max:255',
         ]);
         $user = User::findOrFail($id);
-        $user->fill(request()->all());
-        $user->deleteRoles();
-        $user->assignRoles(request()->roles);
+        $request = request();
+        $request->merge(['password' => bcrypt($request->password)]);
+        $user->fill($request->all());
+        if ($request->roles) {
+            $user->deleteRoles();
+            $user->assignRoles(request()->roles);
+        }
         $user->save();
         if (Auth::user()->isAn('admin')) {
             Session::flash('alert-success', trans('app.player_updated_msg'));
