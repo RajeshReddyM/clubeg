@@ -44,10 +44,7 @@ class UsersController extends Controller
         $request->merge(['password' => bcrypt($request->password)]);
         $user = User::create($request->all());
         if ($request->roles) {
-            $roles = $request->roles;
-            for ($i = 0; $i < count($roles); $i++ ) {
-                $user->assign($roles[$i]);
-            }
+            $user->assignRoles($request->roles);
         }
 
         if (Auth::user()) {
@@ -93,8 +90,13 @@ class UsersController extends Controller
         $user->deleteRoles();
         $user->assignRoles(request()->roles);
         $user->save();
-        Session::flash('alert-success', trans('app.player_updated_msg'));
-        return redirect('/users');
+        if (Auth::user()->isAn('admin')) {
+            Session::flash('alert-success', trans('app.player_updated_msg'));
+            return redirect('/users');
+        } else {
+            Session::flash('alert-success', trans('app.profile_updated_msg'));
+            return redirect('/');
+        }
     }
 
      /**
@@ -107,7 +109,6 @@ class UsersController extends Controller
     public function destroy($id)
     {
         $user = User::findOrFail($id);
-
         $user->delete();
         Session::flash('alert-success', trans('app.player_deleted_msg'));
         return redirect('/users');

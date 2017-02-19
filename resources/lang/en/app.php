@@ -27,9 +27,11 @@ return [
     'welcome_msg' => 'Welcome back ',
     'player_added_msg' => 'Player added successfully',
     'player_updated_msg' => 'Player updated successfully',
+    'profile_updated_msg' => 'Profile updated successfully',
     'player_deleted_msg' => 'Player deleted successfully',
     'user_added_msg' => 'Registered successfully. Please Login',
     'signup' => 'Signup',
+    'profile' => 'Profile',
     'roles' => 'Roles',
     'update' => 'Update',
 ];

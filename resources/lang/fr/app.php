@@ -27,9 +27,11 @@ return [
     'welcome_msg' => 'Bienvenue ',
     'player_added_msg' => 'Joueur ajouté avec succès',
     'player_updated_msg' => 'Joueur mis à jour avec succès',
+    'profile_updated_msg' => 'Profil mis à jour avec succès',
     'player_deleted_msg' => 'Joueur supprimé avec succès',
     'user_added_msg' => 'Enregistré avec succès. Veuillez vous connecter',
     'signup' => 'Inscrivez',
+    'profile' => 'Profil',
     'roles' => 'Les rôles',
     'update' => 'Mise à jour',
 ];
