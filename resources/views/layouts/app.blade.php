@@ -66,8 +66,8 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{route('users.edit', Auth::user()->id)}}" class="dropdown-item"> <i class="glyphicon glyphicon-user"> </i> {{ trans('app.profile') }}</a></li>
+                                    <div class="dropdown-divider"></div>
                                    @if (Auth::user()->isAn('admin'))
-                                        <div class="dropdown-divider"></div>
                                         <li><a class="dropdown-item" href="{{ route('register') }}"> <i class="glyphicon glyphicon-plus"></i> {{ trans('app.add_player') }}</a></li>
                                         <div class="dropdown-divider"></div>
                                         <li><a class="dropdown-item"  href="{{ route('users.index') }}"><i class="glyphicon glyphicon-list"></i> {{ trans('app.players') }} </a></li>
@@ -91,6 +91,52 @@
                 </div>
             </div>
         </nav>
+
+        @if (Auth::user())
+            <nav class="navbar navbar-inverse sidebar" role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#"></a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/home">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                            <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+                            @if (Auth::user()->isAn('admin'))
+                                <li ><a href="#">Players<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                            @endif
+                            @if (Auth::user()->isAn('admin','player'))
+                                <li><a href="#">Tournaments<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                            @endif
+                            @if (Auth::user()->isAn('admin'))
+                                <li ><a href="#">Clubs<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                            @endif
+                            @if (Auth::user()->isAn('admin', 'golfcourse'))
+                                <li ><a href="#">Golf Courses<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                            @endif
+                            @if (Auth::user()->isAn('admin', 'scorer'))
+                                <li ><a href="#">Scores<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                            @endif
+                            <li ><a href="#">Groups<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+                                <ul class="dropdown-menu forAnimate" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        @endif
 
         @yield('content')
     </div>
