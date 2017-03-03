@@ -30,7 +30,7 @@
                     <td>{{ $user->last_name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->handicap }}</td>
-                    <td> <b> {{ implode(', ',$user->listRoles()) }} </b></td>
+                    <td> <b> {{ implode(', ',array_map('ucfirst', $user->listRoles())) }} </b></td>
                     <td>
                         <a href="{{route('users.edit', $user->id)}}" class="btn btn-primary">
                             <i class="glyphicon glyphicon-edit" aria-hidden="true"> </i>
