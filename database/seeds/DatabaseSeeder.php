@@ -13,5 +13,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(BouncerRolesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(GolfclubsTableSeeder::class);
+        $this->call(GolfcoursesTableSeeder::class);
+        $this->call(SponsorsTableSeeder::class);
+        $this->call(TournamentsTableSeeder::class);
+        $this->call(RoundsTableSeeder::class);
     }
 }

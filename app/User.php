@@ -51,4 +51,22 @@ class User extends Authenticatable
             $this->assign($roles[$i]);
         }
     }
+
+    public function golfclubs()
+    {
+        return $this->belongsToMany('App\Golfclub')
+          ->withTimestamps();
+    }
+
+    public function groups()
+    {
+        return $this->belongsToMany('App\Group')
+          ->withTimestamps();
+    }
+
+    public function teams()
+    {
+        return $this->belongsToMany('App\Team')
+          ->withTimestamps();
+    }
 }
