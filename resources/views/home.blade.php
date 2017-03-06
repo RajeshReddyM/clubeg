@@ -13,12 +13,28 @@
         <div class="panel panel-default">
             <div class="panel-heading">{{ trans('app.dashboard') }}</div>
             <div class="panel-body">
-                @foreach ($tournaments as $tournament)
-                    <div class="col-md-4">
-                        {{Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded'))}}
-                        {{Html::linkAction("TournamentController@view" ,$tournament->name,$tournament->id)}}
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Registered Tournaments:</h3>
+                        @foreach ($pageData['registeredTournaments'] as $tournament)
+                            <div class="col-md-4">
+                                {{Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded'))}}
+                                {{Html::linkAction("TournamentController@view" ,$tournament->name,$tournament->id)}}
+                            </div>
+                        @endforeach
                     </div>
-                @endforeach
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Available Tournaments:</h3>
+                        @foreach ($pageData['allTournaments'] as $tournament)
+                            <div class="col-md-4">
+                                {{Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded'))}}
+                                {{Html::linkAction("TournamentController@view" ,$tournament->name,$tournament->id)}}
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
     </div>

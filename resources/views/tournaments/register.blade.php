@@ -40,8 +40,11 @@
                 </div>
             <!-- Register button-->
             <div class="col-sm-6">
-                <button class="btn btn-success">Register</button>
-                <button class="btn btn-danger">Cancel Registration</button>
+                @if($pageData['isRegistered'])
+                    <button class="btn btn-danger">Cancel Registration</button>
+                @else
+                    <button class="btn btn-success">Register</button>
+                @endif
             </div>
 
 

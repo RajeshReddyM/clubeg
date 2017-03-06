@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -24,10 +24,26 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //get all tournaments from the db
-        //TODO: make this grab all tournaments a user is registered for - 2017-03-06 - MT
-        $tournaments = DB::table('tournaments')->get();
+        //get ALL tournaments from the db
+        $allTournaments = DB::table('tournaments')->get();
 
-        return view('home')->with('tournaments', $tournaments);
+        //get tournaments where the current user is registered
+        $user = Auth::user();
+        $registeredTournamentIds = DB::table('tournament_user')->where('user_id', $user->id)->get();
+        $registeredTournaments = [];
+        foreach($registeredTournamentIds as $tournament){
+            $nextTournament = DB::table('tournaments')->where('id', $tournament->tournament_id)->first();
+            $registeredTournaments[] = $nextTournament;
+        }
+
+
+
+        $pageData = array(
+            'allTournaments' => $allTournaments,
+            'registeredTournaments' => $registeredTournaments
+        );
+        return view('home')->with('pageData', $pageData);
+
+
     }
 }

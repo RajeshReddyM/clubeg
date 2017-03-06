@@ -51,18 +51,22 @@ class TournamentController extends Controller
     */
     public function view($tournamentId)
     {
-        //grab the required tournament
-        //TODO: Create a way to get a list of players for a tournament  { Users - Tournaments table }
+        $user = Auth::user();
+        //grab the required tournament and course info
         $tournamentInfo =  DB::table('tournaments')->where('id', $tournamentId)->first();
         $courseInfo = DB::table('golfcourses')->where('id', $tournamentInfo->golfcourse_id)->first();
-
         $clubInfo = DB::table('golfclubs')->where('id', $courseInfo->golfclub_id)->first();
+        $registered = false;
+        if(DB::table('tournament_user')->where('user_id', $user->id)->where('tournament_id', $tournamentId)->exists()){
+            $registered = true;
+        }
 
 
         $pageData = array(
             'tournamentInfo' =>$tournamentInfo,
             'courseInfo' => $courseInfo,
-            'clubInfo' =>$clubInfo
+            'clubInfo' =>$clubInfo,
+            'isRegistered' => $registered
         );
         return view('tournaments/register')->with('pageData', $pageData);
     }
