@@ -21,10 +21,6 @@ class CreateTournamentsTable extends Migration
             $table->string('name');
             $table->dateTime('start_time');
             $table->timestamps();
-            $table->integer('course_id')->unsigned()->nullable();
-            $table->foreign('course_id')->references('id')->on('golfcourses')->onDelete('cascade');
-            $table->integer('type_id');
-            $table->string('type_name');
             $table->foreign('golfcourse_id')
               ->references('id')->on('golfcourses')
               ->onDelete('cascade');

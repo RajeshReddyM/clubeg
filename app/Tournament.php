@@ -22,7 +22,7 @@ class Tournament extends Model
 
 	public function golfcourse()
 	{
-	return $this->belongsTo('App\Golfcourse');
+		return $this->belongsTo('App\Golfcourse');
 	}
 
 }
