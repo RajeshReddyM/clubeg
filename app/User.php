@@ -58,6 +58,12 @@ class User extends Authenticatable
           ->withTimestamps();
     }
 
+    public function tournaments()
+    {
+        return $this->belongsToMany('App\Tournament')
+          ->withTimestamps();
+    }
+
     public function groups()
     {
         return $this->belongsToMany('App\Group')
