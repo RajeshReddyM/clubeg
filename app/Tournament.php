@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tournament extends Model
 {
+
+	protected $fillable = ['name', 'start_time', 'golfcourse_id'];
+
     public function sponsors()
     {
         return $this->belongsToMany('App\Sponsor')
@@ -16,4 +19,10 @@ class Tournament extends Model
     {
         return $this->hasMany('App\Round', 'tournament_id');
     }
+
+	public function golfcourse()
+	{
+	return $this->belongsTo('App\Golfcourse');
+	}
+
 }

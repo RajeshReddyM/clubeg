@@ -15,9 +15,13 @@ class CreateTournamentsTable extends Migration
     {
         Schema::create('tournaments', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('golfcourse_id')->unsigned()->nullable();
             $table->string('name');
             $table->dateTime('start_time');
             $table->timestamps();
+            $table->foreign('golfcourse_id')
+              ->references('id')->on('golfcourses')
+              ->onDelete('cascade');
         });
     }
 
