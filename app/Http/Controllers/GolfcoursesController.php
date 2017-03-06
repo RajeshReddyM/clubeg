@@ -44,6 +44,7 @@ class GolfcoursesController extends Controller
         $golfcourse->hole_no = (int)$request->hole_no;
         $golfcourse->par = $request->par;
         $golfcourse->hole_length = $request->hole_length;
+        $golfcourse->golfclub_id = $request->golfclub_id;
         $golfcourse->logo = $filename;
         $golfcourse->save();
 
@@ -99,6 +100,7 @@ class GolfcoursesController extends Controller
         $golfcourse->hole_no = (int)$request->hole_no;
         $golfcourse->par = $request->par;
         $golfcourse->hole_length = $request->hole_length;
+        $golfcourse->golfclub_id = $request->golfclub_id;
         if ($request->logo) {
             $filename = $request->logo->getClientOriginalName();
             $path = $request->logo->storeAs('golfcourses', $filename);

@@ -34,6 +34,12 @@
           </div>
 
           <div class="form-group">
+              {{ Form::label('golfclub_id', 'Golf Club') }}
+
+              {{ Form::select('golfclub_id', \App\Golfclub::all()->pluck('name', 'id')->toArray(), null,['placeholder'=> 'Select a Club...', 'class'=>'form-control select2']) }}
+          </div>
+
+          <div class="form-group">
               {{ Form::label('logo', 'Logo') }}
               {{ Form::file('logo', null, array('class' => 'form-control')) }}
           </div>
