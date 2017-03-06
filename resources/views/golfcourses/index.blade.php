@@ -18,7 +18,7 @@
                 <div class="panel panel-default">
                   <div class="panel-body">
                       <div class="hovereffect">
-                        <a href="">
+                        <a href="golfcourses/{{$golfcourse->id}}">
                           {{ Html::image('images/golfcourses/' . $golfcourse->logo,"golfcourse placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
                           <div class="overlay">
                              <h2><?php echo  $golfcourse->name ?></h2>

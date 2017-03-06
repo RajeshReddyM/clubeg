@@ -71,6 +71,21 @@ class GolfclubsController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        // get the golfclub
+        $club = Golfclub::find($id);
+
+        // show the edit form and pass the golfclub
+        return view('golfclubs.show', ['club' => $club]);
+    }
+
+    /**
      * Update the specified resource.
      *
      * @param  int  $id

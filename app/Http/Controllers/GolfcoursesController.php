@@ -67,6 +67,21 @@ class GolfcoursesController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        // get the Golfcourse
+        $golfcourse = Golfcourse::find($id);
+
+        // show the edit form and pass the golfcourse
+        return view('golfcourses.show', ['golfcourse' => $golfcourse]);
+    }
+
+    /**
      * Update the specified resource.
      *
      * @param  int  $id
