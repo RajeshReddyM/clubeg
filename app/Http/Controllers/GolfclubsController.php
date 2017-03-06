@@ -94,6 +94,22 @@ class GolfclubsController extends Controller
 
     public function update($id)
     {
+        $club = Golfclub::findOrFail($id);
+        $request = request();
+        $club->name = $request->name;
+        $club->street_no = $request->street_no;
+        $club->street_name = $request->street_name;
+        $club->city =  $request->city;
+        $club->province = $request->province;
+        if ($request->logo) {
+            $filename = $request->logo->getClientOriginalName();
+            $path = $request->logo->storeAs('clubs', $filename);
+            $club->logo = $filename;
+        }
+        $club->save();
+
+        Session::flash('alert-success', 'Golfclub updated Successfully');
+        return redirect('/clubs');
 
     }
 
@@ -108,7 +124,7 @@ class GolfclubsController extends Controller
     {
         $club = Golfclub::findOrFail($id);
         $club->delete();
-        Session::flash('alert-success', trans('app.player_deleted_msg'));
+        Session::flash('alert-success', 'Golfclub deleted Successfully');
         return redirect('/clubs');
     }
 }

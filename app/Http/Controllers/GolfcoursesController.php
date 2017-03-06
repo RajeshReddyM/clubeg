@@ -90,7 +90,18 @@ class GolfcoursesController extends Controller
 
     public function update($id)
     {
+        $golfcourse = Golfcourse::findOrFail($id);
+        $request = request();
+        $golfcourse->name = $request->name;
+        if ($request->logo) {
+            $filename = $request->logo->getClientOriginalName();
+            $path = $request->logo->storeAs('golfcourses', $filename);
+            $golfcourse->logo = $filename;
+        }
+        $golfcourse->save();
 
+        Session::flash('alert-success', 'Golfcourse updated Successfully');
+        return redirect('/golfcourses');
     }
 
      /**
