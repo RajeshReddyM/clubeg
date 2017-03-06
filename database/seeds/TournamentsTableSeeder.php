@@ -16,7 +16,8 @@ class TournamentsTableSeeder extends Seeder
 
         for ($i = 0; $i < 20; $i++){
             $tournament =  Tournament::create([
-                'name'=>'Tournament ' . $i
+                'name'=>'Tournament ' . $i,
+                'golfcourse_id' => '1'
             ]);
         }
 

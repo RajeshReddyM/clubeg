@@ -43,7 +43,7 @@ class TournamentController extends Controller
     {
         $tournament = new Tournament;
 
-        return view('users.create')->with(compact('tournament'));
+        return view('users/create')->with(compact('tournament'));
     }
 
     /*Created: 2017-02-16 - Michel Tremblay
@@ -54,9 +54,17 @@ class TournamentController extends Controller
         //grab the required tournament
         //TODO: Create a way to get a list of players for a tournament  { Users - Tournaments table }
         $tournamentInfo =  DB::table('tournaments')->where('id', $tournamentId)->first();
-        $courseInfo = DB::table('golfcourses')->where('id',$tournamentId->course_id)->first();
+        $courseInfo = DB::table('golfcourses')->where('id', $tournamentInfo->golfcourse_id)->first();
 
-        return view('tournaments/register')->with('tournamentInfo', $tournamentInfo);
+        $clubInfo = DB::table('golfclubs')->where('id', $courseInfo->golfclub_id)->first();
+
+
+        $pageData = array(
+            'tournamentInfo' =>$tournamentInfo,
+            'courseInfo' => $courseInfo,
+            'clubInfo' =>$clubInfo
+        );
+        return view('tournaments/register')->with('pageData', $pageData);
     }
 
 

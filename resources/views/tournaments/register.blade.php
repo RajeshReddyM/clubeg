@@ -4,32 +4,32 @@
 
 
         <div class="container">
-            <h2>{{$tournamentInfo->name}}</h2>
+            <h2>{{$pageData['tournamentInfo']->name}}</h2>
 
                 <div class="col-sm-6">
                     <div class="col-sm-6">
                         <label for="startDate">Start Date: </label>
                     </div>
                     <div class="col-sm-6">
-                        <p id="startDate">{{$tournamentInfo->start_time}}</p>
+                        <p id="startDate">{{$pageData['tournamentInfo']->start_time}}</p>
                     </div>
                     <div class="col-sm-6">
                         <label for="clubName">Club Name: </label>
                     </div>
                     <div class="col-sm-6">
-                        <p id="clubName">{{$tournamentInfo->name}}</p>
+                        <p id="clubName">{{$pageData['clubInfo']->name}}</p>
                     </div>
                     <div class="col-sm-6">
                         <label for="courseName">Course Name: </label>
                     </div>
                     <div class="col-sm-6">
-                        <p id="courseName">{{$tournamentInfo->start_time}}</p>
+                        <p id="courseName">{{$pageData['courseInfo']->name}}</p>
                     </div>
                     <div class="col-sm-6">
                         <label for="type">Type: </label>
                     </div>
                     <div class="col-sm-6">
-                        <p id="type">{{$tournamentInfo->created_at}}</p>
+                        <p id="type">Public</p>
                     </div>
 
                 </div>
