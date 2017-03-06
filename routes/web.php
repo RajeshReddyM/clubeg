@@ -13,10 +13,10 @@
 
 Route::post('/language-chooser',  'LanguageController@changeLanguage');
 Route::post('/language', array(
-	'before' =>  'csrf',
-	'as' => 'language-chooser',
-	'uses' => 'LanguageController@changeLanguage'
-	)
+    'before' =>  'csrf',
+    'as' => 'language-chooser',
+    'uses' => 'LanguageController@changeLanguage'
+    )
 );
 
 Route::get('/', function () {
@@ -29,7 +29,17 @@ Route::get('/home', 'HomeController@index');
 Route::get('/register', array('as' => 'register', 'uses' => 'UsersController@create'));
 Route::post('/register', array('as' => 'register', 'uses' => 'UsersController@store'));
 Route::group( ['middleware' => 'auth' ], function() {
-	Route::resource('users', 'UsersController', ['only' => ['index', 'edit', 'update', 'destroy']]);
+    Route::resource('users', 'UsersController', ['only' => ['index', 'edit', 'update', 'destroy']]);
+    Route::resource('clubs', 'GolfclubsController');
+    Route::resource('golfcourses', 'GolfcoursesController');
+    Route::get('images/clubs/{filename}', function ($filename)
+    {
+        return Image::make(storage_path() . '/app/clubs/' . $filename)->response();
+    });
+    Route::get('images/golfcourses/{filename}', function ($filename)
+    {
+        return Image::make(storage_path() . '/app/golfcourses/' . $filename)->response();
+    });
 });
 
 //Routes to TournamentController

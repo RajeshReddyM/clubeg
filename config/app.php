@@ -168,6 +168,8 @@ return [
         Silber\Bouncer\BouncerServiceProvider::class,
         // Debugbar library for better debugging
         Barryvdh\Debugbar\ServiceProvider::class,
+        // Image Library
+        Intervention\Image\ImageServiceProvider::class,
 
 
         /*
@@ -236,6 +238,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Bouncer' => Silber\Bouncer\BouncerFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 
