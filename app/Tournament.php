@@ -16,4 +16,6 @@ class Tournament extends Model
     {
         return $this->hasMany('App\Round', 'tournament_id');
     }
+
+
 }

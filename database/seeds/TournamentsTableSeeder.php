@@ -14,9 +14,12 @@ class TournamentsTableSeeder extends Seeder
     {
         DB::table('tournaments')->delete();
 
-        // Tournament
-        $tournament =  Tournament::create([
-            'name'=>'Tournament1'
-        ]);
+        for ($i = 0; $i < 20; $i++){
+            $tournament =  Tournament::create([
+                'name'=>'Tournament ' . $i
+            ]);
+        }
+
+
     }
 }
