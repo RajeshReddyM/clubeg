@@ -76,6 +76,10 @@
                                         <div class="dropdown-divider"></div>
                                         <li><a class="dropdown-item"  href="{{ route('clubs.create') }}"><i class="glyphicon glyphicon-plus"></i>  Add Club </a></li>
                                         <div class="dropdown-divider"></div>
+                                        <li><a class="dropdown-item"  href="{{ route('golfcourses.index') }}"><i class="glyphicon glyphicon-list"></i>  Golfcourses </a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a class="dropdown-item"  href="{{ route('golfcourses.create') }}"><i class="glyphicon glyphicon-plus"></i>  Add Golfcourse </a></li>
+                                        <div class="dropdown-divider"></div>
                                     @endif
                                     <li>
                                         <a href="{{ route('logout') }}" class="dropdown-item"

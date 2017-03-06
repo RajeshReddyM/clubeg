@@ -37,8 +37,8 @@ class GolfclubsController extends Controller
      */
     public function store(Request $request)
     {
-    	$filename = $request->logo->getClientOriginalName();
-    	$path = $request->logo->storeAs('clubs', $filename);
+        $filename = $request->logo->getClientOriginalName();
+        $path = $request->logo->storeAs('clubs', $filename);
         $club = new Golfclub();
         $club->name = $request->name;
         $club->street_no = $request->street_no;

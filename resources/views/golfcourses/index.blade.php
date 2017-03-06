@@ -11,17 +11,17 @@
             @endif
           @endforeach
         </div>
-        <h2>Golf Clubs</h2>
+        <h2>Golfcourses</h2>
         <hr/>
-        @foreach($clubs as $club)
+        @foreach($golfcourses as $golfcourse)
             <div class="col-md-4">
                 <div class="panel panel-default">
                   <div class="panel-body">
                       <div class="hovereffect">
                         <a href="">
-                          {{ Html::image('images/clubs/' . $club->logo,"Club placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
+                          {{ Html::image('images/golfcourses/' . $golfcourse->logo,"golfcourse placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
                           <div class="overlay">
-                             <h2><?php echo  $club->name ?></h2>
+                             <h2><?php echo  $golfcourse->name ?></h2>
                           </div>
                         </a>
                       </div>

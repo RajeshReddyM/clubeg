@@ -31,11 +31,15 @@ Route::post('/register', array('as' => 'register', 'uses' => 'UsersController@st
 Route::group( ['middleware' => 'auth' ], function() {
     Route::resource('users', 'UsersController', ['only' => ['index', 'edit', 'update', 'destroy']]);
     Route::resource('clubs', 'GolfclubsController');
+    Route::resource('golfcourses', 'GolfcoursesController');
     Route::get('images/clubs/{filename}', function ($filename)
     {
         return Image::make(storage_path() . '/app/clubs/' . $filename)->response();
     });
-
+    Route::get('images/golfcourses/{filename}', function ($filename)
+    {
+        return Image::make(storage_path() . '/app/golfcourses/' . $filename)->response();
+    });
 });
 
 //Routes to TournamentController

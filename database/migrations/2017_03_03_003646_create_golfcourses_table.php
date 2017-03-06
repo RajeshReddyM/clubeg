@@ -15,7 +15,7 @@ class CreateGolfcoursesTable extends Migration
     {
         Schema::create('golfcourses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('golfclub_id')->unsigned();
+            $table->integer('golfclub_id')->unsigned()->nullable();
             $table->string('name');
             $table->string('logo');
             $table->timestamps();
