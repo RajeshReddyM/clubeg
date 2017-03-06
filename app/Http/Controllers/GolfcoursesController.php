@@ -41,6 +41,9 @@ class GolfcoursesController extends Controller
         $path = $request->logo->storeAs('golfcourses', $filename);
         $golfcourse = new Golfcourse();
         $golfcourse->name = $request->name;
+        $golfcourse->hole_no = (int)$request->hole_no;
+        $golfcourse->par = $request->par;
+        $golfcourse->hole_length = $request->hole_length;
         $golfcourse->logo = $filename;
         $golfcourse->save();
 
@@ -93,6 +96,9 @@ class GolfcoursesController extends Controller
         $golfcourse = Golfcourse::findOrFail($id);
         $request = request();
         $golfcourse->name = $request->name;
+        $golfcourse->hole_no = (int)$request->hole_no;
+        $golfcourse->par = $request->par;
+        $golfcourse->hole_length = $request->hole_length;
         if ($request->logo) {
             $filename = $request->logo->getClientOriginalName();
             $path = $request->logo->storeAs('golfcourses', $filename);

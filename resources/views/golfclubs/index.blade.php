@@ -7,13 +7,14 @@
         <div class="flash-message">
           @foreach (['danger', 'warning', 'success', 'info'] as $msg)
             @if(Session::has('alert-' . $msg))
-            <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p>
+              <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p>
             @endif
           @endforeach
         </div>
         <h2>Golf Clubs</h2>
         <hr/>
         @foreach($clubs as $club)
+          @if($club->logo)
             <div class="col-md-4">
                 <div class="panel panel-default">
                   <div class="panel-body">
@@ -28,6 +29,7 @@
                   </div>
                 </div>
             </div>
+          @endif
         @endforeach
     </div>
   </div>

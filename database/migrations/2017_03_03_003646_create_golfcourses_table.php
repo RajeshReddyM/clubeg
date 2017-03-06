@@ -17,6 +17,9 @@ class CreateGolfcoursesTable extends Migration
             $table->increments('id');
             $table->integer('golfclub_id')->unsigned()->nullable();
             $table->string('name');
+            $table->integer('hole_no')->unsigned();
+            $table->string('par');
+            $table->string('hole_length');
             $table->string('logo');
             $table->timestamps();
             $table->foreign('golfclub_id')

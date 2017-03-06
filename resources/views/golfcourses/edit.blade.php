@@ -19,6 +19,21 @@
           </div>
 
           <div class="form-group">
+              {{ Form::label('hole_no', 'Hole No') }}
+              {{ Form::text('hole_no', null, array('class' => 'form-control')) }}
+          </div>
+
+          <div class="form-group">
+              {{ Form::label('hole_length', 'Hole Length') }}
+              {{ Form::text('hole_length', null, array('class' => 'form-control')) }}
+          </div>
+
+          <div class="form-group">
+              {{ Form::label('par', 'Par') }}
+              {{ Form::text('par', null, array('class' => 'form-control')) }}
+          </div>
+
+          <div class="form-group">
               {{ Form::label('logo', 'Logo') }}
               {{ Form::file('logo', null, array('class' => 'form-control')) }}
           </div>

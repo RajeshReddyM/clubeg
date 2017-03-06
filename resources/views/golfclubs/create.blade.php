@@ -29,13 +29,18 @@
           </div>
 
           <div class="form-group">
+              {{ Form::label('city', 'City') }}
+              {{ Form::text('city', null, array('class' => 'form-control')) }}
+          </div>
+
+          <div class="form-group">
               {{ Form::label('province', 'Province') }}
               {{ Form::text('province', null, array('class' => 'form-control')) }}
           </div>
 
           <div class="form-group">
-              {{ Form::label('city', 'City') }}            
-              {{ Form::text('city', null, array('class' => 'form-control')) }}
+              {{ Form::label('postal_code', 'Postal Code') }}
+              {{ Form::text('postal_code', null, array('class' => 'form-control')) }}
           </div>
 
           <div class="form-group">
