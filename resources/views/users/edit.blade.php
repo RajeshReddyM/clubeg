@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="col-md-6 row">
+<div class="main">
+    <div class="col-md-4 col-md-offset-2">
       <h1>{{trans('app.edit')}} {{ $user->first_name }}</h1>
 
       <!-- if there are creation errors, they will show here -->
