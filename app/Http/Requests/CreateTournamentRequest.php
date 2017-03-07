@@ -13,7 +13,7 @@ class CreateTournamentRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,9 +25,8 @@ class CreateTournamentRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255',
-            'start_time' => 'required|max:255',
-            'created_at' => 'required|email|max:255|unique:users',
-            'updated_at' => 'required|min:6|confirmed',
+            'golfcourse-id' => 'required|',
+            'start_time' => 'required|date_parse_from_format'
         ];
 
     }

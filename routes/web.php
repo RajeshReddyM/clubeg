@@ -43,12 +43,15 @@ Route::group( ['middleware' => 'auth' ], function() {
 });
 
 //Routes to TournamentController
-Route::get('/tournaments/register{id}', 'TournamentController@view');
-Route::post('/tournaments/register{id}', 'TournamentController@view');
+Route::get('/tournaments/view{id}', 'TournamentController@view');
+Route::post('/tournaments/view{id}', 'TournamentController@view');
 Route::get('/tournaments', 'TournamentController@index');
 Route::post('/tournaments', 'TournamentController@index');
 Route::get('/tournaments/create', 'TournamentController@create');
 Route::post('/tournaments/create', 'TournamentController@create');
-
+Route::get('/tournaments/cancelRegistration{id}', 'TournamentController@cancelRegistration');
+Route::post('/tournaments/cancelRegistration{id}', 'TournamentController@cancelRegistration');
+Route::get('/tournaments/register{id}', 'TournamentController@register');
+Route::post('/tournaments/register{id}', 'TournamentController@register');
 //Routes to ProfileController
 Route::get('/profile/', 'ProfileController@view');

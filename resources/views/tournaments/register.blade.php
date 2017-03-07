@@ -4,6 +4,13 @@
 
 
         <div class="container">
+            <div class="flash-message">
+                @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                    @if(Session::has('alert-' . $msg))
+                        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p>
+                    @endif
+                @endforeach
+            </div>
             <h2>{{$pageData['tournamentInfo']->name}}</h2>
 
                 <div class="col-sm-6">
@@ -41,9 +48,13 @@
             <!-- Register button-->
             <div class="col-sm-6">
                 @if($pageData['isRegistered'])
-                    <button class="btn btn-danger">Cancel Registration</button>
+                    {{ Form::open(array('action' => array('TournamentController@cancelRegistration', $pageData['tournamentInfo']->id))) }}
+                        {{Form::submit('Cancel Registration',array('class' => 'btn btn-danger'))}}
+                    {{ Form::close() }}
                 @else
-                    <button class="btn btn-success">Register</button>
+                    {{ Form::open(array('action' => array('TournamentController@register', $pageData['tournamentInfo']->id))) }}
+                        {{Form::submit('Register',array('class' => 'btn btn-success'))}}
+                    {{ Form::close() }}
                 @endif
             </div>
 

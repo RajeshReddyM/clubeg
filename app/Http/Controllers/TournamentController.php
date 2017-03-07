@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
 use Session;
+use App\Http\Requests;
 
 class TournamentController extends Controller
 {
@@ -78,8 +79,59 @@ class TournamentController extends Controller
     * Controller function which registers the user for the selected tournament
     * TODO: Add functionality to register the current user in a tournament. This function should check if the user has access to the tournament before registering
    */
-    public function register($tournamentInfo)
+    public function register($tournamentId)
     {
-        return view('tournaments/register');
+        $user = Auth::user();
+        //grab the required tournament and course info
+        $tournamentInfo =  DB::table('tournaments')->where('id', $tournamentId)->first();
+        $courseInfo = DB::table('golfcourses')->where('id', $tournamentInfo->golfcourse_id)->first();
+        $clubInfo = DB::table('golfclubs')->where('id', $courseInfo->golfclub_id)->first();
+
+        //determine if the user is registered for the requested tournament
+        $registered = false;
+        if(DB::table('tournament_user')->insert(['user_id' => $user->id, 'tournament_id' => $tournamentId, 'created_at' =>date("y-m-d")])){
+            $registered = true;
+        } else {
+            Session::flash('alert-danger', 'Registration failed. Please try again.');
+        }
+
+        //package all the content
+        $pageData = array(
+            'tournamentInfo' =>$tournamentInfo,
+            'courseInfo' => $courseInfo,
+            'clubInfo' =>$clubInfo,
+            'isRegistered' => $registered
+        );
+        return view('tournaments/register')->with('pageData', $pageData);
+    }
+
+    /*Created: 2017-03-07 - Michel Tremblay
+       * Controller function which cancels a registration for the current user and the designated tournament
+    */
+    public function cancelRegistration($tournamentId)
+    {
+        $user = Auth::user();
+        //grab the required tournament and course info
+        $tournamentInfo =  DB::table('tournaments')->where('id', $tournamentId)->first();
+        $courseInfo = DB::table('golfcourses')->where('id', $tournamentInfo->golfcourse_id)->first();
+        $clubInfo = DB::table('golfclubs')->where('id', $courseInfo->golfclub_id)->first();
+
+        //determine if the user is registered for the requested tournament
+        $registered = true;
+        if(DB::table('tournament_user')->where('user_id', $user->id)->where('tournament_id', $tournamentId)->delete()) {
+            $registered = false;
+            Session::flash('alert-success', 'Registration cancelled.');
+        } else {
+            Session::flash('alert-danger', 'Cancellation failed. Please try again.');
+        }
+        //package all the content
+        $pageData = array(
+            'tournamentInfo' =>$tournamentInfo,
+            'courseInfo' => $courseInfo,
+            'clubInfo' =>$clubInfo,
+            'isRegistered' => $registered
+        );
+
+        return view('tournaments/register')->with('pageData', $pageData);
     }
 }
