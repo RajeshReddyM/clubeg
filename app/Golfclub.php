@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Golfclub extends Model
 {
-    protected $fillable = ['name', 'street_no', 'street_name', 'city', 'province', 'logo'];
+    protected $fillable = ['name', 'street_no', 'street_name', 'city', 'province', 'postal_code', 'logo'];
 
     public function users()
     {

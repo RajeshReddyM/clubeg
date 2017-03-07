@@ -45,6 +45,7 @@ class GolfclubsController extends Controller
         $club->street_name = $request->street_name;
         $club->city =  $request->city;
         $club->province = $request->province;
+        $club->postal_code = $request->postal_code;
         $club->logo = $filename;
         $club->save();
 
