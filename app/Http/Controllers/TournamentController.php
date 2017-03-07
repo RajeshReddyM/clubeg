@@ -91,6 +91,7 @@ class TournamentController extends Controller
         $registered = false;
         if(DB::table('tournament_user')->insert(['user_id' => $user->id, 'tournament_id' => $tournamentId, 'created_at' =>date("y-m-d")])){
             $registered = true;
+            Session::flash('alert-success', "You've been registered!");
         } else {
             Session::flash('alert-danger', 'Registration failed. Please try again.');
         }
