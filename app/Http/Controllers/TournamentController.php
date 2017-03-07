@@ -56,12 +56,14 @@ class TournamentController extends Controller
         $tournamentInfo =  DB::table('tournaments')->where('id', $tournamentId)->first();
         $courseInfo = DB::table('golfcourses')->where('id', $tournamentInfo->golfcourse_id)->first();
         $clubInfo = DB::table('golfclubs')->where('id', $courseInfo->golfclub_id)->first();
+
+        //determine if the user is registered for the requested tournament
         $registered = false;
         if(DB::table('tournament_user')->where('user_id', $user->id)->where('tournament_id', $tournamentId)->exists()){
             $registered = true;
         }
 
-
+        //package all the content
         $pageData = array(
             'tournamentInfo' =>$tournamentInfo,
             'courseInfo' => $courseInfo,
