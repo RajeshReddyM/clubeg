@@ -40,6 +40,10 @@ Route::group( ['middleware' => 'auth' ], function() {
     {
         return Image::make(storage_path() . '/app/golfcourses/' . $filename)->response();
     });
+    Route::get('images/tournaments/{filename}', function ($filename)
+    {
+        return Image::make(storage_path() . '/app/tournaments/' . $filename)->response();
+    });
 });
 
 //Routes to TournamentController
@@ -48,7 +52,7 @@ Route::post('/tournaments/view{id}', 'TournamentController@view');
 Route::get('/tournaments', 'TournamentController@index');
 Route::post('/tournaments', 'TournamentController@index');
 Route::get('/tournaments/create', 'TournamentController@create');
-Route::post('/tournaments/create', 'TournamentController@create');
+Route::post('/tournaments/create', 'TournamentController@store');
 Route::get('/tournaments/cancelRegistration{id}', 'TournamentController@cancelRegistration');
 Route::post('/tournaments/cancelRegistration{id}', 'TournamentController@cancelRegistration');
 Route::get('/tournaments/register{id}', 'TournamentController@register');

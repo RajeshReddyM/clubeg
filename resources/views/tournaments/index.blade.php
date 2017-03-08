@@ -7,10 +7,22 @@
             <div class="row">
                 <h3>All Tournaments:</h3>
                 @foreach($tournaments as $tournament)
-                    <div class="col-md-4">
-                        {{Html::image('images/tournament_placeholder_image.jpg',"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded'))}}
-                        {{Html::linkAction("TournamentController@view" ,$tournament->name,$tournament->id)}}
-                    </div>
+                    @if($tournament->logo)
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="hovereffect">
+                                        <a href="tournament/view{{$tournament->id}}">
+                                            {{ Html::image('images/tournaments/'. $tournament->logo,"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
+                                            <div class="overlay">
+                                                <h2><?php echo  $tournament->name ?></h2>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 @endforeach
             </div>
         </div>

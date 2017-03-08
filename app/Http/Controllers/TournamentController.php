@@ -44,7 +44,30 @@ class TournamentController extends Controller
     {
         $tournament = new Tournament;
 
-        return view('users/create')->with(compact('tournament'));
+        return view('tournaments/create')->with(compact('tournament'));
+    }
+
+
+
+
+
+
+    public function store(Request $request)
+    {
+        $filename = $request->logo->getClientOriginalName();
+        $path = $request->logo->storeAs('tournaments', $filename);
+        $tournament = new Tournament();
+        $tournament->name = $request->name;
+        $tournament->golfcourse_id = $request->golfcourse_id;
+        $tournament->start_time = $request->start_time;
+        $tournament->logo = $filename;
+        $tournament->save();
+
+
+        if (Auth::user()) {
+            Session::flash('alert-success', 'Successfully created golfcourse');
+            return redirect('/tournaments');
+        }
     }
 
     /*Created: 2017-02-16 - Michel Tremblay

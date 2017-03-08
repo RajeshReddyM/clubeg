@@ -20,6 +20,7 @@ class CreateTournamentsTable extends Migration
             $table->integer('golfcourse_id')->unsigned()->nullable();
             $table->string('name');
             $table->dateTime('start_time');
+            $table->string('logo');
             $table->timestamps();
             $table->foreign('golfcourse_id')
               ->references('id')->on('golfcourses')
