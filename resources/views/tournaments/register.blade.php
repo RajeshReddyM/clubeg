@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-sm-6">
                     <!-- Tournament promo photo -->
-                        {{ Html::image('images/tournament_placeholder_image.jpg',"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
+                    {{ Html::image('images/tournaments/'. $pageData['tournamentInfo']->logo,"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
 
                 </div>
             <!-- Register button-->
