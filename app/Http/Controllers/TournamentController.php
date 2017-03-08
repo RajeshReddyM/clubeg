@@ -51,7 +51,9 @@ class TournamentController extends Controller
 
 
 
-
+    /*Created: 2017-03-07 - Michel Tremblay
+     * Controller function which saves new tournament data to db
+    */
     public function store(Request $request)
     {
         $filename = $request->logo->getClientOriginalName();
@@ -100,7 +102,7 @@ class TournamentController extends Controller
 
     /*Created: 2017-02-16 - Michel Tremblay
     * Controller function which registers the user for the selected tournament
-    * TODO: Add functionality to register the current user in a tournament. This function should check if the user has access to the tournament before registering
+    * TODO: This function should check if the user has access to the tournament before registering
    */
     public function register($tournamentId)
     {
