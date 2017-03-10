@@ -109,18 +109,18 @@
                     <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="/home">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-                            <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+                            <li ><a href="{{route('users.edit', Auth::user()->id)}}" class="dropdown-item"> <i class="pull-right glyphicon glyphicon-user"> </i> {{ trans('app.profile') }}</a></li>
                             @if (Auth::user()->isAn('admin'))
-                                <li ><a href="#">Players<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                                <li ><a class="dropdown-item"  href="{{ route('users.index') }}"><i class="pull-right glyphicon glyphicon-list"></i> {{ trans('app.players') }} </a></li>
                             @endif
                             @if (Auth::user()->isAn('admin','player'))
-                                <li><a href="#">Tournaments<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                                <li><a class="dropdown-item"  href="{{ action('TournamentController@index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  Tournaments </a></li>
                             @endif
                             @if (Auth::user()->isAn('admin'))
-                                <li ><a href="#">Clubs<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                                <li ><a class="dropdown-item"  href="{{ route('clubs.index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  Clubs </a></li>
                             @endif
                             @if (Auth::user()->isAn('admin', 'golfcourse'))
-                                <li ><a href="#">Golf Courses<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                                <li ><a class="dropdown-item"  href="{{ route('golfcourses.index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  Golfcourses </a></li>
                             @endif
                             @if (Auth::user()->isAn('admin', 'scorer'))
                                 <li ><a href="#">Scores<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
