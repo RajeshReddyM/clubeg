@@ -1,5 +1,6 @@
 
-Install:
+Install Instructions:
+====================
 PHP (bundled with XAMPP)
 Composer
 Laravel
