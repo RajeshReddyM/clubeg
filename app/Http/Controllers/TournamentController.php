@@ -74,6 +74,7 @@ class TournamentController extends Controller
 
     /*Created: 2017-02-16 - Michel Tremblay
      * Controller function which returns the basic view with tournament data which the user requests
+     * TODO: This function should check if the user has access to the tournament before viewing
     */
     public function view($tournamentId)
     {
