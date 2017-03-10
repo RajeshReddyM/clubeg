@@ -37,7 +37,7 @@
                       </a>
                       {!! Form::open([
                           'method' => 'DELETE',
-                          'route' => ['users.destroy', $user->id], 'class' => 'deleteUser'
+                          'route' => ['users.destroy', $user->id], 'class' => 'deleteResource'
                       ]) !!}
                           {{Form::button("<i class='glyphicon glyphicon-trash'></i>", array('type' => 'submit', 'class' => 'btn btn-danger'))}}
                       {!! Form::close() !!}

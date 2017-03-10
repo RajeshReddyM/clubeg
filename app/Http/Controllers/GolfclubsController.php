@@ -81,9 +81,11 @@ class GolfclubsController extends Controller
     {
         // get the golfclub
         $club = Golfclub::find($id);
+        // get golfcourses associated with this club
+        $golfcourses = $club->golfcourses;
 
-        // show the edit form and pass the golfclub
-        return view('golfclubs.show', ['club' => $club]);
+        // show the edit form and pass the golfclub and associated golfcourses
+        return view('golfclubs.show', ['club' => $club, 'golfcourses' => $golfcourses]);
     }
 
     /**
@@ -102,6 +104,7 @@ class GolfclubsController extends Controller
         $club->street_name = $request->street_name;
         $club->city =  $request->city;
         $club->province = $request->province;
+        $club->postal_code = $request->postal_code;
         if ($request->logo) {
             $filename = $request->logo->getClientOriginalName();
             $path = $request->logo->storeAs('clubs', $filename);
