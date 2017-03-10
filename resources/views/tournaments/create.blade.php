@@ -29,8 +29,8 @@
                 {{ Form::file('logo', null, array('class' => 'form-control')) }}
             </div>
             <div class="form-group">
-                {{ Form::label('start_date', 'Start date') }}
-                {{ Form::text('start_date', date('Y/m/d')) }}
+                {{ Form::label('start_time', 'Start time') }}
+                {{ Form::text('start_time', date('Y/m/d')) }}
             </div>
             {{ Form::submit('Submit', array('class' => 'btn btn-primary')) }}
 
