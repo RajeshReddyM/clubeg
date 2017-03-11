@@ -1,5 +1,5 @@
 
-## Install Instructions
+## Installation Instructions
 
 - PHP (bundled with XAMPP)
 - Composer
@@ -25,7 +25,7 @@ Generate key and save it (including the square brackets):
 - php artisan db:seed
 - php artisan serve
 
-## Login info for app
+## Login credentials
 
 - Email: admin@example.com
 - Password: password

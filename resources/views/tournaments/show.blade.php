@@ -54,15 +54,15 @@
                     {{ Html::image('images/tournaments/'. $pageData['tournament']->logo,"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
                 </div>
             <!-- Register button-->
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <div class="row">
                     @if($pageData['isRegistered'])
                         <a href="{{ action('TournamentsController@unregister', $pageData['tournament']->id) }}" class="btn btn-danger">
-                          <i class="glyphicon glyphicon-remove" aria-hidden="true"> </i> Cancel registration
+                          <i class="glyphicon glyphicon-minus-sign" aria-hidden="true"> </i> Cancel registration
                         </a>
                     @else
                         <a href="{{ action('TournamentsController@register', $pageData['tournament']->id) }}" class="btn btn-success">
-                          <i class="glyphicon glyphicon-ok" aria-hidden="true"> </i> Register
+                          <i class="glyphicon glyphicon-plus-sign" aria-hidden="true"> </i> Register
                         </a>
                     @endif
                 </div>

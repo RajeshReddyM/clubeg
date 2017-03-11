@@ -63,11 +63,11 @@
                     <div class="col-md-4">
                         @if ($registered)
                             <a href="{{ action('GolfclubsController@unregister', $club->id) }}"  class="btn btn-danger">
-                              <i class="glyphicon glyphicon-remove" aria-hidden="true"> </i> Cancel Registration
+                              <i class="glyphicon glyphicon-minus-sign" aria-hidden="true"> </i> Cancel Registration
                             </a>
                         @else
                             <a href="{{ action('GolfclubsController@register', $club->id) }}" class="btn btn-success">
-                              <i class="glyphicon glyphicon-ok" aria-hidden="true"> </i> Register
+                              <i class="glyphicon glyphicon-plus-sign" aria-hidden="true"> </i> Register
                             </a>
                         @endif                    
                     </div>
@@ -84,7 +84,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-10">
                 <h2>Golfcourses</h2>
                 <hr/>
