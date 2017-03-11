@@ -83,9 +83,11 @@ class GolfclubsController extends Controller
         $club = Golfclub::find($id);
         // get golfcourses associated with this club
         $golfcourses = $club->golfcourses;
+        $user = Auth::user();
+        $registered = $club->users()->wherePivot('user_id', $user->id)->first();
 
         // show the edit form and pass the golfclub and associated golfcourses
-        return view('golfclubs.show', ['club' => $club, 'golfcourses' => $golfcourses]);
+        return view('golfclubs.show', ['club' => $club, 'golfcourses' => $golfcourses, 'registered' => $registered]);
     }
 
     /**
@@ -117,6 +119,30 @@ class GolfclubsController extends Controller
 
     }
 
+
+    public function register($id)
+    {
+        $club = Golfclub::findOrFail($id);
+        $golfcourses = $club->golfcourses;
+        $user = Auth::user();
+        $club->users()->attach($user->id);
+        $registered = $club->users()->wherePivot('user_id', $user->id)->first();
+
+        Session::flash('alert-success', 'You have been Successfully Registered');
+        return view('golfclubs/show', ['club' => $club, 'golfcourses' => $golfcourses, 'registered' => $registered]);
+    }
+
+    public function unregister($id)
+    {
+        $club = Golfclub::findOrFail($id);
+        $golfcourses = $club->golfcourses;
+        $user = Auth::user();
+        $club->users()->detach($user->id);
+        $registered = $club->users()->wherePivot('user_id', $user->id)->first();
+
+        Session::flash('alert-success', 'You have been Unregistered Successfully');
+        return view('golfclubs/show', ['club' => $club, 'golfcourses' => $golfcourses, 'registered' => $registered]);
+    }
      /**
      * Destroy the resource.
      *

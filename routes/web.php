@@ -31,6 +31,8 @@ Route::post('/register', array('as' => 'register', 'uses' => 'UsersController@st
 Route::group( ['middleware' => 'auth' ], function() {
     Route::resource('users', 'UsersController', ['only' => ['index', 'edit', 'update', 'destroy']]);
     Route::resource('clubs', 'GolfclubsController');
+    Route::get('/clubs/{id}/register', 'GolfclubsController@register');
+    Route::get('/clubs/{id}/unregister', 'GolfclubsController@unregister');
     Route::resource('golfcourses', 'GolfcoursesController');
     Route::get('images/clubs/{filename}', function ($filename)
     {
