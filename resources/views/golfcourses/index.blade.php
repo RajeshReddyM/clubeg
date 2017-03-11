@@ -11,7 +11,16 @@
             @endif
           @endforeach
         </div>
-        <h2>Golfcourses</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <h3 class="title">Golfcourses</h3>
+            </div>
+            <div class="col-md-2">
+                <a href="{{ action('GolfcoursesController@create') }}" class="btn btn-success addButton">
+                  <i class="glyphicon glyphicon-plus" aria-hidden="true"> </i> Add Golfcourse
+                </a>
+            </div>
+        </div>
         <hr/>
         @foreach($golfcourses as $golfcourse)
           @if($golfcourse->logo)

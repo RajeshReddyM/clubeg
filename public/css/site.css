@@ -9,6 +9,15 @@
   display: inline-block;
 }
 
+.title {
+  margin-bottom: 20px;
+  margin-left:20px;
+}
+
+.addButton {
+  margin-top:15px;
+}
+
 #createPlayer span.select2-container
 {
   width: 360px !important;

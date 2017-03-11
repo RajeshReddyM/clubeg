@@ -3,7 +3,7 @@
 @section('content')
     <div class="main">
         <div class="col-md-10 col-md-offset-1">
-            <h2>{{$golfcourse->name}}</h2>
+            <h2 class="title">{{$golfcourse->name}}</h2>
 
             <div class="col-md-6">
                 <div class="row">

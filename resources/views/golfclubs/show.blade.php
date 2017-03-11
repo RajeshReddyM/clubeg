@@ -10,7 +10,7 @@
                   @endif
                 @endforeach
             </div>
-            <h2>{{$club->name}}</h2>
+            <h2 class="title">{{$club->name}}</h2>
 
             <div class="col-md-6">
                 <div class="row">

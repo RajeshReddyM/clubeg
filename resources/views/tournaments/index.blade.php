@@ -3,27 +3,38 @@
 @section('content')
 
 
-        <div class="container">
-            <div class="row">
-                <h3>All Tournaments:</h3>
-                @foreach($tournaments as $tournament)
-                    @if($tournament->logo)
-                        <div class="col-md-4">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <div class="hovereffect">
-                                        <a href="{{ action("TournamentsController@show", $tournament->id) }}">
-                                            {{ Html::image('images/tournaments/'. $tournament->logo,"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
-                                            <div class="overlay">
-                                                <h2><?php echo  $tournament->name ?></h2>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-                @endforeach
+<div class="main">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row">
+            <div class="col-md-3">
+                <h3 class="title">All Tournaments:</h3>
+            </div>
+            <div class="col-md-2">
+                <a href="{{ action('TournamentsController@create') }}" class="btn btn-success addButton">
+                  <i class="glyphicon glyphicon-plus" aria-hidden="true"> </i> Add tournament
+                </a>
             </div>
         </div>
+        <hr/>
+        @foreach($tournaments as $tournament)
+            @if($tournament->logo)
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="hovereffect">
+                                <a href="{{ action("TournamentsController@show", $tournament->id) }}">
+                                    {{ Html::image('images/tournaments/'. $tournament->logo,"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
+                                    <div class="overlay">
+                                        <h2><?php echo  $tournament->name ?></h2>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+        @endforeach
+    </div>
+
+</div>
 @endsection

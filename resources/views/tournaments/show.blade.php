@@ -12,7 +12,7 @@
                     @endif
                 @endforeach
             </div>
-            <h2>{{$pageData['tournament']->name}}</h2>
+            <h2 class="title">{{$pageData['tournament']->name}}</h2>
 
                 <div class="col-md-6">
                     <div class="row">
