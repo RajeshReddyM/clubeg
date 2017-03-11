@@ -84,7 +84,8 @@ class GolfclubsController extends Controller
         // get golfcourses associated with this club
         $golfcourses = $club->golfcourses;
         $user = Auth::user();
-        $registered = $club->users()->wherePivot('user_id', $user->id)->first();
+        // check if user is registered
+        $registered = $club->users()->wherePivot('user_id', $user->id)->exists();
 
         // show the edit form and pass the golfclub and associated golfcourses
         return view('golfclubs.show', ['club' => $club, 'golfcourses' => $golfcourses, 'registered' => $registered]);
@@ -126,7 +127,8 @@ class GolfclubsController extends Controller
         $golfcourses = $club->golfcourses;
         $user = Auth::user();
         $club->users()->attach($user->id);
-        $registered = $club->users()->wherePivot('user_id', $user->id)->first();
+        // check if user is registered
+        $registered = $club->users()->wherePivot('user_id', $user->id)->exists();
 
         Session::flash('alert-success', 'You have been Successfully Registered');
         return view('golfclubs/show', ['club' => $club, 'golfcourses' => $golfcourses, 'registered' => $registered]);
@@ -138,7 +140,8 @@ class GolfclubsController extends Controller
         $golfcourses = $club->golfcourses;
         $user = Auth::user();
         $club->users()->detach($user->id);
-        $registered = $club->users()->wherePivot('user_id', $user->id)->first();
+        // check if user is registered
+        $registered = $club->users()->wherePivot('user_id', $user->id)->exists();
 
         Session::flash('alert-success', 'You have been Unregistered Successfully');
         return view('golfclubs/show', ['club' => $club, 'golfcourses' => $golfcourses, 'registered' => $registered]);

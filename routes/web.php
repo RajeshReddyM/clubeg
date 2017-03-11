@@ -30,10 +30,17 @@ Route::get('/register', array('as' => 'register', 'uses' => 'UsersController@cre
 Route::post('/register', array('as' => 'register', 'uses' => 'UsersController@store'));
 Route::group( ['middleware' => 'auth' ], function() {
     Route::resource('users', 'UsersController', ['only' => ['index', 'edit', 'update', 'destroy']]);
+    // Routes to Golfclubs Controller
     Route::resource('clubs', 'GolfclubsController');
     Route::get('/clubs/{id}/register', 'GolfclubsController@register');
     Route::get('/clubs/{id}/unregister', 'GolfclubsController@unregister');
     Route::resource('golfcourses', 'GolfcoursesController');
+    // Routes to Tournaments Controller
+    Route::resource('tournaments', 'TournamentsController');
+    Route::get('/tournaments/{id}/register', 'TournamentsController@register');
+    Route::get('/tournaments/{id}/unregister', 'TournamentsController@unregister');
+
+    // Fetch Images
     Route::get('images/clubs/{filename}', function ($filename)
     {
         return Image::make(storage_path() . '/app/clubs/' . $filename)->response();
@@ -47,17 +54,3 @@ Route::group( ['middleware' => 'auth' ], function() {
         return Image::make(storage_path() . '/app/tournaments/' . $filename)->response();
     });
 });
-
-//Routes to TournamentController
-Route::get('/tournaments/view{id}', 'TournamentController@view');
-Route::post('/tournaments/view{id}', 'TournamentController@view');
-Route::get('/tournaments', 'TournamentController@index');
-Route::post('/tournaments', 'TournamentController@index');
-Route::get('/tournaments/create', 'TournamentController@create');
-Route::post('/tournaments/create', 'TournamentController@store');
-Route::get('/tournaments/cancelRegistration{id}', 'TournamentController@cancelRegistration');
-Route::post('/tournaments/cancelRegistration{id}', 'TournamentController@cancelRegistration');
-Route::get('/tournaments/register{id}', 'TournamentController@register');
-Route::post('/tournaments/register{id}', 'TournamentController@register');
-//Routes to ProfileController
-Route::get('/profile/', 'ProfileController@view');

@@ -60,19 +60,19 @@
 
             <div class="col-md-8">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                         @if ($registered)
-                            <a href="/clubs/{{$club->id}}/unregister" class="btn btn-warning">
-                              <i class="glyphicon glyphicon-remove" aria-hidden="true"> </i> Un Register
+                            <a href="{{ action('GolfclubsController@unregister', $club->id) }}"  class="btn btn-danger">
+                              <i class="glyphicon glyphicon-remove" aria-hidden="true"> </i> Cancel Registration
                             </a>
                         @else
-                            <a href="/clubs/{{$club->id}}/register" class="btn btn-success">
+                            <a href="{{ action('GolfclubsController@register', $club->id) }}" class="btn btn-success">
                               <i class="glyphicon glyphicon-ok" aria-hidden="true"> </i> Register
                             </a>
                         @endif                    
                     </div>
-                    <div class="col-md-6">
-                        <a href="{{route('clubs.edit', $club->id)}}" class="btn btn-primary">
+                    <div class="col-md-4">
+                        <a href="{{ action('GolfclubsController@register', $club->id) }}" class="btn btn-primary">
                           <i class="glyphicon glyphicon-edit" aria-hidden="true"> </i> Edit
                         </a>
                         {!! Form::open([

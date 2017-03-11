@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Tournament;
+use App\Golfclub;
+use App\Golfcourse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Auth;
 use Session;
 use App\Http\Requests;
 
-class TournamentController extends Controller
+class TournamentsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -33,8 +34,8 @@ class TournamentController extends Controller
     */
     public function index()
     {
-        $tournaments = DB::table('tournaments')->get();
-        return view('tournaments/index')->with('tournaments', $tournaments);
+        $tournaments = Tournament::all();
+        return view('tournaments.index')->with('tournaments', $tournaments);
     }
 
     /*Created: 2017-02-16 - Michel Tremblay
@@ -44,12 +45,8 @@ class TournamentController extends Controller
     {
         $tournament = new Tournament;
 
-        return view('tournaments/create')->with(compact('tournament'));
+        return view('tournaments.create')->with(compact('tournament'));
     }
-
-
-
-
 
     /*Created: 2017-03-07 - Michel Tremblay
      * Controller function which saves new tournament data to db
@@ -61,7 +58,7 @@ class TournamentController extends Controller
         $tournament = new Tournament();
         $tournament->name = $request->name;
         $tournament->golfcourse_id = $request->golfcourse_id;
-        $tournament->start_time = $request->start_time;
+        $tournament->start_date = $request->start_date;
         $tournament->logo = $filename;
         $tournament->save();
 
@@ -76,28 +73,26 @@ class TournamentController extends Controller
      * Controller function which returns the basic view with tournament data which the user requests
      * TODO: This function should check if the user has access to the tournament before viewing
     */
-    public function view($tournamentId)
+    public function show($id)
     {
         $user = Auth::user();
         //grab the required tournament and course info
-        $tournamentInfo =  DB::table('tournaments')->where('id', $tournamentId)->first();
-        $courseInfo = DB::table('golfcourses')->where('id', $tournamentInfo->golfcourse_id)->first();
-        $clubInfo = DB::table('golfclubs')->where('id', $courseInfo->golfclub_id)->first();
+        $tournament =  Tournament::find($id);
+        // $club = Golfclub::find($id);
+        $golfcourse = Golfcourse::where('id', $tournament->golfcourse_id)->first();
+        $club = Golfclub::where('id', $golfcourse->golfclub_id)->first();
 
         //determine if the user is registered for the requested tournament
-        $registered = false;
-        if(DB::table('tournament_user')->where('user_id', $user->id)->where('tournament_id', $tournamentId)->exists()){
-            $registered = true;
-        }
+        $registered = $tournament->users()->wherePivot('user_id', $user->id)->exists();
 
         //package all the content
         $pageData = array(
-            'tournamentInfo' =>$tournamentInfo,
-            'courseInfo' => $courseInfo,
-            'clubInfo' =>$clubInfo,
+            'tournament' =>$tournament,
+            'golfcourse' => $golfcourse,
+            'club' =>$club,
             'isRegistered' => $registered
         );
-        return view('tournaments/register')->with('pageData', $pageData);
+        return view('tournaments.show')->with('pageData', $pageData);
     }
 
 
@@ -105,60 +100,54 @@ class TournamentController extends Controller
     * Controller function which registers the user for the selected tournament
     * TODO: This function should check if the user has access to the tournament before registering
    */
-    public function register($tournamentId)
+    public function register($id)
     {
         $user = Auth::user();
         //grab the required tournament and course info
-        $tournamentInfo =  DB::table('tournaments')->where('id', $tournamentId)->first();
-        $courseInfo = DB::table('golfcourses')->where('id', $tournamentInfo->golfcourse_id)->first();
-        $clubInfo = DB::table('golfclubs')->where('id', $courseInfo->golfclub_id)->first();
-
+        $tournament =  Tournament::where('id', $id)->first();
+        $golfcourse = Golfcourse::where('id', $tournament->golfcourse_id)->first();
+        $club = Golfcourse::where('id', $golfcourse->golfclub_id)->first();
+        $tournament->users()->attach($user->id);
         //determine if the user is registered for the requested tournament
-        $registered = false;
-        if(DB::table('tournament_user')->insert(['user_id' => $user->id, 'tournament_id' => $tournamentId, 'created_at' =>date("y-m-d")])){
-            $registered = true;
-            Session::flash('alert-success', "You've been registered!");
-        } else {
-            Session::flash('alert-danger', 'Registration failed. Please try again.');
-        }
+        $registered = $tournament->users()->wherePivot('user_id', $user->id)->exists();
+
+        Session::flash('alert-success', "You've been registered!");
 
         //package all the content
         $pageData = array(
-            'tournamentInfo' =>$tournamentInfo,
-            'courseInfo' => $courseInfo,
-            'clubInfo' =>$clubInfo,
+            'tournament' =>$tournament,
+            'golfcourse' => $golfcourse,
+            'club' =>$club,
             'isRegistered' => $registered
         );
-        return view('tournaments/register')->with('pageData', $pageData);
+        return view('tournaments.show')->with('pageData', $pageData);
     }
 
     /*Created: 2017-03-07 - Michel Tremblay
        * Controller function which cancels a registration for the current user and the designated tournament
     */
-    public function cancelRegistration($tournamentId)
+    public function unregister($id)
     {
         $user = Auth::user();
         //grab the required tournament and course info
-        $tournamentInfo =  DB::table('tournaments')->where('id', $tournamentId)->first();
-        $courseInfo = DB::table('golfcourses')->where('id', $tournamentInfo->golfcourse_id)->first();
-        $clubInfo = DB::table('golfclubs')->where('id', $courseInfo->golfclub_id)->first();
+        $tournament =  Tournament::where('id', $id)->first();
+        $golfcourse = Golfcourse::where('id', $tournament->golfcourse_id)->first();
+        $club = Golfclub::where('id', $golfcourse->golfclub_id)->first();
+        $tournament->users()->detach($user->id);
 
         //determine if the user is registered for the requested tournament
-        $registered = true;
-        if(DB::table('tournament_user')->where('user_id', $user->id)->where('tournament_id', $tournamentId)->delete()) {
-            $registered = false;
-            Session::flash('alert-success', 'Registration cancelled.');
-        } else {
-            Session::flash('alert-danger', 'Cancellation failed. Please try again.');
-        }
+        $registered = $tournament->users()->wherePivot('user_id', $user->id)->exists();
+
+        Session::flash('alert-success', 'Registration cancelled.');
+
         //package all the content
         $pageData = array(
-            'tournamentInfo' =>$tournamentInfo,
-            'courseInfo' => $courseInfo,
-            'clubInfo' =>$clubInfo,
+            'tournament' =>$tournament,
+            'golfcourse' => $golfcourse,
+            'club' =>$club,
             'isRegistered' => $registered
         );
 
-        return view('tournaments/register')->with('pageData', $pageData);
+        return view('tournaments.show')->with('pageData', $pageData);
     }
 }

@@ -12,7 +12,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <div class="hovereffect">
-                                        <a href="{{ action("TournamentController@view", $tournament->id) }}">
+                                        <a href="{{ action("TournamentsController@show", $tournament->id) }}">
                                             {{ Html::image('images/tournaments/'. $tournament->logo,"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
                                             <div class="overlay">
                                                 <h2><?php echo  $tournament->name ?></h2>

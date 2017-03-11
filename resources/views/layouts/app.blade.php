@@ -114,7 +114,7 @@
                                 <li ><a class="dropdown-item"  href="{{ route('users.index') }}"><i class="pull-right glyphicon glyphicon-list"></i> {{ trans('app.players') }} </a></li>
                             @endif
                             @if (Auth::user()->isAn('admin','player'))
-                                <li><a class="dropdown-item"  href="{{ action('TournamentController@index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  Tournaments </a></li>
+                                <li><a class="dropdown-item"  href="{{ action('TournamentsController@index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  Tournaments </a></li>
                             @endif
                             @if (Auth::user()->isAn('admin'))
                                 <li ><a class="dropdown-item"  href="{{ route('clubs.index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  Clubs </a></li>
