@@ -72,7 +72,7 @@
                         @endif                    
                     </div>
                     <div class="col-md-4">
-                        <a href="{{ action('GolfclubsController@register', $club->id) }}" class="btn btn-primary">
+                        <a href="{{ action('GolfclubsController@edit', $club->id) }}" class="btn btn-primary">
                           <i class="glyphicon glyphicon-edit" aria-hidden="true"> </i> Edit
                         </a>
                         {!! Form::open([
