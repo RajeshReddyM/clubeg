@@ -82,6 +82,12 @@
             margin-bottom: 0px !important;
         }
 
+        #flashMessage {
+            position: absolute;
+            z-index: 1;
+            margin-top: 20px;
+        }
+
     </style>
 </head>
 <body>
@@ -138,6 +144,17 @@
 <!-- Carousel
 ================================================== -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="col-md-10 col-md-offset-1" id="flashMessage">
+        <div class="row">
+            <div class="flash-message">
+                @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                    @if(Session::has('alert-' . $msg))
+                        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+    </div>
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -200,24 +217,9 @@
 <!-- Wrap the rest of the page in another container to center all the content. -->
 <div class="container">
 
-    <!--  Commenting out the flash message
-            <div class="row">
-
-                <div class="flash-message">
-                  @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-    @if(Session::has('alert-' . $msg))
-            <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p>
-
-
-
-                    @endif
-    @endforeach
-            </div>
-        </div> -->
-
     <!-- Three columns of text below the carousel -->
     <div class="row">
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-4 col-md-4 col-sm-4 text-center">
             <img class="img-circle" src="/images/golf-bag-transp.jpg" alt="Generic placeholder image" width="140"
                  height="140">
 
@@ -230,7 +232,7 @@
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <!-- /.col-lg-4 -->
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-4 col-md-4 col-sm-4 text-center">
             <img class="img-circle" src="/images/golfer3-cropped.jpg" alt="Generic placeholder image" width="140"
                  height="140">
 
@@ -243,7 +245,7 @@
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <!-- /.col-lg-4 -->
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-4 col-md-4 col-sm-4 text-center">
             <img class="img-circle" src="/images/sky and grass-cropped.jpg" alt="Generic placeholder image" width="140"
                  height="140">
 
