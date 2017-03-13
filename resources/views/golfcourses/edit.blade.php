@@ -11,7 +11,7 @@
       <!-- if there are creation errors, they will show here -->
       {{ Html::ul($errors->all()) }}
 
-      {{ Form::model($golfcourse, array('route' => array('golfcourses.update', $golfcourse->id), 'method' => 'PUT')) }}
+      {{ Form::model($golfcourse, array('route' => array('golfcourses.update', $golfcourse->id), 'files' => true , 'method' => 'PUT')) }}
 
           <div class="form-group">
               {{ Form::label('name', 'Name') }}
