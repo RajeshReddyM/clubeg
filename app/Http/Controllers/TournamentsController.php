@@ -58,7 +58,7 @@ class TournamentsController extends Controller
         $tournament = new Tournament();
         $tournament->name = $request->name;
         $tournament->golfcourse_id = $request->golfcourse_id;
-        $tournament->start_date = $request->start_date;
+        $tournament->start_time = $request->start_time;
         $tournament->logo = $filename;
         $tournament->save();
 

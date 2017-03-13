@@ -23,8 +23,8 @@
                 {{ Form::select('golfcourse_id', \App\Golfcourse::all()->pluck('name', 'id')->toArray(), null,['placeholder'=> 'Select a Course...', 'class'=>'form-control select2']) }}
             </div>
             <div class="form-group">
-                {{ Form::label('start_date', 'Start Date') }}
-                {{ Form::text('start_date', date('Y/m/d'), array('class' => 'form-control')) }}
+                {{ Form::label('start_time', 'Start Date') }}
+                {{ Form::text('start_time', date('Y/m/d'), array('class' => 'form-control')) }}
             </div>
             <div class="form-group">
                 {{ Form::label('logo', 'Logo') }}
