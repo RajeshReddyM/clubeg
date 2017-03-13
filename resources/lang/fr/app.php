@@ -34,4 +34,8 @@ return [
     'profile' => 'Profil',
     'roles' => 'Les rôles',
     'update' => 'Mise à jour',
+    'clubs' => 'Les Clubs',
+    'tournaments' => 'Tournois',
+    'scores' => 'Les Scores',
+    'groups' => 'Les groupes',
 ];

@@ -7,11 +7,11 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="row">
             <div class="col-md-3">
-                <h3 class="title">All Tournaments:</h3>
+                <h3 class="title">{{trans('tournaments.all_tournaments')}}</h3>
             </div>
             <div class="col-md-2">
                 <a href="{{ action('TournamentsController@create') }}" class="btn btn-success addButton">
-                  <i class="glyphicon glyphicon-plus" aria-hidden="true"> </i> Add tournament
+                  <i class="glyphicon glyphicon-plus" aria-hidden="true"> </i> {{trans('tournaments.add_tournament')}}
                 </a>
             </div>
         </div>
@@ -23,7 +23,7 @@
                         <div class="panel-body">
                             <div class="hovereffect">
                                 <a href="{{ action('TournamentsController@show', $tournament->id) }}">
-                                    {{ Html::image('images/tournaments/'. $tournament->logo,"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
+                                    {{ Html::image('images/tournaments/'. $tournament->logo,trans('tournaments.tournament_place_img'), array('class' => 'img img-responsive img-rounded rounded')) }}
                                     <div class="overlay">
                                         <h2><?php echo  $tournament->name ?></h2>
                                     </div>

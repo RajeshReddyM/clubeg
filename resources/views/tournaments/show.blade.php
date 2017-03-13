@@ -17,7 +17,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="startDate">Start Date: </label>
+                            <label for="startDate">{{trans('tournaments.start_date')}}: </label>
                         </div>
                         <div class="col-md-6">
                             <p id="startDate">{{$pageData['tournament']->start_date}}</p>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="clubName">Club Name: </label>
+                            <label for="clubName">{{trans('tournaments.club_name')}}: </label>
                         </div>
                         <div class="col-md-6">
                             <p id="clubName">{{$pageData['club']->name}}</p>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="courseName">Course Name: </label>
+                            <label for="courseName">{{trans('tournaments.course_name')}}: </label>
                         </div>
                         <div class="col-md-6">
                             <p id="courseName">{{$pageData['golfcourse']->name}}</p>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="type">Type: </label>
+                            <label for="type">{{trans('tournaments.type')}} </label>
                         </div>
                         <div class="col-md-6">
                             <p id="type">Public</p>
@@ -51,18 +51,18 @@
                 </div>
                 <div class="col-md-6">
                     <!-- Tournament promo photo -->
-                    {{ Html::image('images/tournaments/'. $pageData['tournament']->logo,"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
+                    {{ Html::image('images/tournaments/'. $pageData['tournament']->logo,trans('tournaments.tournament_place_img'), array('class' => 'img img-responsive img-rounded rounded')) }}
                 </div>
             <!-- Register button-->
             <div class="col-md-8">
                 <div class="row">
                     @if($pageData['isRegistered'])
                         <a href="{{ action('TournamentsController@unregister', $pageData['tournament']->id) }}" class="btn btn-danger">
-                          <i class="glyphicon glyphicon-minus-sign" aria-hidden="true"> </i> Cancel registration
+                          <i class="glyphicon glyphicon-minus-sign" aria-hidden="true"> </i> {{trans('tournaments.cancel_registration')}}
                         </a>
                     @else
                         <a href="{{ action('TournamentsController@register', $pageData['tournament']->id) }}" class="btn btn-success">
-                          <i class="glyphicon glyphicon-plus-sign" aria-hidden="true"> </i> Register
+                          <i class="glyphicon glyphicon-plus-sign" aria-hidden="true"> </i> {{trans('tournaments.register')}}
                         </a>
                     @endif
                 </div>

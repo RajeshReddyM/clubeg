@@ -72,13 +72,13 @@
                                         <div class="dropdown-divider"></div>
                                         <li><a class="dropdown-item"  href="{{ route('users.index') }}"><i class="glyphicon glyphicon-list"></i> {{ trans('app.players') }} </a></li>
                                         <div class="dropdown-divider"></div>
-                                        <li><a class="dropdown-item"  href="{{ route('clubs.index') }}"><i class="glyphicon glyphicon-list"></i>  Clubs </a></li>
+                                        <li><a class="dropdown-item"  href="{{ route('clubs.index') }}"><i class="glyphicon glyphicon-list"></i>  {{trans('app.clubs')}} </a></li>
                                         <div class="dropdown-divider"></div>
-                                        <li><a class="dropdown-item"  href="{{ route('clubs.create') }}"><i class="glyphicon glyphicon-plus"></i>  Add Club </a></li>
+                                        <li><a class="dropdown-item"  href="{{ route('clubs.create') }}"><i class="glyphicon glyphicon-plus"></i>  {{trans('golf_club.add_club')}} </a></li>
                                         <div class="dropdown-divider"></div>
-                                        <li><a class="dropdown-item"  href="{{ route('golfcourses.index') }}"><i class="glyphicon glyphicon-list"></i>  Golfcourses </a></li>
+                                        <li><a class="dropdown-item"  href="{{ route('golfcourses.index') }}"><i class="glyphicon glyphicon-list"></i>  {{trans('golf_club.golf_courses')}} </a></li>
                                         <div class="dropdown-divider"></div>
-                                        <li><a class="dropdown-item"  href="{{ route('golfcourses.create') }}"><i class="glyphicon glyphicon-plus"></i>  Add Golfcourse </a></li>
+                                        <li><a class="dropdown-item"  href="{{ route('golfcourses.create') }}"><i class="glyphicon glyphicon-plus"></i>  {{trans('golf_courses.add_golf_courses')}} </a></li>
                                         <div class="dropdown-divider"></div>
                                     @endif
                                     <li>
@@ -114,18 +114,18 @@
                                 <li ><a class="dropdown-item"  href="{{ route('users.index') }}"><i class="pull-right glyphicon glyphicon-list"></i> {{ trans('app.players') }} </a></li>
                             @endif
                             @if (Auth::user()->isAn('admin','player'))
-                                <li><a class="dropdown-item"  href="{{ action('TournamentsController@index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  Tournaments </a></li>
+                                <li><a class="dropdown-item"  href="{{ action('TournamentsController@index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  {{trans('app.tournaments')}} </a></li>
                             @endif
                             @if (Auth::user()->isAn('admin'))
-                                <li ><a class="dropdown-item"  href="{{ route('clubs.index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  Clubs </a></li>
+                                <li ><a class="dropdown-item"  href="{{ route('clubs.index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  {{trans('app.clubs')}} </a></li>
                             @endif
                             @if (Auth::user()->isAn('admin', 'golfcourse'))
-                                <li ><a class="dropdown-item"  href="{{ route('golfcourses.index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  Golfcourses </a></li>
+                                <li ><a class="dropdown-item"  href="{{ route('golfcourses.index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  {{trans('golf_club.golf_courses')}} </a></li>
                             @endif
                             @if (Auth::user()->isAn('admin', 'scorer'))
-                                <li ><a href="#">Scores<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                                <li ><a href="#">{{trans('app.scores')}}<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
                             @endif
-                            <li ><a href="#">Groups<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                            <li ><a href="#">{{trans('app.groups')}}<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
                                 <ul class="dropdown-menu forAnimate" role="menu">
