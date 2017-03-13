@@ -242,7 +242,7 @@
                 mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris
                 condimentum nibh.</p>
 
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-default" href="{{ action('TournamentsController@index') }}" role="button">View details &raquo;</a></p>
         </div>
         <!-- /.col-lg-4 -->
         <div class="col-lg-4 col-md-4 col-sm-4 text-center">
@@ -255,7 +255,7 @@
                 porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
                 fermentum massa justo sit amet risus.</p>
 
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-default" href="{{ route('golfcourses.index') }}" role="button">View details &raquo;</a></p>
         </div>
         <!-- /.col-lg-4 -->
     </div>
