@@ -31,4 +31,9 @@ class Tournament extends Model
         return $this->belongsTo('App\Golfcourse');
     }
 
+    public function livescores()
+    {
+        return $this->hasMany('App\Livescore', 'tournament_id');
+    }
+
 }

@@ -75,4 +75,9 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Team')
           ->withTimestamps();
     }
+
+    public function livescores()
+    {
+        return $this->hasMany('App\Livescore', 'user_id');
+    }
 }
