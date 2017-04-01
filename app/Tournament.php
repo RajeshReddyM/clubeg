@@ -7,7 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Tournament extends Model
 {
 
-    protected $fillable = ['name', 'start_date', 'type', 'visibility', 'golfcourse_id'];
+    protected $fillable = ['name', 'start_date', 'type', 'visibility', 'division', 'golfcourse_id'];
+
+    // protected static $types = [ 'charity' => 'Charity' ];
+
+    // protected static $visibility = [ 'private' => 'Private' ];
+
+    // protected static $division = [ 'division1' => 'Division1' ];
 
     public function sponsors()
     {
