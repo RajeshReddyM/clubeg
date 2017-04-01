@@ -23,6 +23,21 @@
                 {{ Form::select('golfcourse_id', \App\Golfcourse::all()->pluck('name', 'id')->toArray(), null,['placeholder'=> trans('tournaments.select_course'), 'class'=>'form-control select2']) }}
             </div>
             <div class="form-group">
+                {{ Form::label('visibility', 'Visibility') }}
+
+                {{ Form::select('visibility', ['public' => 'Public', 'private' => 'Private'], null,['placeholder'=> 'Please select...', 'class'=>'form-control select2']) }}
+            </div>
+            <div class="form-group">
+                {{ Form::label('division', 'Division') }}
+
+                {{ Form::select('division', ['division1' => 'Division1', 'division2' => 'Division2'], null,['placeholder'=> 'Please select...', 'class'=>'form-control select2']) }}
+            </div>
+             <div class="form-group">
+                {{ Form::label('type', 'Type') }}
+
+                {{ Form::select('type', ['charity' => 'Charity', 'type1' => 'Type1'], null,['placeholder'=> 'Please select...', 'class'=>'form-control select2']) }}
+            </div>
+            <div class="form-group">
                 {{ Form::label('start_date', trans('tournaments.start_date')) }}
                 {{ Form::text('start_date', date('Y/m/d'), array('class' => 'form-control')) }}
             </div>

@@ -44,7 +44,23 @@
                             <label for="type">{{trans('tournaments.type')}} </label>
                         </div>
                         <div class="col-md-6">
-                            <p id="type">Public</p>
+                            <p id="type">{{$pageData['tournament']->type}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="type"> Division </label>
+                        </div>
+                        <div class="col-md-6">
+                            <p id="type">{{$pageData['tournament']->division}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="type"> Visibility </label>
+                        </div>
+                        <div class="col-md-6">
+                            <p id="type">{{$pageData['tournament']->visibility}}</p>
                         </div>
                     </div>
 

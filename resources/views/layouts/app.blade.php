@@ -123,9 +123,10 @@
                                 <li ><a class="dropdown-item"  href="{{ route('golfcourses.index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  {{trans('golf_club.golf_courses')}} </a></li>
                             @endif
                             @if (Auth::user()->isAn('admin', 'scorer'))
-                                <li ><a href="#">{{trans('app.scores')}}<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                                <li ><a class="dropdown-item" href="#">{{trans('app.scores')}}<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
                             @endif
-                            <li ><a href="#">{{trans('app.groups')}}<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                            <li ><a class="dropdown-item" href="{{ route('groups.index') }}">{{trans('app.groups')}}<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                            <li ><a class="dropdown-item" href="{{ route('teams.index') }}">Teams<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
                                 <ul class="dropdown-menu forAnimate" role="menu">
