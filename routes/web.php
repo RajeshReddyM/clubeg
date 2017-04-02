@@ -44,6 +44,8 @@ Route::group( ['middleware' => 'auth' ], function() {
 
     Route::resource('teams', 'TeamsController');
 
+    Route::resource('scores', 'LivescoresController');
+
     // Fetch Images
     Route::get('images/clubs/{filename}', function ($filename)
     {
