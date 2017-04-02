@@ -11,4 +11,9 @@ class Team extends Model
         return $this->belongsToMany('App\User')
           ->withTimestamps();
     }
+
+    public function listUsers() 
+    {
+        return $this->users->pluck('first_name')->toArray();
+    }
 }

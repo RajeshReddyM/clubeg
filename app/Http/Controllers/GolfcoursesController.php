@@ -50,7 +50,7 @@ class GolfcoursesController extends Controller
 
 
         if (Auth::user()) {
-            Session::flash('alert-success', 'Successfully created golfcourse');
+            Session::flash('alert-success', trans('golf_courses.create_golfcourse'));
             return redirect('/golfcourses');
         }
     }
@@ -108,7 +108,7 @@ class GolfcoursesController extends Controller
         }
         $golfcourse->save();
 
-        Session::flash('alert-success', 'Golfcourse updated Successfully');
+        Session::flash('alert-success', trans('golf_courses.update_golfcourse'));
         return redirect('/golfcourses');
     }
 
@@ -123,7 +123,7 @@ class GolfcoursesController extends Controller
     {
         $golfcourses = Golfcourse::findOrFail($id);
         $golfcourses->delete();
-        Session::flash('alert-success', 'Successfully deleted golfcourse');
+        Session::flash('alert-success', trans('golf_courses.delete_golfcourse'));
         return redirect('/golfcourses');
     }
 }

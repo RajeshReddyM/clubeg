@@ -51,7 +51,7 @@ class GolfclubsController extends Controller
 
 
         if (Auth::user()) {
-            Session::flash('alert-success', 'Successfully created golfclub');
+            Session::flash('alert-success', trans('golf_club.create_golfclub'));
             return redirect('/clubs');
         }
     }
@@ -115,7 +115,7 @@ class GolfclubsController extends Controller
         }
         $club->save();
 
-        Session::flash('alert-success', 'Golfclub updated Successfully');
+        Session::flash('alert-success', trans('golf_club.update_golfclub'));
         return redirect('/clubs');
 
     }
@@ -157,7 +157,7 @@ class GolfclubsController extends Controller
     {
         $club = Golfclub::findOrFail($id);
         $club->delete();
-        Session::flash('alert-success', 'Golfclub deleted Successfully');
+        Session::flash('alert-success', trans('golf_club.delete_golfclub'));
         return redirect('/clubs');
     }
 }

@@ -58,13 +58,16 @@ class TournamentsController extends Controller
         $tournament = new Tournament();
         $tournament->name = $request->name;
         $tournament->golfcourse_id = $request->golfcourse_id;
-        $tournament->start_time = $request->start_time;
+        $tournament->start_date = $request->start_date;
+        $tournament->type = $request->type;
+        $tournament->visibility = $request->visibility;
+        $tournament->division = $request->division;
         $tournament->logo = $filename;
         $tournament->save();
 
 
         if (Auth::user()) {
-            Session::flash('alert-success', 'Successfully created golfcourse');
+            Session::flash('alert-success', trans('tournaments.create_tournament'));
             return redirect('/tournaments');
         }
     }
@@ -111,7 +114,7 @@ class TournamentsController extends Controller
         //determine if the user is registered for the requested tournament
         $registered = $tournament->users()->wherePivot('user_id', $user->id)->exists();
 
-        Session::flash('alert-success', "You've been registered!");
+        Session::flash('alert-success', trans('tournaments.registration_done'));
 
         //package all the content
         $pageData = array(
@@ -138,7 +141,7 @@ class TournamentsController extends Controller
         //determine if the user is registered for the requested tournament
         $registered = $tournament->users()->wherePivot('user_id', $user->id)->exists();
 
-        Session::flash('alert-success', 'Registration cancelled.');
+        Session::flash('alert-success', trans('tournaments.registration_cancelled'));
 
         //package all the content
         $pageData = array(

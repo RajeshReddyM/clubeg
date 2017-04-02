@@ -19,4 +19,10 @@ return [
     'token'    => "Ce jeton de réinitialisation du mot de passe n'est pas valide.",
     'user'     => "Aucun utilisateur n'a été trouvé avec cette adresse e-mail.",
 
+    /* For email.blade.php */
+    'email_address' => 'Adresse E-mail',
+    'reset_password' => 'Réinitialiser Le Mot De Passe',
+    'send_reset_link' => 'Envoyer Le Lien De Réinitialisation De Mot De Passe',
+    'password' => 'mot de passe',
+    'confirm_password' => 'confirmer le mot de passe',
 ];

@@ -13,7 +13,7 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <h3 class="title">Golfcourses</h3>
+                <h3 class="title">{{trans('golf_club.golf_courses')}}</h3>
             </div>
             <div class="col-md-2">
                 <a href="{{ action('GolfcoursesController@create') }}" class="btn btn-success addButton">
@@ -29,7 +29,7 @@
                   <div class="panel-body">
                       <div class="hovereffect">
                         <a href="golfcourses/{{$golfcourse->id}}">
-                          {{ Html::image('images/golfcourses/' . $golfcourse->logo,"golfcourse placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
+                          {{ Html::image('images/golfcourses/' . $golfcourse->logo,trans('golf_courses.golf_course_place_img'), array('class' => 'img img-responsive img-rounded rounded')) }}
                           <div class="overlay">
                              <h2><?php echo  $golfcourse->name ?></h2>
                           </div>

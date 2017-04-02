@@ -40,6 +40,10 @@ Route::group( ['middleware' => 'auth' ], function() {
     Route::get('/tournaments/{id}/register', 'TournamentsController@register');
     Route::get('/tournaments/{id}/unregister', 'TournamentsController@unregister');
 
+    Route::resource('groups', 'GroupsController');
+
+    Route::resource('teams', 'TeamsController');
+
     // Fetch Images
     Route::get('images/clubs/{filename}', function ($filename)
     {
