@@ -19,7 +19,7 @@
           </div>
           <div class="form-group">
               {{ Form::label('hole', 'Hole') }}
-              {{ Form::select('hole', ['1' => '1', '2' => '2', '3' => '3', '4' => '5' ], null, ['placeholder'=> 'Select Hole...','class'=>'form-control select2']) }}
+              {{ Form::select('hole', ['1' => '1', '2' => '2', '3' => '3', '4' => '4' ], null, ['placeholder'=> 'Select Hole...','class'=>'form-control select2']) }}
           </div>
           <div class="form-group">
               {{ Form::label('score', 'Score') }}

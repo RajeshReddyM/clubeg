@@ -46,8 +46,8 @@ class TeamsController extends Controller
 
         $users = $request->users;
 
-        if (count($users) > 2) {
-            Session::flash('alert-danger', "Team cannot have more than 2 players");
+        if (count($users) > 4) {
+            Session::flash('alert-danger', "Team cannot have more than 4 players");
             return redirect('/teams');
         } else {
             $team->save();
@@ -87,17 +87,23 @@ class TeamsController extends Controller
 
     public function update($id)
     {
-        // $this->validate(request(), [
-        //     'first_name' => 'required|max:255',
-        //     'last_name' => 'required|max:255'
-        // ]);
         $team = Team::findOrFail($id);
         $request = request();
-        $team->fill($request->all());
-        $team->save();
-        if (Auth::user()->isAn('admin')) {
-            Session::flash('alert-success', "Team Updated Successfully");
+        $team->name = $request->name;
+
+        $users = $request->users;
+        $totalUsers = count($users);
+        if ($totalUsers > 4) {
+            Session::flash('alert-danger', "Team cannot have more than 4 players");
             return redirect('/teams');
+        } else {
+            $team->save();
+            $team->deleteUsers();
+            $team->assignUsers($users);
+            if (Auth::user()) {
+                Session::flash('alert-success', "Team Updated Successfully");
+                return redirect('/teams');
+            }
         }
     }
 

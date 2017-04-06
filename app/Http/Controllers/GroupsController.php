@@ -51,10 +51,7 @@ class GroupsController extends Controller
             return redirect('/groups');
         } else {
             $group->save();
-            for ($i = 0; $i < count($users); $i++ ) {
-                $user = User::find($users[$i]);
-                $group->users()->attach($user->id);
-            }
+            $group->assignUsers($users);
             if (Auth::user()) {
                 Session::flash('alert-success', "Group successfully created");
                 return redirect('/groups');
@@ -92,19 +89,17 @@ class GroupsController extends Controller
 
         $group->name = $request->name;
 
-        $userids = $request->users;
-        $totalUsers = count($userids) + $group->users()->count();
+        $users = $request->users;
+        $totalUsers = count($users);
         if ($totalUsers > 4) {
             Session::flash('alert-danger', "Group cannot have more than 4 players");
             return redirect('/groups');
         } else {
             $group->save();
-            for ($i = 0; $i < count($userids); $i++ ) {
-                $user = User::find($userids[$i]);
-                $group->users()->attach($user->id);
-            }
+            $group->deleteUsers();
+            $group->assignUsers($users);
             if (Auth::user()) {
-                Session::flash('alert-success', "Group successfully created");
+                Session::flash('alert-success', "Group updated successfully");
                 return redirect('/groups');
             }
         }

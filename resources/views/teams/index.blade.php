@@ -32,7 +32,7 @@
           @foreach($teams as $team )
               <tr>
                   <td>{{ $team->name }}</td>
-                  <td> <b> {{ implode(', ',array_map('ucfirst', $team->listUsers())) }} </b></td>
+                  <td> <b> {{ implode(', ',array_map('ucfirst', $team->listUserNames())) }} </b></td>
                   <td>
                       <a href="{{route('teams.edit', $team->id)}}" class="btn btn-primary">
                           <i class="glyphicon glyphicon-edit" aria-hidden="true"> </i>

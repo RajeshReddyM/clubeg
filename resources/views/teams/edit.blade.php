@@ -18,7 +18,7 @@
           @if (Auth::user()->isAn('admin'))
             <div class="form-group">
                 {{ Form::label('users', 'Users') }}
-                {{ Form::select('users[]', \App\User::all()->pluck('first_name', 'id')->toArray(), $team->listUsers() ,['multiple'=>true, 'class'=>'form-control select2']) }}
+                {{ Form::select('users[]', \App\User::all()->pluck('first_name', 'id')->toArray(), $team->listUserIds() ,['multiple'=>true, 'class'=>'form-control select2']) }}
             </div>
           @endif
 
