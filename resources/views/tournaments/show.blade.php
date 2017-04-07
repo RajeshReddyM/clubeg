@@ -81,6 +81,11 @@
                           <i class="glyphicon glyphicon-plus-sign" aria-hidden="true"> </i> {{trans('tournaments.register')}}
                         </a>
                     @endif
+                    @if (Auth::user()->isAn('admin'))
+                        <a href="{{action('TournamentsController@edit', $pageData['tournament']->id)}}" class="btn btn-primary">
+                            <i class="glyphicon glyphicon-edit" aria-hidden="true"> </i> {{trans('app.edit')}}
+                        </a>
+                    @endif
                 </div>
             </div>
 
