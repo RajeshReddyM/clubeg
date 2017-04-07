@@ -23,4 +23,7 @@ return [
     'registration_failed' => 'L\'enregistrement a échoué. Merci d\'essayer de nouveau.',
     'registration_cancelled' => 'Inscription annulée.',
     'cancelled_failed' => 'L\'annulation a échoué. Merci d\'essayer de nouveau.',
+
+    /* edit.blade.php */
+    'edit_tournament' => 'Éditer le tournoi',
 ];

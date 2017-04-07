@@ -23,4 +23,7 @@ return [
     'registration_failed' => 'Registration failed. Please try again.',
     'registration_cancelled' => 'Registration cancelled.',
     'cancelled_failed' => 'Cancellation failed. Please try again.',
+
+    /* edit.blade.php */
+    'edit_tournament' => 'Edit Tournament',
 ];
