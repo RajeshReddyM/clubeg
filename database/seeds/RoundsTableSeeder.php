@@ -18,7 +18,7 @@ class RoundsTableSeeder extends Seeder
         // Round
         $round =  Round::create([
         	'tournament_id' => Tournament::first()->id,
-            'round_no'=>'1'
+            'name'=>'Round1'
         ]);
     }
 }
