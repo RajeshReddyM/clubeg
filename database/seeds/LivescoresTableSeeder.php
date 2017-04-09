@@ -21,6 +21,7 @@ class LivescoresTableSeeder extends Seeder
             Livescore::create([
                 'tournament_id' => rand(1,6),
                 'user_id' => rand(1,6),
+                'golfcourse_id' => rand(1,6),
                 'H1'=> rand(1,5), 'H2' => rand(1,5), 'H3'=> rand(1,5), 'H4'=> rand(1,5), 'H5'=> rand(1,5),'H6'=> rand(1,5),   
                 'H7'=> rand(1,5), 'H8' => rand(1,5), 'H9'=> rand(1,5), 'H10'=> rand(1,5), 'H11'=> rand(1,5),'H12'=> rand(1,5),
                 'H13'=> rand(1,5), 'H14' => rand(1,5), 'H15'=> rand(1,5), 'H16'=> rand(1,5), 'H17'=> rand(1,5),'H18'=> rand(1,5),

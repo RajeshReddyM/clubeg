@@ -20,8 +20,90 @@
               </a>
           </div>
       </div>
-      <table class="table table-responsive">
+      <br>
 
+      <table class="table table-responsive table-bordered">
+          <thead>
+            <tr>
+              <td>Hole</td>
+              @for ($i=1; $i<10; $i++)
+                <td> {{ $i }} </td>
+              @endfor
+              <td>OUT</td>
+              @for ($i=10; $i<19; $i++)
+                <td> {{ $i }} </td>
+              @endfor
+              <td>IN</td>
+              <td>Total</td>
+              <td>+/-</td>
+            </tr>
+            <tr>
+              <td>Par</td>
+              <td>5</td>
+              <td>3</td>
+              <td>5</td>
+              <td>3</td>
+              <td>4</td>
+              <td>3</td>
+              <td>5</td>
+              <td>4</td>
+              <td>4</td>
+              <td>36</td>
+              <td>5</td>
+              <td>4</td>
+              <td>4</td>
+              <td>3</td>
+              <td>5</td>
+              <td>4</td>
+              <td>3</td>
+              <td>4</td>
+              <td>4</td>
+              <td>36</td>
+              <td>72</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+              @foreach ($scores as $score)
+                <tr>
+                  <?php echo "<td><b>". implode("<br/>",array_map('ucfirst', $score->teamusers())). "</b></td>" ?>
+                  @for ($i=1; $i<=9; $i++)
+                    @if ($score['H'.$i] === $score->golfcourse['P'.$i] - 1)
+                      <td class="birdie"> {{$score['H'.(string)$i]}} </td>
+                    @elseif ($score['H'.$i] === $score->golfcourse['P'.$i] - 2)
+                      <td class="eagle"> {{$score['H'.(string)$i]}} </td>
+                    @elseif ($score['H'.$i] === $score->golfcourse['P'.$i] + 1)
+                      <td class="bogey"> {{$score['H'.(string)$i]}} </td>
+                    @elseif ($score['H'.$i] === $score->golfcourse['P'.$i] + 2)
+                      <td class="double"> {{$score['H'.(string)$i]}} </td>
+                    @elseif ($score['H'.$i] === $score->golfcourse['P'.$i])
+                      <td> {{$score['H'.(string)$i]}} </td>
+                    @else
+                      <td class="other"> {{$score['H'.(string)$i]}} </td>
+                    @endif
+                  @endfor
+                  <td> 36 </td>
+                  @for ($i=10; $i<=18; $i++)
+                    @if ($score['H'.$i] === $score->golfcourse['P'.$i] - 1)
+                      <td class="birdie"> {{$score['H'.(string)$i]}} </td>
+                    @elseif ($score['H'.$i] === $score->golfcourse['P'.$i] - 2)
+                      <td class="eagle"> {{$score['H'.(string)$i]}} </td>
+                    @elseif ($score['H'.$i] === $score->golfcourse['P'.$i]+ 1)
+                      <td class="bogey"> {{$score['H'.(string)$i]}} </td>
+                    @elseif ($score['H'.$i] === $score->golfcourse['P'.$i] + 2)
+                      <td class="double"> {{$score['H'.(string)$i]}} </td>
+                    @elseif ($score['H'.$i] === $score->golfcourse['P'.$i])
+                      <td> {{$score['H'.(string)$i]}} </td>
+                    @else
+                      <td class="other"> {{$score['H'.(string)$i]}} </td>
+                    @endif
+                  @endfor
+                  <td> 36 </td>
+                  <td> </td>
+                  <td> </td>
+                </tr>
+              @endforeach
+          </tbody>
       </table>
     </div>
 </div>

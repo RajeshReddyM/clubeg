@@ -7,17 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 class Golfcourse extends Model
 {
   
-  protected $fillable = ['name', 'hole_no', 'hole_length', 'par', 'logo', 'golfclub_id'];
-  
+    protected $fillable = ['name', 'hole_no', 'hole_length', 'par', 'logo', 'golfclub_id'];
 
-  public function tournaments()
-  {
+    public function tournaments()
+    {
     return $this->hasMany('App\Tournament', 'golfcourse_id');
-  }
+    }
 
-  public function golfclub()
-  {
+    public function golfclub()
+    {
     return $this->belongsTo('App\Golfclub');
-  }
+    }
 
+    public function livescores()
+    {
+        return $this->hasMany('App\Livescore', 'golfcourse_id');
+    }
 }

@@ -45,12 +45,15 @@ class CreateLivescoresTable extends Migration
             $table->integer('lostPlayoff')->nullable();
             $table->integer('round1')->nullable();
             $table->integer('r1ToPar')->nullable();
-
             $table->integer('tournament_id')->unsigned()->nullable();
+            $table->integer('golfcourse_id')->unsigned()->nullable();
             $table->integer('user_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('tournament_id')
               ->references('id')->on('tournaments')
+              ->onDelete('cascade');
+            $table->foreign('golfcourse_id')
+              ->references('id')->on('golfcourses')
               ->onDelete('cascade');
             $table->foreign('user_id')->references('id')
                 ->on('users')->onDelete('cascade');

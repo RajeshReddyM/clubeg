@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Livescore;
+use App\Tournament;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class LivescoresController extends Controller
     {
         $scores = Livescore::all();
 
-        return view('scores.index')->with('scores', $scores);;
+        return view('scores.index', ['scores' => $scores]);
     }
 
     /**
@@ -72,6 +73,10 @@ class LivescoresController extends Controller
         
     }
 
+    public function listscores($id)
+    {
+
+    }
      /**
      * Destroy the resource.
      *

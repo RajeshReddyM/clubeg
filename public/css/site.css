@@ -243,3 +243,23 @@
   section{
     padding-left: 15px;
   }
+
+.bogey {
+  background-color: #F0FFA2;
+}
+
+.double {
+  background-color: #FC7A92;
+}
+
+.birdie {
+  background-color: #A3EBFC;
+}
+
+.eagle {
+  background-color: #C3C9FF;
+}
+
+.other {
+  background-color: #867F81;
+}

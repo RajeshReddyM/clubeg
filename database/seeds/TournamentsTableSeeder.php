@@ -14,13 +14,14 @@ class TournamentsTableSeeder extends Seeder
     {
         DB::table('tournaments')->delete();
 
-        for ($i = 0; $i < 20; $i++){
+        for ($i = 1; $i <= 20; $i++){
             $tournament =  Tournament::create([
                 'name'=>'Tournament ' . $i,
                 'golfcourse_id' => '1'
             ]);
+
+            $tournament->users()->attach(rand(1,5));
+            $tournament->users()->attach(rand(1,5));
         }
-
-
     }
 }
