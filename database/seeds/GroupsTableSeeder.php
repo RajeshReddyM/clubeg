@@ -16,11 +16,12 @@ class GroupsTableSeeder extends Seeder
     {
         DB::table('groups')->delete();
 
-        // groups
-        $group =  Group::create(['name'=>'Group1']);
-        $admin = User::find(1);
-        $player = User::find(2);
-        $group->users()->attach($admin->id);
-        $group->users()->attach($player->id);
+
+        // Groups
+        for($i = 1; $i <= 10; $i++) {
+            $group =  Group::create(['name' => 'Group'. (string)$i]);
+            $group->users()->attach(rand(1,5));
+            $group->users()->attach(rand(1,5));
+        }
     }
 }

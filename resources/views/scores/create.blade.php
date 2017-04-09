@@ -29,7 +29,14 @@
               {{ Form::label('tournament', 'Tournament') }}
               {{ Form::select('tournament_id', \App\Tournament::all()->pluck('name', 'id')->toArray(), null, ['placeholder'=> 'Select Tournament...','class'=>'form-control select2']) }}
           </div>
-
+          <div class="form-group">
+              {{ Form::label('groupNo', 'Group') }}
+              {{ Form::select('groupNo', \App\Group::all()->pluck('name', 'id')->toArray(), null, ['placeholder'=> 'Select Group...','class'=>'form-control select2']) }}
+          </div>
+          <div class="form-group">
+              {{ Form::label('teamNo', 'Team') }}
+              {{ Form::select('teamNo', \App\Team::all()->pluck('name', 'id')->toArray(), null, ['placeholder'=> 'Select Team...','class'=>'form-control select2']) }}
+          </div>
 
           {{ Form::submit('Submit', array('class' => 'btn btn-primary')) }}
 

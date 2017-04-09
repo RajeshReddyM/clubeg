@@ -16,11 +16,11 @@ class TeamsTableSeeder extends Seeder
     {
         DB::table('teams')->delete();
 
-        // groups
-        $team =  Team::create(['name'=>'Team1']);
-        $admin = User::find(1);
-        $player = User::find(2);
-        $team->users()->attach($admin->id);
-        $team->users()->attach($player->id);
+        // Teams
+        for($i = 1; $i <= 10; $i++) {
+            $team =  Team::create(['name'=> 'Team'. (string)$i]);
+            $team->users()->attach(rand(1,5));
+            $team->users()->attach(rand(1,5));
+        }
     }
 }

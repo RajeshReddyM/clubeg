@@ -35,7 +35,8 @@ class CreateLivescoresTable extends Migration
             $table->integer('H18')->nullable();
             $table->integer('score')->nullable();
             $table->dateTime('timeUpdate')->nullable();
-            $table->integer('groupNum')->nullable();
+            $table->integer('groupNo')->nullable();
+            $table->integer('teamNo')->nullable();
             $table->integer('INScore')->nullable();
             $table->integer('OUTScore')->nullable();
             $table->integer('toPar')->nullable();

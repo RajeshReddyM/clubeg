@@ -15,10 +15,9 @@ class RoundsTableSeeder extends Seeder
     {
         DB::table('rounds')->delete();
 
-        // Round
-        $round =  Round::create([
-        	'tournament_id' => Tournament::first()->id,
-            'name'=>'Round1'
-        ]);
+        // rounds
+        for($i = 1; $i <= 10; $i++) {
+            $round =  Round::create(['name'=> 'Round'. (string)$i, 'tournament_id' => rand(1,10)]);
+        }
     }
 }
