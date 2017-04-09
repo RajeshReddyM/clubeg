@@ -22,44 +22,44 @@
       </div>
       <br>
 
-      <table class="table table-responsive table-bordered">
+      <table class="table table-responsive table-bordered" style="background-color: white !important;">
           <thead>
             <tr>
-              <td class="text-center">Hole</td>
+              <td class="text-center"><b> Hole </b></td>
               @for ($i=1; $i<10; $i++)
-                <td class="text-center"> {{ $i }} </td>
+                <td class="text-center"> <b> {{ $i }} </b> </td>
               @endfor
-              <td class="text-center">OUT</td>
+              <td class="text-center"> <b> OUT </b> </td>
               @for ($i=10; $i<19; $i++)
-                <td class="text-center"> {{ $i }} </td>
+                <td class="text-center"> <b> {{ $i }} </b></td>
               @endfor
-              <td class="text-center">IN</td>
-              <td class="text-center">Total</td>
-              <td class="text-center">+/-</td>
+              <td class="text-center"> <b> IN </b></td>
+              <td class="text-center"> <b> Total </b></td>
+              <td class="text-center"> <b> +/- </b></td>
             </tr>
             <tr>
-              <td class="text-center">Par</td>
-              <td class="text-center">5</td>
-              <td class="text-center">3</td>
-              <td class="text-center">5</td>
-              <td class="text-center">3</td>
-              <td class="text-center">4</td>
-              <td class="text-center">3</td>
-              <td class="text-center">5</td>
-              <td class="text-center">4</td>
-              <td class="text-center">4</td>
-              <td class="text-center">36</td>
-              <td class="text-center">5</td>
-              <td class="text-center">4</td>
-              <td class="text-center">4</td>
-              <td class="text-center">3</td>
-              <td class="text-center">5</td>
-              <td class="text-center">4</td>
-              <td class="text-center">3</td>
-              <td class="text-center">4</td>
-              <td class="text-center">4</td>
-              <td class="text-center">36</td>
-              <td class="text-center">72</td>
+              <td class="text-center"> <b> Par </b> </td>
+              <td class="text-center"><b> 5 </b></td>
+              <td class="text-center"><b> 3 </b></td>
+              <td class="text-center"><b> 5 </b></td>
+              <td class="text-center"><b> 3 </b></td>
+              <td class="text-center"><b> 4 </b></td>
+              <td class="text-center"><b> 3 </b></td>
+              <td class="text-center"><b> 5 </b></td>
+              <td class="text-center"><b> 4 </b></td>
+              <td class="text-center"><b> 4 </b></td>
+              <td class="text-center"><b> 36</b></td>
+              <td class="text-center"><b> 5 </b></td>
+              <td class="text-center"><b> 4 </b></td>
+              <td class="text-center"><b> 4 </b></td>
+              <td class="text-center"><b> 3 </b></td>
+              <td class="text-center"><b> 5 </b></td>
+              <td class="text-center"><b> 4 </b></td>
+              <td class="text-center"><b> 3 </b></td>
+              <td class="text-center"><b> 4 </b></td>
+              <td class="text-center"><b> 4 </b></td>
+              <td class="text-center"><b> 36</b></td>
+              <td class="text-center"><b> 72</b></td>
               <td class="text-center"></td>
             </tr>
           </thead>
@@ -69,36 +69,36 @@
                   <?php echo "<td class='text-center'><b>". implode("<br/>",array_map('ucfirst', $score->teamusers())). "</b></td>" ?>
                   @for ($i=1; $i<=9; $i++)
                     @if ($score['H'.$i] === $score->golfcourse['P'.$i] - 1)
-                      <td class="birdie text-center"> {{$score['H'.(string)$i]}} </td>
+                      <td class="birdie text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @elseif ($score['H'.$i] === $score->golfcourse['P'.$i] - 2)
-                      <td class="eagle text-center"> {{$score['H'.(string)$i]}} </td>
+                      <td class="eagle text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @elseif ($score['H'.$i] === $score->golfcourse['P'.$i] + 1)
-                      <td class="bogey text-center"> {{$score['H'.(string)$i]}} </td>
+                      <td class="bogey text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @elseif ($score['H'.$i] === $score->golfcourse['P'.$i] + 2)
-                      <td class="double text-center"> {{$score['H'.(string)$i]}} </td>
+                      <td class="double text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @elseif ($score['H'.$i] === $score->golfcourse['P'.$i])
-                      <td class="text-center"> {{$score['H'.(string)$i]}} </td>
+                      <td class="text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @else
-                      <td class="other text-center"> {{$score['H'.(string)$i]}} </td>
+                      <td class="other text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @endif
                   @endfor
-                  <td class="text-center"> 36 </td>
+                  <td class="text-center"> <b> 36 </b> </td>
                   @for ($i=10; $i<=18; $i++)
                     @if ($score['H'.$i] === $score->golfcourse['P'.$i] - 1)
-                      <td class="birdie text-center"> {{$score['H'.(string)$i]}} </td>
+                      <td class="birdie text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @elseif ($score['H'.$i] === $score->golfcourse['P'.$i] - 2)
-                      <td class="eagle text-center"> {{$score['H'.(string)$i]}} </td>
+                      <td class="eagle text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @elseif ($score['H'.$i] === $score->golfcourse['P'.$i]+ 1)
-                      <td class="bogey text-center"> {{$score['H'.(string)$i]}} </td>
+                      <td class="bogey text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @elseif ($score['H'.$i] === $score->golfcourse['P'.$i] + 2)
-                      <td class="double text-center"> {{$score['H'.(string)$i]}} </td>
+                      <td class="double text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @elseif ($score['H'.$i] === $score->golfcourse['P'.$i])
-                      <td class="text-center"> {{$score['H'.(string)$i]}} </td>
+                      <td class="text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @else
-                      <td class="other text-center"> {{$score['H'.(string)$i]}} </td>
+                      <td class="other text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @endif
                   @endfor
-                  <td class="text-center"> 36 </td>
+                  <td class="text-center"> <b> 36 </b> </td>
                   <td class="text-center"> </td>
                   <td class="text-center"> </td>
                 </tr>
