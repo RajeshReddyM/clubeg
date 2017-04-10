@@ -57,5 +57,13 @@ class UsersTableSeeder extends Seeder
         ]);
         $golfcourse->assign('golfcourse');
 
+        for ($i=1; $i<=25; $i++) {
+            // Players
+            $player =  User::create([
+                'first_name'=>'Player'.$i, 'last_name' => 'User', 'handicap' => '5', 'email'=>'player'.$i.'@example.com','password'=> bcrypt('password')
+            ]);
+            $player->assign('player');
+        }
+
     }
 }

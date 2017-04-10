@@ -20,8 +20,8 @@ class TournamentsTableSeeder extends Seeder
                 'golfcourse_id' => '1'
             ]);
 
-            $tournament->users()->attach(rand(1,5));
-            $tournament->users()->attach(rand(1,5));
+            $tournament->users()->attach(rand(1,30));
+            $tournament->users()->attach(rand(1,30));
         }
     }
 }
