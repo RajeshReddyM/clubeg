@@ -38,7 +38,7 @@ class CreateGolfcoursesTable extends Migration
             $table->integer('P17')->nullable();
             $table->integer('P18')->nullable();
             $table->string('hole_length');
-            $table->string('logo');
+            $table->string('logo')->nullable();
             $table->timestamps();
             $table->foreign('golfclub_id')
               ->references('id')->on('golfclubs')

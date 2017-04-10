@@ -19,7 +19,7 @@ class CreateGolfclubsTable extends Migration
             $table->string('city');
             $table->string('province');
             $table->string('postal_code');
-            $table->string('logo');
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }
