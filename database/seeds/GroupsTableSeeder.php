@@ -20,8 +20,10 @@ class GroupsTableSeeder extends Seeder
         // Groups
         for($i = 1; $i <= 10; $i++) {
             $group =  Group::create(['name' => 'Group'. (string)$i]);
-            $group->users()->attach(rand(1,5));
-            $group->users()->attach(rand(1,5));
+            $group->users()->attach(rand(1,20));
+            $group->users()->attach(rand(1,20));
+            $group->tournaments()->attach(rand(1,10));
+            $group->tournaments()->attach(rand(1,10));
         }
     }
 }

@@ -17,7 +17,7 @@
 
           @if (Auth::user()->isAn('admin'))
             <div class="form-group">
-                {{ Form::label('touurnament', 'Tournament') }}
+                {{ Form::label('tournament', 'Tournament') }}
                 {{ Form::select('tournament_id', \App\Tournament::all()->pluck('name', 'id')->toArray(), null ,['placeholder'=> 'Please Select...', 'class'=>'form-control select2']) }}
             </div>
           @endif

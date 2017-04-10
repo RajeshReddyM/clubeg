@@ -44,17 +44,18 @@ class TeamsController extends Controller
         $team = new Team();
         $team->name = $request->name;
 
+
         $users = $request->users;
+        $tournaments = $request->tournaments;
 
         if (count($users) > 4) {
             Session::flash('alert-danger', "Team cannot have more than 4 players");
             return redirect('/teams');
         } else {
             $team->save();
-            for ($i = 0; $i < count($users); $i++ ) {
-                $user = User::find($users[$i]);
-                $team->users()->attach($user->id);
-            }
+            $team->assignUsers($users);
+            $team->assignTournaments($tournaments);
+
             if (Auth::user()) {
                 Session::flash('alert-success', "Team successfully created");
                 return redirect('/teams');
@@ -90,8 +91,8 @@ class TeamsController extends Controller
         $team = Team::findOrFail($id);
         $request = request();
         $team->name = $request->name;
-
         $users = $request->users;
+        $tournaments = $request->tournaments;
         $totalUsers = count($users);
         if ($totalUsers > 4) {
             Session::flash('alert-danger', "Team cannot have more than 4 players");
@@ -100,6 +101,8 @@ class TeamsController extends Controller
             $team->save();
             $team->deleteUsers();
             $team->assignUsers($users);
+            $team->deleteTournaments();
+            $team->assignTournaments($tournaments);
             if (Auth::user()) {
                 Session::flash('alert-success', "Team Updated Successfully");
                 return redirect('/teams');

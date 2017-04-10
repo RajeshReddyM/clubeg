@@ -46,12 +46,15 @@ class GroupsController extends Controller
         $group->name = $request->name;
 
         $users = $request->users;
+        $tournaments = $request->tournaments;
+
         if (count($users) > 4) {
             Session::flash('alert-danger', "Group cannot have more than 4 players");
             return redirect('/groups');
         } else {
             $group->save();
             $group->assignUsers($users);
+            $group->assignTournaments($tournaments);
             if (Auth::user()) {
                 Session::flash('alert-success', "Group successfully created");
                 return redirect('/groups');
@@ -90,6 +93,7 @@ class GroupsController extends Controller
         $group->name = $request->name;
 
         $users = $request->users;
+        $tournaments = $request->tournaments;
         $totalUsers = count($users);
         if ($totalUsers > 4) {
             Session::flash('alert-danger', "Group cannot have more than 4 players");
@@ -98,6 +102,9 @@ class GroupsController extends Controller
             $group->save();
             $group->deleteUsers();
             $group->assignUsers($users);
+            $group->deleteTournaments();
+            $group->tournaments()->attach($tournaments);
+
             if (Auth::user()) {
                 Session::flash('alert-success', "Group updated successfully");
                 return redirect('/groups');

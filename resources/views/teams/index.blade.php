@@ -25,6 +25,7 @@
           <tr>
             <th>Name</th>
             <th>Players</th>
+            <th>Tournaments</th>
             <th></th>
           </tr>
         </thead>
@@ -33,6 +34,7 @@
               <tr>
                   <td>{{ $team->name }}</td>
                   <td> <b> {{ implode(', ',array_map('ucfirst', $team->listUserNames())) }} </b></td>
+                  <td> <b> {{ implode(', ',array_map('ucfirst', $team->listTournamentNames())) }} </b></td>
                   <td>
                       <a href="{{route('teams.edit', $team->id)}}" class="btn btn-primary">
                           <i class="glyphicon glyphicon-edit" aria-hidden="true"> </i>
