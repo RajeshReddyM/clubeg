@@ -63,8 +63,12 @@ class TournamentsController extends Controller
         $tournament->visibility = $request->visibility;
         $tournament->division = $request->division;
         $tournament->logo = $filename;
-        $tournament->save();
 
+
+        $tournament->sponsors = $request->sponsors;
+        $tournament->save();
+        $tournament->deleteSponsors();
+        $tournament->assignSponsors($tournament->sponsors);
 
         if (Auth::user()) {
             Session::flash('alert-success', trans('tournaments.create_tournament'));

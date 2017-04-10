@@ -56,4 +56,19 @@ class Tournament extends Model
 
 
 
+    public function deleteSponsors() {
+        $sponsors = $this->sponsors;
+        foreach ($sponsors as $s) {
+            $this->sponsors()->detach($s->id);
+        }
+    }
+
+    public function assignSponsors($sponsors) {
+        foreach ($sponsors as $s) {
+            $this->tournaments()->attach($s);
+        }
+    }
+
+
+
 }
