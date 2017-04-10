@@ -26,4 +26,36 @@ class Livescore extends Model
     {
         return $this->tournament->users->pluck('first_name')->toArray();
     }
+
+    public function total()
+    {
+        $total = 0;
+        for($i=1; $i<=18; $i++) {
+            $total += $this['H'.(string)$i];
+        }
+        return $total;
+    }
+
+    public function out()
+    {
+        $total = 0;
+        for($i=1; $i<=9; $i++) {
+            $total += $this['H'.(string)$i];
+        }
+        return $total;
+    }
+
+    public function in()
+    {
+        $total = 0;
+        for($i=10; $i<=18; $i++) {
+            $total += $this['H'.(string)$i];
+        }
+        return $total;
+    }
+
+    public function diff()
+    {
+        return 72 - $this->total();
+    }
 }

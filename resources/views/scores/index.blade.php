@@ -82,7 +82,7 @@
                       <td class="other text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @endif
                   @endfor
-                  <td class="text-center"> <b> 36 </b> </td>
+                  <td class="text-center"> <b> {{$score->out()}} </b> </td>
                   @for ($i=10; $i<=18; $i++)
                     @if ($score['H'.$i] === $score->golfcourse['P'.$i] - 1)
                       <td class="birdie text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
@@ -98,9 +98,9 @@
                       <td class="other text-center"> <b> {{$score['H'.(string)$i]}} </b> </td>
                     @endif
                   @endfor
-                  <td class="text-center"> <b> 36 </b> </td>
-                  <td class="text-center"> </td>
-                  <td class="text-center"> </td>
+                  <td class="text-center"> <b> {{$score->in()}} </b> </td>
+                  <td class="text-center"> <b> {{$score->total()}} </b> </td>
+                  <td class="text-center"> <b> {{$score->diff()}} </b> </td>
                 </tr>
               @endforeach
           </tbody>
