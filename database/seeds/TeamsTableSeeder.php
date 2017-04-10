@@ -19,8 +19,10 @@ class TeamsTableSeeder extends Seeder
         // Teams
         for($i = 1; $i <= 10; $i++) {
             $team =  Team::create(['name'=> 'Team'. (string)$i]);
-            $team->users()->attach(rand(1,5));
-            $team->users()->attach(rand(1,5));
+            $team->users()->attach(rand(1,20));
+            $team->users()->attach(rand(1,20));
+            $team->tournaments()->attach(rand(1,10));
+            $team->tournaments()->attach(rand(1,10));
         }
     }
 }

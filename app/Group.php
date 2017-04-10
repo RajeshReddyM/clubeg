@@ -33,6 +33,29 @@ class Group extends Model
         return $this->users->pluck('id')->toArray();
     }
 
+    public function listTournamentNames()
+    {
+        return $this->tournaments->pluck('name')->toArray();
+    }
+
+    public function listTournamentIds()
+    {
+        return $this->tournaments->pluck('id')->toArray();
+    }
+
+    public function deleteTournaments() {
+        $tournaments = $this->tournaments;
+        foreach ($tournaments as $t) {
+            $this->tournaments()->detach($t->id);
+        }
+    }
+
+    public function assignTournaments($tournaments) {
+        foreach ($tournaments as $t) {
+            $this->tournaments()->attach($t);
+        }
+    }
+
     public function deleteUsers() {
         $users = $this->users;
         foreach ($users as $user) {

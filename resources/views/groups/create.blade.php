@@ -19,10 +19,14 @@
           </div>
 
           <div class="form-group">
+              {{ Form::label('tournaments', 'Tournaments') }}
+              {{ Form::select('tournaments[]', \App\Tournament::all()->pluck('name', 'id')->toArray(), null, ['multiple'=>true,'class'=>'form-control select2']) }}
+          </div>
+          
+          <div class="form-group">
               {{ Form::label('users', 'Players') }}
               {{ Form::select('users[]', \App\User::all()->pluck('first_name', 'id')->toArray(), null, ['multiple'=>true, 'class'=>'form-control select2']) }}
           </div>
-
 
           {{ Form::submit('Submit', array('class' => 'btn btn-primary')) }}
 

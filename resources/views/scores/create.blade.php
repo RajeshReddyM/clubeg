@@ -26,7 +26,7 @@
               {{ Form::text('score', null, array('class' => 'form-control')) }}
           </div>
           <div class="form-group">
-              {{ Form::label('tournament', 'Tournament') }}
+              {{ Form::label('tournament_id', 'Tournament') }}
               {{ Form::select('tournament_id', \App\Tournament::all()->pluck('name', 'id')->toArray(), null, ['placeholder'=> 'Select Tournament...','class'=>'form-control select2']) }}
           </div>
           <div class="form-group">
