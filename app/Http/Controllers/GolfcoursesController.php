@@ -42,7 +42,6 @@ class GolfcoursesController extends Controller
         $golfcourse = new Golfcourse();
         $golfcourse->name = $request->name;
         $golfcourse->hole_no = (int)$request->hole_no;
-        $golfcourse->par = $request->par;
         $golfcourse->hole_length = $request->hole_length;
         $golfcourse->golfclub_id = $request->golfclub_id;
         $golfcourse->logo = $filename;
@@ -98,7 +97,6 @@ class GolfcoursesController extends Controller
         $request = request();
         $golfcourse->name = $request->name;
         $golfcourse->hole_no = (int)$request->hole_no;
-        $golfcourse->par = $request->par;
         $golfcourse->hole_length = $request->hole_length;
         $golfcourse->golfclub_id = $request->golfclub_id;
         if ($request->logo) {

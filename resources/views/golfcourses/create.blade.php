@@ -29,11 +29,6 @@
           </div>
 
           <div class="form-group">
-              {{ Form::label('par', trans('golf_courses.par')) }}
-              {{ Form::text('par', null, array('class' => 'form-control')) }}
-          </div>
-
-          <div class="form-group">
               {{ Form::label('golfclub_id', trans('golf_club.golf_clubs')) }}
 
               {{ Form::select('golfclub_id', \App\Golfclub::all()->pluck('name', 'id')->toArray(), null,['placeholder'=> 'Select a Club...', 'class'=>'form-control select2']) }}
