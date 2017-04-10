@@ -5,13 +5,13 @@
     <div class="col-md-8">
 
         <div class="col-md-6 col-md-offset-4">
-            <h1>{{trans('sponsors.sponsor')}}</h1>
+            <h1>{{trans('sponsors.add_sponsor')}}</h1>
             <br/>
 
             <!-- if there are creation errors, they will show here -->
             {{ Html::ul($errors->all()) }}
 
-            {{ Form::model($sponsor, array('action' => array('SponsorsController@update', $sponsor->id), 'files' => true , 'method' => 'PUT')) }}
+            {{ Form::model($sponsor, array('action' => array('SponsorsController@store'), 'method' => 'POST', 'files' => true, 'enctype' => "multipart/form-data")) }}
 
             <div class="form-group">
                 {{ Form::label('name', trans('sponsors.name')) }}
@@ -20,11 +20,11 @@
             <div class="form-group">
                 {{ Form::label('email', trans('sponsors.email')) }}
 
-                {{ Form::text('email', array('class' => 'form-control')) }}
+                {{ Form::text('email', null, array('class' => 'form-control')) }}
             </div>
 
             <div class="form-group">
-                {{ Form::label('logo', trans('tournament.logo')) }}
+                {{ Form::label('logo', trans('sponsors.logo')) }}
                 {{ Form::file('logo', null, array('class' => 'form-control')) }}
             </div>
 

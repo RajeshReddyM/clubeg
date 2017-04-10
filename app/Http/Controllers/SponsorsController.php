@@ -42,7 +42,7 @@ class SponsorsController extends Controller
     {
         $sponsor = new Sponsor;
 
-        return view('tournaments.create')->with(compact('sponsor'));
+        return view('sponsors.create')->with(compact('sponsor'));
     }
 
     /*Created: 2017-04-09 - Michel Tremblay
@@ -91,7 +91,7 @@ class SponsorsController extends Controller
         // get the Sponsor
         $sponsor = Sponsor::find($id);
 
-        // show the edit form and pass the Tournament
+        // show the edit form and pass the Sponsor
         return view('sponsors.edit')->with('sponsor', $sponsor);
     }
 
@@ -115,4 +115,20 @@ class SponsorsController extends Controller
         Session::flash('alert-success', trans('sponsors.update_sponsor'));
         return redirect('/sponsors');
     }
+    /*Created: 2017-04-10 - Michel Tremblay
+     * Controller function which deletes the selected sponsor
+    */
+    public function destroy($id)
+    {
+        $sponsor = Sponsor::findOrFail($id);
+        if($sponsor->delete()){
+            Session::flash('alert-success', trans('sponsors.delete_sponsor'));
+        } else {
+            Session::flash('alert-danger', trans('sponsors.delete_sponsor'));
+        }
+
+
+        return redirect('/sponsors');
+    }
+
 }

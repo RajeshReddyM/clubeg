@@ -1,7 +1,6 @@
 <?php
 return [
     /* create.blade.php */
-    'add_tournament' => 'Add Sponsor',
     'name' => 'Name',
     'email' => 'Email',
     'add_sponsor' => 'Create new Sponsor',
@@ -9,12 +8,13 @@ return [
     'all_sponsors' => 'All Sponsors:',
     'sponsor_place_img' => 'Sponsor placeholder image',
     'available_sponsors' => 'Available Sponsors',
-    'add_sponsor' => 'Create new Sponsor',
-
+    'sponsor' => 'Sponsor',
 
     /* SponsorsController.php */
     'create_sponsor' => 'Successfully created sponsor',
+    'delete_sponsor' => 'Successfully deleted sponsor',
 
     /* edit.blade.php */
     'edit_sponsor' => 'Edit Sponsor',
+
 ];

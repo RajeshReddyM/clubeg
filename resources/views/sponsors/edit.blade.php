@@ -20,7 +20,7 @@
         <div class="form-group">
             {{ Form::label('email', trans('sponsors.email')) }}
 
-          {{ Form::text('email', array('class' => 'form-control')) }}
+          {{ Form::text('email', null, array('class' => 'form-control')) }}
         </div>
 
         <div class="form-group">

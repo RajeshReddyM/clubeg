@@ -18,10 +18,10 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="sponsorName">{{trans('sponsor.name')}}: </label>
+                            <label for="sponsorName">{{trans('sponsors.name')}}: </label>
                         </div>
                         <div class="col-md-6">
-                            <p id="sponsorName">{{$pageData['club']->name}}</p>
+                            <p id="sponsorName">{{$sponsor->name}}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -36,16 +36,22 @@
 
                 </div>
                 <div class="col-md-6">
-                    <!-- Tournament promo photo -->
-                    {{ Html::image('images/tournaments/'. $pageData['tournament']->logo,trans('tournaments.tournament_place_img'), array('class' => 'img img-responsive img-rounded rounded')) }}
+                    <!-- Sponsors promo photo -->
+                    {{ Html::image('images/sponsors/'. $sponsor->logo,trans('sponsors.sponsor_place_img'), array('class' => 'img img-responsive img-rounded rounded')) }}
                 </div>
-            <!-- Register button-->
+            <!-- Admin button-->
             <div class="col-md-8">
                 <div class="row">
                     @if (Auth::user()->isAn('admin'))
-                        <a href="{{action('SponsorsController@edit', $pageData['tournament']->id)}}" class="btn btn-primary">
+                        <a href="{{action('SponsorsController@edit', $sponsor->id)}}" class="btn btn-primary">
                             <i class="glyphicon glyphicon-edit" aria-hidden="true"> </i> {{trans('app.edit')}}
                         </a>
+                        {!! Form::open([
+                          'method' => 'DELETE',
+                          'action' => ['SponsorsController@destroy', $sponsor->id], 'class' => 'deleteResource'
+                        ]) !!}
+                        {{Form::button("<i class='glyphicon glyphicon-trash'></i> ". trans('app.delete'), array('type' => 'submit', 'class' => 'btn btn-danger'))}}
+                        {!! Form::close() !!}
                     @endif
                 </div>
             </div>

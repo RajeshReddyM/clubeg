@@ -1,29 +1,20 @@
 <?php
 return [
     /* create.blade.php */
-    'add_tournament' => 'Ajouter Tournoi',
-    'start_date' => 'Date De Début De',
-    'select_course' => 'Sélectionnez un Cours...',
+    'add_tournament' => 'Add Sponsor',
+    'name' => 'Name',
+    'email' => 'Email',
+    'add_sponsor' => 'Create new Sponsor',
     /* index.blade.php */
-    'all_tournaments' => 'Tous Les Tournois:',
-    'tournament_place_img' => 'Tournoi image d\'espace réservé',
-    'available_tournaments' => 'Disponible Tournois',
+    'all_sponsors' => 'All Sponsors:',
+    'sponsor_place_img' => 'Sponsor placeholder image',
+    'available_sponsors' => 'Available Sponsors',
+    'sponsor' => 'Sponsor',
 
-    /* register.blade.php */
-    'club_name' => 'Nom Du Club',
-    'course_name' => 'Nom Du Cours',
-    'type' => 'Type',
-    'tournament_place_img' => 'Tournoi image d\'espace réservé',
-    'cancel_registration' => 'Annuler L\'Enregistrement',
-    'register' => 'Registre',
 
-    /* TournamentController.php */
-    'create_tournament' => 'Créé avec succès en tournoi',
-    'registration_done' => 'Vous avez été enregistrées!',
-    'registration_failed' => 'L\'enregistrement a échoué. Merci d\'essayer de nouveau.',
-    'registration_cancelled' => 'Inscription annulée.',
-    'cancelled_failed' => 'L\'annulation a échoué. Merci d\'essayer de nouveau.',
+    /* SponsorsController.php */
+    'create_sponsor' => 'Successfully created sponsor',
 
     /* edit.blade.php */
-    'edit_tournament' => 'Éditer le tournoi',
+    'edit_sponsor' => 'Edit Sponsor',
 ];

@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sponsor extends Model
 {
-    public function tournaments()
+
+    protected $fillable = ['name', 'email'];
+    public function sponsor()
     {
         return $this->belongsToMany('App\Tournament')
           ->withTimestamps();
