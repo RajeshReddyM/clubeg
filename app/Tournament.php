@@ -21,6 +21,18 @@ class Tournament extends Model
           ->withTimestamps();
     }
 
+    public function groups()
+    {
+        return $this->belongsToMany('App\Group')
+          ->withTimestamps();
+    }
+
+    public function teams()
+    {
+        return $this->belongsToMany('App\Team')
+          ->withTimestamps();
+    }
+
     public function users()
     {
         return $this->belongsToMany('App\User')
@@ -41,5 +53,7 @@ class Tournament extends Model
     {
         return $this->hasMany('App\Livescore', 'tournament_id');
     }
+
+
 
 }

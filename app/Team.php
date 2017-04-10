@@ -12,6 +12,12 @@ class Team extends Model
           ->withTimestamps();
     }
 
+    public function tournaments()
+    {
+        return $this->belongsToMany('App\Tournament')
+          ->withTimestamps();
+    }
+
     public function listUserNames()
     {
         return $this->users->pluck('first_name')->toArray();
