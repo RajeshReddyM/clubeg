@@ -22,14 +22,6 @@
                         <p id="hole_length">{{$golfcourse->hole_length}}</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="par">{{trans('golf_courses.par')}} </label>
-                    </div>
-                    <div class="col-md-6">
-                        <p id="par">{{$golfcourse->par}}</p>
-                    </div>
-                </div>
             </div>
             <div class="col-md-6">
                 {{ Html::image('images/golfcourses/' . $golfcourse->logo,trans('golf_courses.golf_course_place_img'), array('class' => 'img img-responsive img-rounded rounded')) }}
