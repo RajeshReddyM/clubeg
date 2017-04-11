@@ -39,6 +39,9 @@ Route::group( ['middleware' => 'auth' ], function() {
     Route::resource('tournaments', 'TournamentsController');
     Route::get('/tournaments/{id}/register', 'TournamentsController@register');
     Route::get('/tournaments/{id}/unregister', 'TournamentsController@unregister');
+    //Routes to Sponsors Controller
+    Route::resource('sponsors', 'SponsorsController');
+    Route::get('/sponsors/{id}/edit', 'SponsorsController@edit');
 
     Route::resource('groups', 'GroupsController');
 
@@ -62,5 +65,9 @@ Route::group( ['middleware' => 'auth' ], function() {
     Route::get('images/tournaments/{filename}', function ($filename)
     {
         return Image::make(storage_path() . '/app/tournaments/' . $filename)->response();
+    });
+    Route::get('images/sponsors/{filename}', function ($filename)
+    {
+        return Image::make(storage_path() . '/app/sponsors/' . $filename)->response();
     });
 });

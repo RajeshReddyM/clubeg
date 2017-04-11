@@ -91,35 +91,31 @@
 
 
             <!-- sponsor area -->
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Sponsors</h2>
-                    <hr/>
-                    <div class="col-md-4 well well-md">
-                        <p>{Sponsor 1}</p>
-                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
-                    </div>
-                    <div class="col-md-4 well well-md">
-                        <p>{Sponsor 2}</p>
-                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
-                    </div>
-                    <div class="col-md-4 well well-md">
-                        <p>{Sponsor 3}</p>
-                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
-                    </div>
-                    <div class="col-md-4 well well-md">
-                        <p>{Sponsor 4}</p>
-                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
-                    </div>
-                    <div class="col-md-4 well well-md">
-                        <p>{Sponsor 5}</p>
-                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
-                    </div>
-                    <div class="col-md-4 well well-md">
-                        <p>{Sponsor 6}</p>
-                        {{ Html::image('http://placehold.it/350x150',"Sponsor placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
-                    </div>
-                </div>
+            <div class="col-md-10">
+                <h2>Sponsors</h2>
+                <hr/>
+                @if (count($pageData['sponsors']))
+                    @foreach($pageData['sponsors'] as $sponsor)
+                      @if($sponsor->logo)
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+                              <div class="panel-body">
+                                  <div class="hovereffect">
+                                    <a href="/sponsors/{{$sponsor->id}}">
+                                      {{ Html::image('images/sponsors/' . $sponsor->logo,trans('golf_courses.golf_course_place_img'), array('class' => 'img img-responsive img-rounded rounded')) }}
+                                      <div class="overlay">
+                                        <h2><?php echo  $sponsor->name ?></h2>
+                                      </div>
+                                    </a>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                      @endif
+                    @endforeach
+                @else
+                 <h3> No Sponsors found </h3>
+                @endif
             </div>
         </div>
     </div>

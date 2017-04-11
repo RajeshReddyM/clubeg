@@ -13,7 +13,6 @@ return [
     'club_name' => 'Club Name',
     'course_name' => 'Course Name',
     'type' => 'Type',
-    'tournament_place_img' => 'Tournament placeholder image',
     'cancel_registration' => 'Cancel Registration',
     'register' => 'Register',
 
@@ -26,4 +25,5 @@ return [
 
     /* edit.blade.php */
     'edit_tournament' => 'Edit Tournament',
+    'select_sponsors' => 'Select sponsors'
 ];

@@ -63,8 +63,8 @@ class TournamentsController extends Controller
         $tournament->visibility = $request->visibility;
         $tournament->division = $request->division;
         $tournament->logo = $filename;
-        $tournament->save();
 
+        $tournament->save();
 
         if (Auth::user()) {
             Session::flash('alert-success', trans('tournaments.create_tournament'));
@@ -82,6 +82,7 @@ class TournamentsController extends Controller
         //grab the required tournament and course info
         $tournament =  Tournament::find($id);
         $golfcourse = Golfcourse::where('id', $tournament->golfcourse_id)->first();
+        $sponsors = $tournament->sponsors;
         $club = Golfclub::where('id', $golfcourse->golfclub_id)->first();
 
         //determine if the user is registered for the requested tournament
@@ -90,6 +91,7 @@ class TournamentsController extends Controller
         $pageData = array(
             'tournament' =>$tournament,
             'golfcourse' => $golfcourse,
+            'sponsors' => $sponsors,
             'club' =>$club,
             'isRegistered' => $registered,
             'user' => $user
@@ -161,7 +163,7 @@ class TournamentsController extends Controller
         $tournament = Tournament::find($id);
 
         // show the edit form and pass the Tournament
-        return view('Tournaments.edit')->with('tournament', $tournament);
+        return view('tournaments.edit')->with('tournament', $tournament);
     }
 
 

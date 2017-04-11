@@ -41,6 +41,7 @@
             {{ Form::label('start_date', trans('tournaments.start_date')) }}
             {{ Form::text('start_date', date('Y/m/d'), array('class' => 'form-control')) }}
         </div>
+
         <div class="form-group">
             {{ Form::label('logo', trans('golf_club.logo')) }}
             {{ Form::file('logo', null, array('class' => 'form-control')) }}
