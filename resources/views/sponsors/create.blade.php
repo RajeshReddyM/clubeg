@@ -22,6 +22,11 @@
 
                 {{ Form::text('email', null, array('class' => 'form-control')) }}
             </div>
+            
+            <div class="form-group">
+                {{ Form::label('tournaments', 'Tournaments') }}
+                {{ Form::select('tournaments[]', \App\Tournament::all()->pluck('name', 'id')->toArray(), null, ['multiple'=>true,'class'=>'form-control select2']) }}
+            </div>
 
             <div class="form-group">
                 {{ Form::label('logo', trans('sponsors.logo')) }}

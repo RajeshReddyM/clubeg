@@ -41,11 +41,7 @@
             {{ Form::label('start_date', trans('tournaments.start_date')) }}
             {{ Form::text('start_date', date('Y/m/d'), array('class' => 'form-control')) }}
         </div>
-      <div class="form-group">
-        {{ Form::label('sponsor_id', trans('sponsors.sponsor')) }}
 
-        {{ Form::select('sponsor_id', \App\Sponsor::all()->pluck('name', 'id')->toArray(), null,['placeholder'=> trans('tournaments.select_sponsors'), 'class'=>'form-control select2']) }}
-      </div>
         <div class="form-group">
             {{ Form::label('logo', trans('golf_club.logo')) }}
             {{ Form::file('logo', null, array('class' => 'form-control')) }}

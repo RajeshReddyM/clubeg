@@ -54,21 +54,4 @@ class Tournament extends Model
         return $this->hasMany('App\Livescore', 'tournament_id');
     }
 
-
-
-    public function deleteSponsors() {
-        $sponsors = $this->sponsors;
-        foreach ($sponsors as $s) {
-            $this->sponsors()->detach($s->id);
-        }
-    }
-
-    public function assignSponsors($sponsors) {
-        foreach ($sponsors as $s) {
-            $this->tournaments()->attach($s);
-        }
-    }
-
-
-
 }

@@ -57,7 +57,10 @@ class SponsorsController extends Controller
         $sponsor->email = $request->email;
         $sponsor->logo = $filename;
         $sponsor->save();
-
+        $tournaments = $request->tournaments;
+        if ($tournaments) {
+            $sponsor->assignTournaments($tournaments);
+        }
 
         if (Auth::user()) {
             Session::flash('alert-success', trans('sponsors.create_sponsor'));
@@ -112,6 +115,11 @@ class SponsorsController extends Controller
         }
         $sponsor->save();
 
+        $tournaments = $request->tournaments;
+        if ($tournaments) {
+            $sponsor->deleteTournaments();
+            $sponsor->assignTournaments($tournaments);
+        }
         Session::flash('alert-success', trans('sponsors.update_sponsor'));
         return redirect('/sponsors');
     }

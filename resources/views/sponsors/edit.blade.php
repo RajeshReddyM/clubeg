@@ -24,6 +24,11 @@
         </div>
 
         <div class="form-group">
+            {{ Form::label('tournaments', 'Tournaments') }}
+            {{ Form::select('tournaments[]', \App\Tournament::all()->pluck('name', 'id')->toArray(), $sponsor->listTournamentIds(), ['multiple'=>true,'class'=>'form-control select2']) }}
+        </div>
+
+        <div class="form-group">
             {{ Form::label('logo', trans('tournament.logo')) }}
             {{ Form::file('logo', null, array('class' => 'form-control')) }}
         </div>

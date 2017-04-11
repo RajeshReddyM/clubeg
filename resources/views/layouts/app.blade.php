@@ -123,6 +123,7 @@
                                 <li><a class="dropdown-item"  href="{{ action('TournamentsController@index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  {{trans('app.tournaments')}} </a></li>
                             @endif
                             @if (Auth::user()->isAn('admin'))
+                                <li><a class="dropdown-item"  href="{{ action('SponsorsController@index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  Sponsors </a></li>
                                 <li ><a class="dropdown-item"  href="{{ route('rounds.index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  Rounds </a></li>
                             @endif
                             <li ><a class="dropdown-item" href="{{ route('groups.index') }}">{{trans('app.groups')}}<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
