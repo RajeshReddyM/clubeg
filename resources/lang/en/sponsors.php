@@ -16,5 +16,6 @@ return [
 
     /* edit.blade.php */
     'edit_sponsor' => 'Edit Sponsor',
+    'submit' => 'Submit',
 
 ];
