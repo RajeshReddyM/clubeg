@@ -35,7 +35,7 @@
                 @for ($i = 1; $i < 19; $i++)
                     <div class="col-md-4 col-xs-6 col-sm-6">
                         {{ Form::label('scores', 'Hole #'.$i) }}
-                        {{ Form::number('hole', null, array('class'=> 'form-control','id' => $i, 'style'=>'width: 8rem', 'min'=>1, 'max'=>5)) }}
+                        {{ Form::number('H'.$i, null, array('class'=> 'form-control','id' => 'H'.$i, 'style'=>'width: 8rem', 'min'=>1, 'max'=>5)) }}
                     </div>
                 @endfor
             </div>

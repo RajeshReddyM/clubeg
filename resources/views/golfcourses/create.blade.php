@@ -44,7 +44,7 @@
                 @for ($i = 1; $i < 19; $i++)
                     <div class="col-md-3 col-xs-6 col-sm-6">
                         {{ Form::label('scores', 'Par #'.$i) }}
-                        {{ Form::number('par'.$i, null, array('class'=> 'form-control','id' => 'par'.$i, 'style'=>'width: 8rem', 'min'=>1, 'max'=>5)) }}
+                        {{ Form::number('P'.$i, null, array('class'=> 'form-control','id' => 'P'.$i, 'style'=>'width: 8rem', 'min'=>1, 'max'=>5)) }}
                     </div>
                 @endfor
             </div>
