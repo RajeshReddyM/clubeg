@@ -42,7 +42,7 @@
             <div class="row">
                 @for ($i = 1; $i <= 18; $i++)
                     <div class="col-md-2 col-xs-3 col-sm-3">
-                        {{ Form::label('scores', 'Par #'.$i) }}
+                        {{ Form::label('scores', 'Par#'.$i) }}
                         {{ Form::number('P'.$i, null, array('class'=> 'form-control','id' => 'P'.$i, 'style'=>'width: 8rem', 'min'=>1, 'max'=>5)) }}
                     </div>
                 @endfor

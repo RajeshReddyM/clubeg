@@ -71,7 +71,7 @@ class LivescoresController extends Controller
         $users = User::all();
 
         // show the edit form and pass the Score
-        return view('scores.edit', ['score' => $core, 'users' => $users]);
+        return view('scores.edit', ['score' => $score, 'users' => $users]);
     }
 
     /**
