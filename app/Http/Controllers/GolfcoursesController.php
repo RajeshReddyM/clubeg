@@ -45,6 +45,7 @@ class GolfcoursesController extends Controller
         $golfcourse->hole_length = $request->hole_length;
         $golfcourse->golfclub_id = $request->golfclub_id;
         $golfcourse->logo = $filename;
+        $golfcourse->assignParValues($request);
         $golfcourse->save();
 
 

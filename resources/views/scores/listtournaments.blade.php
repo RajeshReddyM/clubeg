@@ -2,9 +2,18 @@
 
 @section('content')
 
-<div class="col-md-8">
-
-    <div class="col-md-6 col-md-offset-4">
+<div class="col-md-10">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="flash-message">
+        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+          @if(Session::has('alert-' . $msg))
+          <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p>
+          @endif
+        @endforeach
+      </div>
+      
+    </div>
+    <div class="col-md-6 col-md-offset-2">
       <h2>Select a Tournament</h2>
       <br/>
 

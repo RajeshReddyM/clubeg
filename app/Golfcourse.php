@@ -23,4 +23,11 @@ class Golfcourse extends Model
     {
         return $this->hasMany('App\Livescore', 'golfcourse_id');
     }
+
+    public function assignParValues($request)
+    {
+        for ($i=1; $i<=18; $i++) {
+            $this['P'.(string)$i] = $request['P'.(string)$i];
+        }
+    }
 }

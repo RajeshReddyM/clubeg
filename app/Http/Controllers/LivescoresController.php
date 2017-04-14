@@ -43,6 +43,18 @@ class LivescoresController extends Controller
     public function store(Request $request)
     {
         $score = new Livescore();
+        $score->user_id = $request->user_id;
+        $score->tournament_id = $request->tournament_id;
+        $score->golfcourse_id = $request->golfcourse_id;
+        $score->groupNo = $request->groupNo;
+        $score->teamNo = $request->teamNo;
+        $score->assignHoleValues($request);
+        $score->save();
+
+        if (Auth::user()) {
+            Session::flash('alert-success', 'Score Created Successfully');
+            return redirect('/scores/create');
+        }
    
     }
 
@@ -85,7 +97,7 @@ class LivescoresController extends Controller
     {
         $tournament = Tournament::find($id);
         $scores = $tournament->livescores;
-        if ($scores) {
+        if (count($scores)) {
             $golfcourse = $scores[0]->golfcourse;
             return view('scores.listscores', ['scores' => $scores, 'golfcourse' => $golfcourse, 'tournament' => $tournament]);
         } else {
