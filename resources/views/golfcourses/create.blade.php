@@ -38,6 +38,17 @@
               {{ Form::label('logo', trans('golf_club.logo')) }}
               {{ Form::file('logo', null, array('class' => 'form-control')) }}
           </div>
+        <div class="form-group">
+            <div class="row">
+                {{ Form::label('par', 'Select Par Values', array('class'=>'col-sm-12')) }}
+                @for ($i = 1; $i < 19; $i++)
+                    <div class="col-md-3 col-xs-6 col-sm-6">
+                        {{ Form::label('scores', 'Par #'.$i) }}
+                        {{ Form::number('par'.$i, null, array('class'=> 'form-control','id' => 'par'.$i, 'style'=>'width: 8rem', 'min'=>1, 'max'=>5)) }}
+                    </div>
+                @endfor
+            </div>
+        </div>
 
           {{ Form::submit(trans('golf_club.submit'), array('class' => 'btn btn-primary')) }}
 
