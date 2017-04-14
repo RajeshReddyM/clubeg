@@ -17,14 +17,7 @@
               {{ Form::label('users', 'Players') }}
               {{ Form::select('users[]', \App\User::all()->pluck('first_name', 'id')->toArray(), null, ['placeholder'=> 'Select Player...','class'=>'form-control select2']) }}
           </div>
-          <div class="form-group">
-              {{ Form::label('hole', 'Hole') }}
-              {{ Form::select('hole', ['1' => '1', '2' => '2', '3' => '3', '4' => '4' ], null, ['placeholder'=> 'Select Hole...','class'=>'form-control select2']) }}
-          </div>
-          <div class="form-group">
-              {{ Form::label('score', 'Score') }}
-              {{ Form::text('score', null, array('class' => 'form-control')) }}
-          </div>
+
           <div class="form-group">
               {{ Form::label('tournament_id', 'Tournament') }}
               {{ Form::select('tournament_id', \App\Tournament::all()->pluck('name', 'id')->toArray(), null, ['placeholder'=> 'Select Tournament...','class'=>'form-control select2']) }}
@@ -37,6 +30,16 @@
               {{ Form::label('teamNo', 'Team') }}
               {{ Form::select('teamNo', \App\Team::all()->pluck('name', 'id')->toArray(), null, ['placeholder'=> 'Select Team...','class'=>'form-control select2']) }}
           </div>
+        <div class="form-group">
+            <div class="row">
+                @for ($i = 1; $i < 19; $i++)
+                    <div class="col-md-4 col-xs-6 col-sm-6">
+                        {{ Form::label('scores', 'Hole #'.$i) }}
+                        {{ Form::number('hole', null, array('class'=> 'form-control','id' => $i, 'style'=>'width: 8rem', 'min'=>1, 'max'=>5)) }}
+                    </div>
+                @endfor
+            </div>
+        </div>
 
           {{ Form::submit('Submit', array('class' => 'btn btn-primary')) }}
 
