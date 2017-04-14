@@ -54,4 +54,9 @@ class Tournament extends Model
         return $this->hasMany('App\Livescore', 'tournament_id');
     }
 
+    public function listNames()
+    {
+
+    }
+
 }

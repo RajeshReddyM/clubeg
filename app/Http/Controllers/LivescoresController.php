@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Livescore;
 use App\Tournament;
 use App\User;
+use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
@@ -73,10 +74,26 @@ class LivescoresController extends Controller
         
     }
 
+
+    public function listtournaments()
+    {
+        $tournaments = Tournament::select(DB::raw("CONCAT(name) AS t_name, id"))->pluck('t_name', 'id');
+        return view('scores.listtournaments', ['tournaments' => $tournaments]);
+    }
+
     public function listscores($id)
     {
-
+        $tournament = Tournament::find($id);
+        $scores = $tournament->livescores;
+        if ($scores) {
+            $golfcourse = $scores[0]->golfcourse;
+            return view('scores.listscores', ['scores' => $scores, 'golfcourse' => $golfcourse, 'tournament' => $tournament]);
+        } else {
+            Session::flash('alert-success', "No Scores Entered for this Tournament");
+            return redirect('/listtournaments');
+        }
     }
+
      /**
      * Destroy the resource.
      *

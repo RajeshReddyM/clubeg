@@ -109,6 +109,7 @@ class TournamentsController extends Controller
         $user = Auth::user();
         //grab the required tournament and course info
         $tournament =  Tournament::where('id', $id)->first();
+        $sponsors = $tournament->sponsors;
         $golfcourse = Golfcourse::where('id', $tournament->golfcourse_id)->first();
         $club = Golfcourse::where('id', $golfcourse->golfclub_id)->first();
         $tournament->users()->attach($user->id);
@@ -121,6 +122,7 @@ class TournamentsController extends Controller
         $pageData = array(
             'tournament' =>$tournament,
             'golfcourse' => $golfcourse,
+            'sponsors' => $sponsors,
             'club' =>$club,
             'isRegistered' => $registered
         );
@@ -135,6 +137,7 @@ class TournamentsController extends Controller
         $user = Auth::user();
         //grab the required tournament and course info
         $tournament =  Tournament::where('id', $id)->first();
+        $sponsors = $tournament->sponsors;
         $golfcourse = Golfcourse::where('id', $tournament->golfcourse_id)->first();
         $club = Golfclub::where('id', $golfcourse->golfclub_id)->first();
         $tournament->users()->detach($user->id);
@@ -148,6 +151,7 @@ class TournamentsController extends Controller
         $pageData = array(
             'tournament' =>$tournament,
             'golfcourse' => $golfcourse,
+            'sponsors' => $sponsors,
             'club' =>$club,
             'isRegistered' => $registered
         );
