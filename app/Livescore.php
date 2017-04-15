@@ -27,6 +27,13 @@ class Livescore extends Model
         return $this->tournament->users->pluck('first_name')->toArray();
     }
 
+    public function assignHoleValues($request)
+    {
+        for ($i=1; $i<=18; $i++) {
+            $this['H'.(string)$i] = $request['H'.(string)$i];
+        }
+    }
+
     public function total()
     {
         $total = 0;
