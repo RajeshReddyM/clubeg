@@ -32,8 +32,8 @@
             </div>
 
             <div class="form-group">
-                {{ Form::label('users', 'Players') }}
-                {{ Form::select('users[]', \App\User::all()->pluck('first_name', 'id')->toArray(), null, ['placeholder'=> 'Select Player...','class'=>'form-control select2']) }}
+                {{ Form::label('user_id', 'Players') }}
+                {{ Form::select('user_id', \App\User::all()->pluck('first_name', 'id')->toArray(), null, ['placeholder'=> 'Select Player...','class'=>'form-control select2']) }}
             </div>
 
             <div class="form-group">

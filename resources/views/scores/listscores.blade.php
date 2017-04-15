@@ -31,6 +31,7 @@
               <td class="text-center"> <b> IN </b></td>
               <td class="text-center"> <b> Total </b></td>
               <td class="text-center"> <b> +/- </b></td>
+              <td></td>
             </tr>
             <tr>
               <td class="text-center"> <b> Par </b> </td>
@@ -44,6 +45,7 @@
               <td class="text-center"><b> 36</b></td>
               <td class="text-center"><b> 72</b></td>
               <td class="text-center"></td>
+              <td></td>
             </tr>
           </thead>
           <tbody>
@@ -84,6 +86,13 @@
                   <td class="text-center"> <b> {{$score->in()}} </b> </td>
                   <td class="text-center"> <b> {{$score->total()}} </b> </td>
                   <td class="text-center"> <b> {{$score->diff()}} </b> </td>
+                  <td class="text-center">
+                    @if (Auth::user()->isAn('admin', 'scorer'))
+                      <a href="{{route('scores.edit', $score->id)}}" class="btn btn-primary">
+                          <i class="glyphicon glyphicon-edit" aria-hidden="true"> </i>
+                      </a>
+                    @endif
+                  </td>
                 </tr>
               @endforeach
           </tbody>

@@ -83,7 +83,21 @@ class LivescoresController extends Controller
 
     public function update($id)
     {
-        
+        $request = request();
+        $score = Livescore::findOrFail($id);
+        $score->user_id = $request->user_id;
+        $score->tournament_id = $request->tournament_id;
+        $score->golfcourse_id = $request->golfcourse_id;
+        $score->groupNo = $request->groupNo;
+        $score->teamNo = $request->teamNo;
+        $score->assignHoleValues($request);
+        $score->save();
+
+        if (Auth::user()) {
+            Session::flash('alert-success', 'Score Updated Successfully');
+            return redirect('listtournaments');
+        }
+
     }
 
 
