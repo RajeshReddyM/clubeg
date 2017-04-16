@@ -107,7 +107,7 @@
                       @endif
                     @endforeach
                 @else
-                 <h3> No Golfcourses found </h3>
+                 <h3> {{trans('golf_courses.no_golfcourses')}} </h3>
                 @endif
             </div>
         </div>

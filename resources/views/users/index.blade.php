@@ -16,7 +16,7 @@
           </div>
           <div class="col-md-2">
               <a href="{{ action('UsersController@create') }}" class="btn btn-success addButton">
-                <i class="glyphicon glyphicon-plus" aria-hidden="true"> </i> Add Player
+                <i class="glyphicon glyphicon-plus" aria-hidden="true"> </i> {{trans('app.add_player')}}
               </a>
           </div>
       </div>

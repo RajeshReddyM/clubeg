@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-2">
                 <a href="{{ action('GolfcoursesController@create') }}" class="btn btn-success addButton">
-                  <i class="glyphicon glyphicon-plus" aria-hidden="true"> </i> Add Golfcourse
+                  <i class="glyphicon glyphicon-plus" aria-hidden="true"> </i> {{trans('golf_courses.add_golf_courses')}}
                 </a>
             </div>
         </div>

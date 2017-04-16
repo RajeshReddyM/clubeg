@@ -12,20 +12,20 @@
       </div>
       <div class="row">
           <div class="col-md-3">
-              <h3>Listing Groups</h3>
+              <h3>{{trans('groups.listing_groups')}}</h3>
           </div>
           <div class="col-md-2">
               <a href="{{ action('GroupsController@create') }}" class="btn btn-success addButton">
-                <i class="glyphicon glyphicon-plus" aria-hidden="true"> </i> Add Group
+                <i class="glyphicon glyphicon-plus" aria-hidden="true"> </i> {{trans('groups.add_group')}}
               </a>
           </div>
       </div>
       <table class="table table-responsive">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Players</th>
-            <th>Tournaments</th>
+            <th>{{trans('sponsors.name')}}</th>
+            <th>{{trans('groups.players')}}</th>
+            <th>{{trans('groups.tournaments')}}</th>
             <th></th>
           </tr>
         </thead>
