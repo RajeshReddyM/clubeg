@@ -14,5 +14,8 @@ return [
     /*index.blade.php*/
     'listing_groups' => 'Liste Des Groupes',
 
-
+    /*RoundsController.php*/
+    'round_success_create' => 'Tour A Créé Avec Succès',
+    'round_success_update' => 'Tour Mis À Jour Avec Succès',
+    'round_success_delete' => 'Tour supprimé avec Succès',
 ];

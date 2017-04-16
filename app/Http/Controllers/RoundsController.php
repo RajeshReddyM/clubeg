@@ -44,7 +44,7 @@ class RoundsController extends Controller
         $round->tournament_id = $request->tournament_id;
         $round->save();
         if (Auth::user()) {
-            Session::flash('alert-success', 'Round Created Successfully');
+            Session::flash('alert-success', trans('rounds.round_success_create'));
             return redirect('/rounds');
         }
     }
@@ -79,7 +79,7 @@ class RoundsController extends Controller
         $round->tournament_id = $request->tournament_id;
         $round->save();
         if (Auth::user()) {
-            Session::flash('alert-success', "Round Updated Successfully");
+            Session::flash('alert-success', trans('rounds.round_success_update'));
             return redirect('/rounds');
         }
     }
@@ -95,7 +95,7 @@ class RoundsController extends Controller
     {
         $round = Round::findOrFail($id);
         $round->delete();
-        Session::flash('alert-success', "Round deleted Successfully");
+        Session::flash('alert-success', trans('rounds.round_success_delete'));
         return redirect('/rounds');
     }
 }

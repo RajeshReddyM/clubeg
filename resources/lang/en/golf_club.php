@@ -24,4 +24,6 @@ return [
     'create_golfclub' => 'Successfully created golf club',
     'update_golfclub' => 'Golf club updated Successfully',
     'delete_golfclub' => 'Golf club deleted Successfully',
+    'success_register' => 'You have been Successfully Registered',
+    'success_unregister' => 'You have been Unregistered Successfully',
 ];

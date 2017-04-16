@@ -49,14 +49,14 @@ class GroupsController extends Controller
         $tournaments = $request->tournaments;
 
         if (count($users) > 4) {
-            Session::flash('alert-danger', "Group cannot have more than 4 players");
+            Session::flash('alert-danger', trans('groups.not_more_players'));
             return redirect('/groups');
         } else {
             $group->save();
             $group->assignUsers($users);
             $group->assignTournaments($tournaments);
             if (Auth::user()) {
-                Session::flash('alert-success', "Group successfully created");
+                Session::flash('alert-success', trans('groups.group_success_create'));
                 return redirect('/groups');
             }
         }         
@@ -96,7 +96,7 @@ class GroupsController extends Controller
         $tournaments = $request->tournaments;
         $totalUsers = count($users);
         if ($totalUsers > 4) {
-            Session::flash('alert-danger', "Group cannot have more than 4 players");
+            Session::flash('alert-danger', trans('groups.not_more_players'));
             return redirect('/groups');
         } else {
             $group->save();
@@ -106,7 +106,7 @@ class GroupsController extends Controller
             $group->tournaments()->attach($tournaments);
 
             if (Auth::user()) {
-                Session::flash('alert-success', "Group updated successfully");
+                Session::flash('alert-success', trans('groups.group_success_update'));
                 return redirect('/groups');
             }
         }
@@ -123,7 +123,7 @@ class GroupsController extends Controller
     {
         $group = Group::findOrFail($id);
         $group->delete();
-        Session::flash('alert-success', "Group deleted Successfully");
+        Session::flash('alert-success', trans('groups.group_success_delete'));
         return redirect('/groups');
     }
 }

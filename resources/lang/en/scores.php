@@ -30,5 +30,11 @@ return [
 
     'select_a_tournament' => 'Select a Tournament',
 
+    /*LivescoresController.php*/
+    'score_success_create' => 'Score Created Successfully',
+    'score_success_update' => 'Score Updated Successfully',
+    'no_scores' => 'No Scores Entered for this Tournament',
+    'score_success_delete' => 'Score Deleted Successfully',
+
 
 ];

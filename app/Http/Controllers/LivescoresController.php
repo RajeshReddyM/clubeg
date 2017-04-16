@@ -52,7 +52,7 @@ class LivescoresController extends Controller
         $score->save();
 
         if (Auth::user()) {
-            Session::flash('alert-success', 'Score Created Successfully');
+            Session::flash('alert-success', trans('scores.score_success_create'));
             return redirect('/scores/create');
         }
    
@@ -94,7 +94,7 @@ class LivescoresController extends Controller
         $score->save();
 
         if (Auth::user()) {
-            Session::flash('alert-success', 'Score Updated Successfully');
+            Session::flash('alert-success', trans('scores.score_success_update'));
             return redirect('listtournaments');
         }
 
@@ -115,7 +115,7 @@ class LivescoresController extends Controller
             $golfcourse = $scores[0]->golfcourse;
             return view('scores.listscores', ['scores' => $scores, 'golfcourse' => $golfcourse, 'tournament' => $tournament]);
         } else {
-            Session::flash('alert-success', "No Scores Entered for this Tournament");
+            Session::flash('alert-success', trans('scores.no_scores'));
             return redirect('/listtournaments');
         }
     }
@@ -131,7 +131,7 @@ class LivescoresController extends Controller
     {
         $score = Livescore::findOrFail($id);
         $score->delete();
-        Session::flash('alert-success', "Score Deleted Successfully");
+        Session::flash('alert-success', trans('scores.score_success_delete'));
         return redirect('/scores');
     }
 }

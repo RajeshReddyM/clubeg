@@ -30,5 +30,9 @@ return [
 
     'select_a_tournament' => 'Sélectionnez un Tournoi',
 
-
+    /*LivescoresController.php*/
+    'score_success_create' => 'Score créé avec succès',
+    'score_success_update' => 'Score Mis À Jour Avec Succès',
+    'no_scores' => 'Pas de résultats inscrits pour ce tournoi',
+    'score_success_delete' => 'Score supprimé avec succès',
 ];

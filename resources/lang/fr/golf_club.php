@@ -24,4 +24,6 @@ return [
     'create_golfclub' => 'Créé avec succès golf club',
     'update_golfclub' => 'Le club de golf a été mis à jour avec succès',
     'delete_golfclub' => 'Le club de golf a été supprimé avec succès',
+    'success_register' => 'Vous avez bien été Enregistré',
+    'success_unregister' => 'Vous avez été ou Non Correctement',
 ];

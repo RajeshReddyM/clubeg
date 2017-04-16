@@ -14,5 +14,8 @@ return [
     /*index.blade.php*/
     'listing_groups' => 'Listing Groups',
 
-
+    /*RoundsController.php*/
+    'round_success_create' => 'Round Created Successfully',
+    'round_success_update' => 'Round Updated Successfully',
+    'round_success_delete' => 'Round deleted Successfully',
 ];
