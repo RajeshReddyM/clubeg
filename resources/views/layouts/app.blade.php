@@ -129,7 +129,7 @@
                             <li ><a class="dropdown-item" href="{{ route('groups.index') }}">{{trans('app.groups')}}<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
                             <li ><a class="dropdown-item" href="{{ route('teams.index') }}">{{trans('app.teams')}}<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
                             @if (Auth::user()->isAn('admin', 'scorer'))
-                                <li ><a class="dropdown-item" href="/listtournaments"> Scores <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                                <li ><a class="dropdown-item" href="/listtournaments"> {{trans('scores.scores')}} <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
                                 <li ><a class="dropdown-item" href="{{ route('scores.create') }}"> {{trans('scores.add_score')}} <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-plus"></span></a></li>
                             @endif
                             @if (Auth::user()->isAn('admin'))
