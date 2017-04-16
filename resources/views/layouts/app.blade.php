@@ -123,14 +123,14 @@
                                 <li><a class="dropdown-item"  href="{{ action('TournamentsController@index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  {{trans('app.tournaments')}} </a></li>
                             @endif
                             @if (Auth::user()->isAn('admin'))
-                                <li><a class="dropdown-item"  href="{{ action('SponsorsController@index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  Sponsors </a></li>
-                                <li ><a class="dropdown-item"  href="{{ route('rounds.index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  Rounds </a></li>
+                                <li><a class="dropdown-item"  href="{{ action('SponsorsController@index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  {{trans('app.sponsors')}} </a></li>
+                                <li ><a class="dropdown-item"  href="{{ route('rounds.index') }}"><i class="pull-right glyphicon glyphicon-list"></i>  {{trans('app.rounds')}} </a></li>
                             @endif
                             <li ><a class="dropdown-item" href="{{ route('groups.index') }}">{{trans('app.groups')}}<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
-                            <li ><a class="dropdown-item" href="{{ route('teams.index') }}">Teams<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                            <li ><a class="dropdown-item" href="{{ route('teams.index') }}">{{trans('app.teams')}}<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
                             @if (Auth::user()->isAn('admin', 'scorer'))
                                 <li ><a class="dropdown-item" href="/listtournaments"> Scores <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
-                                <li ><a class="dropdown-item" href="{{ route('scores.create') }}"> Add Score <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-plus"></span></a></li>
+                                <li ><a class="dropdown-item" href="{{ route('scores.create') }}"> {{trans('scores.add_score')}} <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-plus"></span></a></li>
                             @endif
                             @if (Auth::user()->isAn('admin'))
                                 <li class="dropdown">

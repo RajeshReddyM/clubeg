@@ -3,7 +3,7 @@
 @section('content')
 <div class="main">
     <div class="col-md-4 col-md-offset-2">
-      <h1>{{trans('app.edit')}} Group</h1>
+      <h1>{{trans('app.edit_group')}}</h1>
 
       <!-- if there are creation errors, they will show here -->
       {{ Html::ul($errors->all()) }}

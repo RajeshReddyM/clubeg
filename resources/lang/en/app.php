@@ -38,4 +38,13 @@ return [
     'tournaments' => 'Tournaments',
     'scores' => 'Scores',
     'groups' => 'Groups',
+
+    'sponsors' => 'Sponsors',
+    'rounds' => 'Rounds',
+    'teams' => 'Teams',
+    'registered_tournaments' => 'Registered Tournaments:',
+    'available_tournaments' => 'Available Tournaments:',
+    'edit_group' => 'Edit Group',
+    'edit_round' => 'Edit Round',
+    'edit_team' => 'Edit Team',
 ];

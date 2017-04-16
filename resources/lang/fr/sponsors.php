@@ -1,22 +1,22 @@
 <?php
 return [
     /* create.blade.php */
-    'add_tournament' => 'Add Sponsor',
-    'name' => 'Name',
-    'email' => 'Email',
-    'add_sponsor' => 'Create new Sponsor',
+    'add_tournament' => 'Ajouter Le Commanditaire',
+    'name' => 'Nom',
+    'email' => 'E-mail',
+    'add_sponsor' => 'Créer un nouveau Sponsor',
+    'tournaments' => 'Tournois',
     /* index.blade.php */
-    'all_sponsors' => 'All Sponsors:',
-    'sponsor_place_img' => 'Sponsor placeholder image',
-    'available_sponsors' => 'Available Sponsors',
-    'sponsor' => 'Sponsor',
-
+    'all_sponsors' => 'Tous Les Commanditaires:',
+    'sponsor_place_img' => 'Le commanditaire de l\'espace réservé d\'image',
+    'available_sponsors' => 'Disponible Sponsors',
+    'sponsor' => 'Le commanditaire',
 
     /* SponsorsController.php */
-    'create_sponsor' => 'Successfully created sponsor',
+    'create_sponsor' => 'Créé avec succès commanditaire',
+    'delete_sponsor' => 'Supprimé avec succès commanditaire',
 
     /* edit.blade.php */
-    'edit_sponsor' => 'Edit Sponsor',
-
+    'edit_sponsor' => 'Modifier le sponsor',
     'submit' => 'Soumettre',
 ];

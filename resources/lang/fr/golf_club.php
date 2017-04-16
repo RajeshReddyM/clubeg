@@ -13,7 +13,6 @@ return [
     'submit' => 'Soumettre',
 
     'editing_club' => 'Édition Du Club',
-
     /* Golf Club - index.blade.php */
     'golf_clubs' => 'Les clubs de golf',
     'club_place_image' => 'Paramètre fictif réservé pour un image du club',

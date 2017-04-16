@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Alif
- * Date: 12-Mar-17
- * Time: 9:34 PM
- */
+
 return [
     /* Golf Club - create.blade.php & edit.blade.php */
     'add_club' => 'Add Club',

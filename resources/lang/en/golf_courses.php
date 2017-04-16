@@ -9,7 +9,7 @@ return [
     'select_club' => 'Select a Club...',
     'golf_course_place_img' => 'Golf Course placeholder image',
     'edit_golf_course' => 'Editing Golf Course',
-    'no_golfcourses' => 'No Golfcourses found',
+    'no_golfcourses' => 'No Golf Courses found',
 
     /* Golf Course - GolfCourseController.php */
     'create_golfcourse' => 'Successfully created golf course',

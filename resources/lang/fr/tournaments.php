@@ -4,6 +4,9 @@ return [
     'add_tournament' => 'Ajouter Tournoi',
     'start_date' => 'Date De Début De',
     'select_course' => 'Sélectionnez un Cours...',
+    'visibility' => 'Visibilité',
+    'division' => 'Division',
+    'type' => 'Type',
     /* index.blade.php */
     'all_tournaments' => 'Tous Les Tournois:',
     'tournament_place_img' => 'Tournoi image d\'espace réservé',
@@ -26,4 +29,8 @@ return [
 
     /* edit.blade.php */
     'edit_tournament' => 'Éditer le tournoi',
+    'select_sponsors' => 'Sélectionnez sponsors',
+
+    /*show.blade.php*/
+    'no_sponsors' => 'Pas de Sponsors trouvés',
 ];

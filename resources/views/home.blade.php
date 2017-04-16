@@ -22,7 +22,7 @@
                                         <div class="panel-body">
                                             <div class="hovereffect">
                                                 <a href="{{ action('TournamentsController@show', $tournament->id) }}">
-                                                    {{ Html::image('images/tournaments/'. $tournament->logo,"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
+                                                    {{ Html::image('images/tournaments/'. $tournament->logo,trans('tournaments.tournament_place_img'), array('class' => 'img img-responsive img-rounded rounded')) }}
                                                     <div class="overlay">
                                                         <h2><?php echo  $tournament->name ?></h2>
                                                     </div>
@@ -45,7 +45,7 @@
                                         <div class="panel-body">
                                             <div class="hovereffect">
                                                 <a href="{{ action('TournamentsController@show', $tournament->id) }}">
-                                                    {{ Html::image('images/tournaments/'. $tournament->logo,"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
+                                                    {{ Html::image('images/tournaments/'. $tournament->logo,trans('tournaments.tournament_place_img'), array('class' => 'img img-responsive img-rounded rounded')) }}
                                                     <div class="overlay">
                                                         <h2><?php echo  $tournament->name ?></h2>
                                                     </div>
