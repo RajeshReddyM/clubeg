@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
     'welcome' => 'Bienvenue',
@@ -45,6 +45,6 @@ return [
     'registered_tournaments' => 'Vos tournois:',
     'available_tournaments' => 'Tournois disponsible',
     'edit_group' => 'Modifier le groupe',
-    'edit_round' => 'Modifier le Ronde',
+    'edit_round' => 'Modifier la partie de golf',
     'edit_team' => 'Modifier l\'équipe',
 ];

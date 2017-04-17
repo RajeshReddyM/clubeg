@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 return [
     /* create.blade.php */
-    'add_score' => 'Ajouter Le Score',
+    'add_score' => 'Ajouter le score',
     'name' => 'Nom',
     'tournament' => 'Tournoi',
     'select_player' => 'Sélectionner le joueur...',

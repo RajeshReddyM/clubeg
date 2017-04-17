@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 return [
     /* create.blade.php */
     'add_round' => 'Ajouter une partie de golf',
@@ -9,10 +9,10 @@ return [
     'submit' => 'Soumettre',
 
     /* edit.blade.php */
-    'listing_rounds' => 'Liste Des Tours De',
+    'listing_rounds' => 'Liste des parties de golf',
 
     /*index.blade.php*/
-    'listing_groups' => 'Liste Des Groupes',
+    'listing_groups' => 'Liste des groupes',
 
     /*RoundsController.php*/
     'round_success_create' => 'La partie de golf a été créée avec succès',
