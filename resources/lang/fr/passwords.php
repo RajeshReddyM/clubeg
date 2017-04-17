@@ -17,12 +17,12 @@ return [
     'reset'    => 'Votre mot de passe a été réinitialisé !',
     'sent'     => 'Nous vous avons envoyé par courriel le lien de réinitialisation du mot de passe !',
     'token'    => "Ce jeton de réinitialisation du mot de passe n'est pas valide.",
-    'user'     => "Aucun utilisateur n'a été trouvé avec cette adresse e-mail.",
+    'user'     => "Aucun utilisateur n'a été trouvé avec ce courriel",
 
     /* For email.blade.php */
-    'email_address' => 'Adresse E-mail',
-    'reset_password' => 'Réinitialiser Le Mot De Passe',
-    'send_reset_link' => 'Envoyer Le Lien De Réinitialisation De Mot De Passe',
-    'password' => 'mot de passe',
-    'confirm_password' => 'confirmer le mot de passe',
+    'email_address' => 'Courriel',
+    'reset_password' => 'Réinitialiser le mot de passe',
+    'send_reset_link' => 'Envoyer le lien de réinitialisation de mot de passe',
+    'password' => 'Mot de passe',
+    'confirm_password' => 'Confirmer votre mot de passe',
 ];

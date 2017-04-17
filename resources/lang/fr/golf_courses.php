@@ -7,7 +7,7 @@ return [
     'hole_length' => 'Longueur du trou',
     'par' => 'Normale',
     'select_club' => 'Sélectionner un club...',
-    'golf_course_place_img' => 'Paramètre fictif réservé pour un image du parcour de golf',
+    'golf_course_place_img' => 'Paramètre fictif réservé pour un image du parcours de golf',
     'edit_golf_course' => 'Modification du parcours de golf',
     'no_golfcourses' => 'Aucun parcours de golf correspondant',
 

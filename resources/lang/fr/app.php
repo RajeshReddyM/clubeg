@@ -39,12 +39,12 @@ return [
     'scores' => 'Scores',
     'groups' => 'Groupes',
 
-    'sponsors' => 'Sponsors',
-    'rounds' => 'Tours',
+    'sponsors' => 'Commanditaires',
+    'rounds' => 'Partie de golf',
     'teams' => 'Les équipes',
-    'registered_tournaments' => 'Enregistré Tournois:',
-    'available_tournaments' => 'Disponible Tournois:',
-    'edit_group' => 'Modifier Le Groupe',
+    'registered_tournaments' => 'Vos tournois:',
+    'available_tournaments' => 'Tournois disponsible',
+    'edit_group' => 'Modifier le groupe',
     'edit_round' => 'Modifier le Ronde',
-    'edit_team' => 'Modifier L\'Équipe',
+    'edit_team' => 'Modifier l\'équipe',
 ];

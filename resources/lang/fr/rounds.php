@@ -1,10 +1,10 @@
 <?php
 return [
     /* create.blade.php */
-    'add_round' => 'Ajouter Rond',
+    'add_round' => 'Ajouter une partie de golf',
     'name' => 'Nom',
     'tournament' => 'Tournoi',
-    'please_select' => 'Veuillez Sélectionner...',
+    'please_select' => 'Veuillez sélectionner...',
     'players' => 'Les joueurs',
     'submit' => 'Soumettre',
 
@@ -15,7 +15,7 @@ return [
     'listing_groups' => 'Liste Des Groupes',
 
     /*RoundsController.php*/
-    'round_success_create' => 'Tour A Créé Avec Succès',
-    'round_success_update' => 'Tour Mis À Jour Avec Succès',
-    'round_success_delete' => 'Tour supprimé avec Succès',
+    'round_success_create' => 'La partie de golf a été créée avec succès',
+    'round_success_update' => 'La partie de golf a été mise à jour avec succès',
+    'round_success_delete' => 'La partie de golf a été supprimée avec succès',
 ];
