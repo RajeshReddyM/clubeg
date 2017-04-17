@@ -106,7 +106,7 @@
 
 
             <a class="navbar-brand" href="{{ url('/') }}">
-            WGD
+                {{ config('app.name', 'ClubEG') }}
             </a>
         </div>
 
