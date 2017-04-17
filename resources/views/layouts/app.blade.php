@@ -128,22 +128,11 @@
                             @endif
                             <li ><a class="dropdown-item" href="{{ route('groups.index') }}">{{trans('app.groups')}}<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
                             <li ><a class="dropdown-item" href="{{ route('teams.index') }}">{{trans('app.teams')}}<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
-                            @if (Auth::user()->isAn('admin', 'scorer'))
+                            @if (Auth::user()->isAn('admin', 'scorer', 'player'))
                                 <li ><a class="dropdown-item" href="/listtournaments"> {{trans('scores.scores')}} <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
                                 <li ><a class="dropdown-item" href="{{ route('scores.create') }}"> {{trans('scores.add_score')}} <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-plus"></span></a></li>
                             @endif
-                            @if (Auth::user()->isAn('admin'))
-                                <li class="dropdown">
-                                    <a class="dropdown-item" href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
-                                    <ul class="dropdown-menu forAnimate" role="menu">
-                                        <li><a href="#">Some Link</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">One more separated link</a></li>
-                                    </ul>
-                                </li>
-                            @endif
+                           
                         </ul>
                     </div>
                 </div>
