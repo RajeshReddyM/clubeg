@@ -49,7 +49,7 @@ class TeamsController extends Controller
         $tournaments = $request->tournaments;
 
         if (count($users) > 4) {
-            Session::flash('alert-danger', "Team cannot have more than 4 players");
+            Session::flash('alert-danger', trans('teams.no_more_than_4_players'));
             return redirect('/teams');
         } else {
             $team->save();
@@ -57,7 +57,7 @@ class TeamsController extends Controller
             $team->assignTournaments($tournaments);
 
             if (Auth::user()) {
-                Session::flash('alert-success', "Team successfully created");
+                Session::flash('alert-success', trans('teams.team_success_create'));
                 return redirect('/teams');
             }
         }
@@ -95,7 +95,7 @@ class TeamsController extends Controller
         $tournaments = $request->tournaments;
         $totalUsers = count($users);
         if ($totalUsers > 4) {
-            Session::flash('alert-danger', "Team cannot have more than 4 players");
+            Session::flash('alert-danger', trans('teams.no_more_than_4_players'));
             return redirect('/teams');
         } else {
             $team->save();
@@ -104,7 +104,7 @@ class TeamsController extends Controller
             $team->deleteTournaments();
             $team->assignTournaments($tournaments);
             if (Auth::user()) {
-                Session::flash('alert-success', "Team Updated Successfully");
+                Session::flash('alert-success', trans('teams.team_success_update'));
                 return redirect('/teams');
             }
         }
@@ -121,7 +121,7 @@ class TeamsController extends Controller
     {
         $team = Team::findOrFail($id);
         $team->delete();
-        Session::flash('alert-success', "Team deleted Successfully");
+        Session::flash('alert-success', trans('teams.team_success_delete'));
         return redirect('/teams');
     }
 }

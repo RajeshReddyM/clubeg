@@ -24,7 +24,7 @@
             </div>
             
             <div class="form-group">
-                {{ Form::label('tournaments', 'Tournaments') }}
+                {{ Form::label('tournaments', trans('sponsors.tournaments')) }}
                 {{ Form::select('tournaments[]', \App\Tournament::all()->pluck('name', 'id')->toArray(), null, ['multiple'=>true,'class'=>'form-control select2']) }}
             </div>
 

@@ -20,21 +20,21 @@
       <table class="table table-responsive table-bordered" style="background-color: white !important;">
           <thead>
             <tr>
-              <td class="text-center"><b> Hole </b></td>
+              <td class="text-center"><b> {{trans('scores.hole')}} </b></td>
               @for ($i=1; $i<10; $i++)
                 <td class="text-center"> <b> {{ $i }} </b> </td>
               @endfor
-              <td class="text-center"> <b> OUT </b> </td>
+              <td class="text-center"> <b> {{trans('scores.out')}} </b> </td>
               @for ($i=10; $i<19; $i++)
                 <td class="text-center"> <b> {{ $i }} </b></td>
               @endfor
-              <td class="text-center"> <b> IN </b></td>
-              <td class="text-center"> <b> Total </b></td>
+              <td class="text-center"> <b> {{trans('scores.in')}} </b></td>
+              <td class="text-center"> <b> {{trans('scores.total')}} </b></td>
               <td class="text-center"> <b> +/- </b></td>
               <td></td>
             </tr>
             <tr>
-              <td class="text-center"> <b> Par </b> </td>
+              <td class="text-center"> <b> {{trans('scores.par')}} </b> </td>
               @for ($i=1; $i<10; $i++)
                 <td class="text-center"> <b> {{ $golfcourse['P'.$i] }} </b> </td>
               @endfor

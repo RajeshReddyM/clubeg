@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Alif
- * Date: 12-Mar-17
- * Time: 9:34 PM
- */
+
 return [
     /* Golf Club - create.blade.php & edit.blade.php */
     'add_club' => 'Add Club',
@@ -29,4 +24,6 @@ return [
     'create_golfclub' => 'Successfully created golf club',
     'update_golfclub' => 'Golf club updated Successfully',
     'delete_golfclub' => 'Golf club deleted Successfully',
+    'success_register' => 'You have been Successfully Registered',
+    'success_unregister' => 'You have been Unregistered Successfully',
 ];

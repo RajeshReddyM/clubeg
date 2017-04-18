@@ -4,6 +4,9 @@ return [
     'add_tournament' => 'Add Tournament',
     'start_date' => 'Start Date',
     'select_course' => 'Select a Course...',
+    'visibility' => 'Visibility',
+    'division' => 'Division',
+    'type' => 'Type',
     /* index.blade.php */
     'all_tournaments' => 'All Tournaments:',
     'tournament_place_img' => 'Tournament placeholder image',
@@ -13,6 +16,7 @@ return [
     'club_name' => 'Club Name',
     'course_name' => 'Course Name',
     'type' => 'Type',
+    'tournament_place_img' => 'Tournament placeholder image',
     'cancel_registration' => 'Cancel Registration',
     'register' => 'Register',
 
@@ -25,5 +29,8 @@ return [
 
     /* edit.blade.php */
     'edit_tournament' => 'Edit Tournament',
-    'select_sponsors' => 'Select sponsors'
+    'select_sponsors' => 'Select sponsors',
+
+    /*show.blade.php*/
+    'no_sponsors' => 'No Sponsors found',
 ];

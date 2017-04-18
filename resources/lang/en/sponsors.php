@@ -1,9 +1,11 @@
 <?php
 return [
     /* create.blade.php */
+    'add_tournament' => 'Add Sponsor',
     'name' => 'Name',
     'email' => 'Email',
     'add_sponsor' => 'Create new Sponsor',
+    'tournaments' => 'Tournaments',
     /* index.blade.php */
     'all_sponsors' => 'All Sponsors:',
     'sponsor_place_img' => 'Sponsor placeholder image',

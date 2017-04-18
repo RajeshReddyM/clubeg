@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
     'welcome' => 'Bienvenue',
@@ -38,4 +38,13 @@ return [
     'tournaments' => 'Tournois',
     'scores' => 'Scores',
     'groups' => 'Groupes',
+
+    'sponsors' => 'Commanditaires',
+    'rounds' => 'Partie de golf',
+    'teams' => 'Les équipes',
+    'registered_tournaments' => 'Vos tournois:',
+    'available_tournaments' => 'Tournois disponsible',
+    'edit_group' => 'Modifier le groupe',
+    'edit_round' => 'Modifier la partie de golf',
+    'edit_team' => 'Modifier l\'équipe',
 ];

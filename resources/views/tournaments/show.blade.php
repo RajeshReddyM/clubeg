@@ -49,7 +49,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="type"> Division </label>
+                            <label for="type"> {{trans('tournaments.division')}} </label>
                         </div>
                         <div class="col-md-6">
                             <p id="type">{{$pageData['tournament']->division}}</p>
@@ -57,7 +57,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="type"> Visibility </label>
+                            <label for="type"> {{trans('tournaments.visibility')}} </label>
                         </div>
                         <div class="col-md-6">
                             <p id="type">{{$pageData['tournament']->visibility}}</p>
@@ -92,7 +92,7 @@
 
             <!-- sponsor area -->
             <div class="col-md-10">
-                <h2>Sponsors</h2>
+                <h2>{{trans('sponsors.sponsor')}}</h2>
                 <hr/>
                 @if (count($pageData['sponsors']))
                     @foreach($pageData['sponsors'] as $sponsor)
@@ -114,7 +114,7 @@
                       @endif
                     @endforeach
                 @else
-                 <h3> No Sponsors found </h3>
+                 <h3> {{trans('tournaments.no_sponsors')}} </h3>
                 @endif
             </div>
         </div>

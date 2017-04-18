@@ -13,7 +13,6 @@ return [
     'submit' => 'Soumettre',
 
     'editing_club' => 'Édition Du Club',
-
     /* Golf Club - index.blade.php */
     'golf_clubs' => 'Les clubs de golf',
     'club_place_image' => 'Paramètre fictif réservé pour un image du club',
@@ -25,4 +24,6 @@ return [
     'create_golfclub' => 'Créé avec succès golf club',
     'update_golfclub' => 'Le club de golf a été mis à jour avec succès',
     'delete_golfclub' => 'Le club de golf a été supprimé avec succès',
+    'success_register' => 'Vous avez bien été Enregistré',
+    'success_unregister' => 'Vous avez été ou Non Correctement',
 ];

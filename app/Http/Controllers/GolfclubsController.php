@@ -130,7 +130,7 @@ class GolfclubsController extends Controller
         // check if user is registered
         $registered = $club->users()->wherePivot('user_id', $user->id)->exists();
 
-        Session::flash('alert-success', 'You have been Successfully Registered');
+        Session::flash('alert-success', trans('golf_club.success_register'));
         return view('golfclubs/show', ['club' => $club, 'golfcourses' => $golfcourses, 'registered' => $registered]);
     }
 
@@ -143,7 +143,7 @@ class GolfclubsController extends Controller
         // check if user is registered
         $registered = $club->users()->wherePivot('user_id', $user->id)->exists();
 
-        Session::flash('alert-success', 'You have been Unregistered Successfully');
+        Session::flash('alert-success', trans('golf_club.success_unregister'));
         return view('golfclubs/show', ['club' => $club, 'golfcourses' => $golfcourses, 'registered' => $registered]);
     }
      /**

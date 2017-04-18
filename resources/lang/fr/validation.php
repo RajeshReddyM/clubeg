@@ -116,8 +116,8 @@ return [
 
     'attributes'           => [
         'name'                  => 'Nom',
-        'username'              => 'Pseudo',
-        'email'                 => 'Adresse e-mail',
+        'username'              => 'Nom d\'utilisateur',
+        'email'                 => 'Courriel',
         'first_name'            => 'Prénom',
         'last_name'             => 'Nom',
         'password'              => 'Mot de passe',
@@ -129,7 +129,7 @@ return [
         'mobile'                => 'Portable',
         'age'                   => 'Age',
         'sex'                   => 'Sexe',
-        'gender'                => 'Genre',
+        'gender'                => 'Sexe',
         'day'                   => 'Jour',
         'month'                 => 'Mois',
         'year'                  => 'Année',

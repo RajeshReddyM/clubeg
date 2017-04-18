@@ -14,7 +14,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>Registered Tournaments:</h3>
+                        <h3>{{trans('app.registered_tournaments')}}</h3>
                         @foreach ($pageData['registeredTournaments'] as $tournament)
                             @if($tournament->logo)
                                 <div class="col-md-4">
@@ -22,7 +22,7 @@
                                         <div class="panel-body">
                                             <div class="hovereffect">
                                                 <a href="{{ action('TournamentsController@show', $tournament->id) }}">
-                                                    {{ Html::image('images/tournaments/'. $tournament->logo,"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
+                                                    {{ Html::image('images/tournaments/'. $tournament->logo,trans('tournaments.tournament_place_img'), array('class' => 'img img-responsive img-rounded rounded')) }}
                                                     <div class="overlay">
                                                         <h2><?php echo  $tournament->name ?></h2>
                                                     </div>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>Available Tournaments:</h3>
+                        <h3>{{trans('tournaments.available_tournaments')}}</h3>
                         @foreach ($pageData['allTournaments'] as $tournament)
                             @if($tournament->logo)
                                 <div class="col-md-4">
@@ -45,7 +45,7 @@
                                         <div class="panel-body">
                                             <div class="hovereffect">
                                                 <a href="{{ action('TournamentsController@show', $tournament->id) }}">
-                                                    {{ Html::image('images/tournaments/'. $tournament->logo,"Tournament placeholder image", array('class' => 'img img-responsive img-rounded rounded')) }}
+                                                    {{ Html::image('images/tournaments/'. $tournament->logo,trans('tournaments.tournament_place_img'), array('class' => 'img img-responsive img-rounded rounded')) }}
                                                     <div class="overlay">
                                                         <h2><?php echo  $tournament->name ?></h2>
                                                     </div>

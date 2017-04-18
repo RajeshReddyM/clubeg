@@ -1,29 +1,36 @@
 <?php
 return [
     /* create.blade.php */
-    'add_tournament' => 'Ajouter Tournoi',
-    'start_date' => 'Date De Début De',
-    'select_course' => 'Sélectionnez un Cours...',
+    'add_tournament' => 'Ajouter un tournoi',
+    'start_date' => 'Date de début',
+    'select_course' => 'Sélectionnez un parcours de golf...',
+    'visibility' => 'Visibilité',
+    'division' => 'Division',
+    'type' => 'Type',
     /* index.blade.php */
-    'all_tournaments' => 'Tous Les Tournois:',
-    'tournament_place_img' => 'Tournoi image d\'espace réservé',
-    'available_tournaments' => 'Disponible Tournois',
+    'all_tournaments' => 'Tous les tournois:',
+    'tournament_place_img' => 'Paramètre fictif réservé pour un tournoi',
+    'available_tournaments' => 'Tournois disponible',
 
     /* register.blade.php */
-    'club_name' => 'Nom Du Club',
-    'course_name' => 'Nom Du Cours',
+    'club_name' => 'Nom du club',
+    'course_name' => 'Nom du parcours de golf',
     'type' => 'Type',
-    'tournament_place_img' => 'Tournoi image d\'espace réservé',
-    'cancel_registration' => 'Annuler L\'Enregistrement',
-    'register' => 'Registre',
+    'tournament_place_img' => 'Paramètre fictif réservé pour un tournoi',
+    'cancel_registration' => 'Annuler l\'inscription',
+    'register' => 'Inscription',
 
     /* TournamentController.php */
-    'create_tournament' => 'Créé avec succès en tournoi',
-    'registration_done' => 'Vous avez été enregistrées!',
-    'registration_failed' => 'L\'enregistrement a échoué. Merci d\'essayer de nouveau.',
+    'create_tournament' => 'Le tournoi a été créé avec succès',
+    'registration_done' => 'Vous êtes inscrit!',
+    'registration_failed' => 'L\'inscription a échouée. Merci d\'essayer de nouveau.',
     'registration_cancelled' => 'Inscription annulée.',
-    'cancelled_failed' => 'L\'annulation a échoué. Merci d\'essayer de nouveau.',
+    'cancelled_failed' => 'L\'annulation a échouée. Merci d\'essayer de nouveau.',
 
     /* edit.blade.php */
-    'edit_tournament' => 'Éditer le tournoi',
+    'edit_tournament' => 'Modifier le tournoi',
+    'select_sponsors' => 'Sélectionner des commanditaires',
+
+    /*show.blade.php*/
+    'no_sponsors' => 'Aucun commanditaire trouvé',
 ];

@@ -23,19 +23,19 @@
                 {{ Form::select('golfcourse_id', \App\Golfcourse::all()->pluck('name', 'id')->toArray(), null,['placeholder'=> trans('tournaments.select_course'), 'class'=>'form-control select2']) }}
             </div>
             <div class="form-group">
-                {{ Form::label('visibility', 'Visibility') }}
+                {{ Form::label('visibility', trans('tournaments.visibility')) }}
 
-                {{ Form::select('visibility', ['public' => 'Public', 'private' => 'Private'], null,['placeholder'=> 'Please select...', 'class'=>'form-control select2']) }}
+                {{ Form::select('visibility', ['public' => 'Public', 'private' => 'Private'], null,['placeholder'=> trans('rounds.please_select'), 'class'=>'form-control select2']) }}
             </div>
             <div class="form-group">
-                {{ Form::label('division', 'Division') }}
+                {{ Form::label('division', trans('tournaments.division')) }}
 
-                {{ Form::select('division', ['division1' => 'Division1', 'division2' => 'Division2'], null,['placeholder'=> 'Please select...', 'class'=>'form-control select2']) }}
+                {{ Form::select('division', ['division1' => 'Division1', 'division2' => 'Division2'], null,['placeholder'=> trans('rounds.please_select'), 'class'=>'form-control select2']) }}
             </div>
              <div class="form-group">
-                {{ Form::label('type', 'Type') }}
+                {{ Form::label('type', trans('tournaments.type')) }}
 
-                {{ Form::select('type', ['charity' => 'Charity', 'type1' => 'Type1'], null,['placeholder'=> 'Please select...', 'class'=>'form-control select2']) }}
+                {{ Form::select('type', ['charity' => 'Charity', 'type1' => 'Type1'], null,['placeholder'=> trans('rounds.please_select'), 'class'=>'form-control select2']) }}
             </div>
             <div class="form-group">
                 {{ Form::label('start_date', trans('tournaments.start_date')) }}
