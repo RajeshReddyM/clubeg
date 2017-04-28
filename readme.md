@@ -16,12 +16,12 @@ Install the following on your system:
     - DB_PASSWORD=
 
 Using command line, run the following commands from inside the clubeg folder, which is the root folder of the project:
-   composer install
-    php artisan key:generate
-    npm install
-    php artisan migrate
-    php artisan db:seed
-    php artisan serve
+  1. composer install
+  2. php artisan key:generate
+  3. npm install
+  4. php artisan migrate
+  5. php artisan db:seed
+  6. php artisan serve
 
 
 ## Login credentials
